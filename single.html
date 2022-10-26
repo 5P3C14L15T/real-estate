@@ -27,12 +27,14 @@
       <nav class="menu">
         <div class="container">
           <div class="logo">
+            <a href="index.html">
             <img
               src="imagem/logo.png"
               class="img-fluid logo-img"
               alt=""
               srcset=""
             />
+            </a>
           </div>
         </div>
       </nav>
@@ -81,9 +83,11 @@
     </div>
     <div class="container">
       <div class="row col-md-10 mx-auto">
+        <a href="index.html" class="voltar"><i class="fas fa-home"></i> Voltar > Página Inicial</a>
         <div class="titulo-preco">
-          <h1 class="imovel-title">Título do Imóvel</h1>
-            <h2 class="imovel-valor">Valor: R$ 150.000,00</h2>
+          
+          <h1 class="imovel-title">Sobrado no Belvedere com 3 quartos e 1 suíte</h1>
+          <h2 class="imovel-valor">Valor: R$ 150.000,00</h2>
         </div>
         <div class="col-sm-12 col-md-7 info-desc">
 
@@ -141,28 +145,51 @@
               </div>
               <div class="col-md-2 text-center item">
                 <i class="fas fa-tv"></i>
-                <p>2 Quartos</p>
+                <p>Sala</p>
               </div>
               <div class="col-md-2 text-center item">
                 <i class="fas fa-utensil-spoon"></i>
-                <p>2 Quartos</p>
+                <p>Cozinha</p>
               </div>
               <div class="col-md-2 text-center item">
                 <i class="fas fa-shower"></i>
-                <p>2 Quartos</p>
+                <p>Banheiro</p>
               </div>
-              <div class="col-md-2 text-center item">
-                <i class="fas fa-bed"></i>
-                <p>2 Quartos</p>
-              </div>
+              
               <div class="col-md-2 text-center item">
                 <i class="fas fa-warehouse"></i>
-                <p>2 Quartos</p>
+                <p>Garagem</p>
+              </div>
+              <div class="col-md-2 text-center item">
+                <i class="fas fa-ruler-combined"></i>
+                <p>120m²</p>
               </div>
             </div>
           </div>
         </div>
         <div class="col-sm-12 col-md-5 info-corretor-main">
+
+                 <!-- mensagem -->
+<div class="mensagem-corretor">
+  <h3>Falar direto com o Corretor</h3>
+  <form action="#!">
+    <input class="form-control form-control-lg" id="nome" name="nome" type="text" placeholder="Insira o seu nome" required>
+    <input class="form-control form-control-lg" id="renda" name="renda" type="text" placeholder="Qual sua renda bruta?" required>
+
+    <select required class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      <option selected>Possui restrição no Nome?</option>
+      <option value="1">Sim</option>
+      <option value="2">Não</option>
+
+    </select>
+
+    <div class="d-grid gap-2 mt-4">
+      <input class="btn btn-success" type="submit" name="enviar" value="Chamar no WhatsApp" >
+    </div>
+  </form>
+</div>
+          <!-- /mensagem -->
+
           <div class="info-corretor">
             <header>
               <img
@@ -200,17 +227,19 @@
               </div>
             </footer>
           </div>
-          <!-- mensagem -->
-<div class="mensagem-corretor">
-  <h3>Falar direto com o Corretor</h3>
-  <form action="#!">
-    
-  </form>
-</div>
-          <!-- /mensagem -->
+   
         </div>
       </div>
     </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <h1>CASAAVENDACUIABA.COM.BR</h1>
+          <p>&copy; Todos os Direitos Reservados</p>
+        </div>
+      </div>
+    </footer>
 
     <!-- JavaScript Bundle with Popper -->
     <script
