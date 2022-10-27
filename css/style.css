@@ -332,3 +332,28 @@ body {
 
 }
 
+/* página de login */
+
+.login-form {
+  margin-top: 30px;
+  background: rgb(245, 245, 245);
+  border: 1px solid rgb(210, 210, 210) ;
+  padding: 20px;
+}
+
+.login-form h2 {
+  font-size: 1.4em;
+  font-family: "Nunito";
+  font-weight: 400;
+  color: rgb(160, 160, 160);
+  text-align: center;
+}
+
+.login-form legend {
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 0.9em;
+  color: rgb(138, 138, 138);
+  font-family: "Nunito";
+  font-weight: 300;
+}
