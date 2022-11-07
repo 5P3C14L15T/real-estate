@@ -207,3 +207,11 @@ footer .cta button {
     text-align: center;
 }
 
+/* página add imóvel */
+
+.add-imovel {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgb(239, 239, 239);
+}
+
