@@ -34,7 +34,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <a href="#!" class="btn btn-success d-block">Add Novo Imóvel</a>
+            <a href="dashboard.html" class="btn btn-info d-block">Voltar ao dashboard</a>
           </div>
           <div class="col-md-3">
             <a href="#!" class="btn btn-primary d-block">Editar Perfil</a>
@@ -50,6 +50,7 @@
             <h1 class="text-center">Adicione uma nova casa</h1>
 
             <form action="#!" class="add-imovel">
+              <label for="titulo"> Insira o Título do Imóvel</label>
               <div class="input-group input-group-lg mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-lg"
                   ><i class="fas fa-home"></i
@@ -66,11 +67,12 @@
 
               <div class="row">
                 <div class="col-md-6">
+                  <label for="bairro"> Escolha o Bairro</label>
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-lg"
                           ><i class="fas fa-location-arrow"></i></span>
         
-                          <select class="form-select">
+                          <select name="bairro" class="form-select">
                             <option selected>Escolha o Bairro</option>
                             <option value="1">Araés</option>
                             <option value="2">CPA 1</option>
@@ -79,6 +81,7 @@
                       </div>
                 </div>
                 <div class="col-md-6">
+                  <label for="preco"> Qual o valor do Imóvel?</label>
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-lg"
                           ><i class="fas fa-dollar-sign"></i></span>
@@ -86,12 +89,152 @@
                         <input
                           type="text"
                           class="form-control"
-                          name="titulo"
+                          name="preco"
                           placeholder="R$ 200.000,00"
                           aria-describedby="inputGroup-sizing-lg"
                         />
                       </div>
                 </div>
+
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="condominio"> Qual o valor do condomínio</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="condominio"
+                        placeholder="R$ 400,00"
+                        aria-describedby="inputGroup-sizing-lg"
+                      />
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="quartos"> Quantos quartos possui?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="quartos" class="form-select">
+                          <option selected>Escolha o Bairro</option>
+                          <option value="1">1 Quarto</option>
+                          <option value="2">2 Quartos</option>
+                          <option value="3">3 Quartos</option>
+                          <option value="4">4 Quartos</option>
+                          <option value="5">+4 Quartos</option>
+                        </select>
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="area"> Quantos metros quadrados?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="area"
+                        placeholder="120"
+                        aria-describedby="inputGroup-sizing-lg"
+                      />
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="sala"> Quantas salas</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="sala" class="form-select">
+                          <option selected>Quantas salas?</option>
+                          <option value="1">1 Sala</option>
+                          <option value="2">2 Salas</option>
+                          <option value="3">3 Salas</option>
+                          <option value="4">4 Salas</option>
+                          <option value="5">+4 Salas</option>
+                        </select>
+                    </div>
+                    </div>
+              
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="banheiro"> Quantos banheiros?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="quartos" class="form-select">
+                          <option selected>Quantos banheiros?</option>
+                          <option value="1">1 Banheiro</option>
+                          <option value="2">2 Banheiros</option>
+                          <option value="3">3 Banheiros</option>
+                          <option value="4">4 Banheiros</option>
+                          <option value="5">+4 Banheiros</option>
+                        </select>
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="area"> Quantas cozinhas?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="quartos" class="form-select">
+                          <option selected>Quantas cozinhas?</option>
+                          <option value="1">1 Cozinha</option>
+                          <option value="2">2 Cozinhas</option>
+                          <option value="3">3 Cozinhas</option>
+                          <option value="4">4 Cozinhas</option>
+                          <option value="5">+4 Cozinhas</option>
+                        </select>
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="area"> Quantas garagem?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="quartos" class="form-select">
+                          <option selected>Quantas garagem?</option>
+                          <option value="1">1 Garagem</option>
+                          <option value="2">2 Garagems</option>
+                          <option value="3">3 Garagems</option>
+                          <option value="4">4 Garagems</option>
+                          <option value="5">+4 Garagems</option>
+                        </select>
+                    </div>
+              </div>
+
+              <!-- mensagem -->
+
+              <div class="col-md-12">
+                <label for="area"> Descrição do Imóvel</label>
+                <div class="mb-3">
+                 
+                  <textarea class="form-control" rows="5" placeholder="Insira uma pequena descrição do Imovél"></textarea>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="area">Insira as imagens do Imóvel</label>
+                
+                <input class="form-control" type="file" id="formFileMultiple" multiple>
+              </div>
+              
+              <div class="d-grid gap-2">
+                <button class="btn btn-success" type="button">ADICIONAR IMÓVEL</button>
+                
+              </div>
               </div>
             </form>
           </div>
