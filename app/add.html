@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/6c66823518.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Casa a Venda Cuiabá</title>
+  </head>
+  <body>
+    <header class="main">
+      <nav class="menu">
+        <div class="container">
+          <div class="logo">
+            <img src="imagem/logo.png" class="img-fluid logo-img" alt="" />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="componentes">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <a href="dashboard.html" class="btn btn-info d-block">Voltar ao dashboard</a>
+          </div>
+         
+        </div>
+      </div>
+    </nav>
+
+    <section class="main mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 mx-auto">
+            <h1 class="text-center">Adicione uma nova casa</h1>
+
+            <form action="#!" class="add-imovel">
+              <label for="titulo"> Insira o Título do Imóvel</label>
+              <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-lg"
+                  ><i class="fas fa-home"></i
+                ></span>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  name="titulo"
+                  placeholder="Casa de 3 quartos próximo ao centro"
+                  aria-describedby="inputGroup-sizing-lg"
+                />
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="bairro"> Escolha o Bairro</label>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg"
+                          ><i class="fas fa-location-arrow"></i></span>
+        
+                          <select name="bairro" class="form-select">
+                            <option selected>Escolha o Bairro</option>
+                            <option value="1">Araés</option>
+                            <option value="2">CPA 1</option>
+                            <option value="3">Belvedere</option>
+                          </select>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="preco"> Qual o valor do Imóvel?</label>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg"
+                          ><i class="fas fa-dollar-sign"></i></span>
+        
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="preco"
+                          placeholder="R$ 200.000,00"
+                          aria-describedby="inputGroup-sizing-lg"
+                        />
+                      </div>
+                </div>
+
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="condominio"> Qual o valor do condomínio</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="condominio"
+                        placeholder="R$ 400,00"
+                        aria-describedby="inputGroup-sizing-lg"
+                      />
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="quartos"> Quantos quartos possui?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="quartos" class="form-select">
+                          <option selected>Escolha o Bairro</option>
+                          <option value="1">1 Quarto</option>
+                          <option value="2">2 Quartos</option>
+                          <option value="3">3 Quartos</option>
+                          <option value="4">4 Quartos</option>
+                          <option value="5">+4 Quartos</option>
+                        </select>
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="area"> Quantos metros quadrados?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="area"
+                        placeholder="120"
+                        aria-describedby="inputGroup-sizing-lg"
+                      />
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="sala"> Quantas salas</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="sala" class="form-select">
+                          <option selected>Quantas salas?</option>
+                          <option value="1">1 Sala</option>
+                          <option value="2">2 Salas</option>
+                          <option value="3">3 Salas</option>
+                          <option value="4">4 Salas</option>
+                          <option value="5">+4 Salas</option>
+                        </select>
+                    </div>
+                    </div>
+              
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="banheiro"> Quantos banheiros?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="quartos" class="form-select">
+                          <option selected>Quantos banheiros?</option>
+                          <option value="1">1 Banheiro</option>
+                          <option value="2">2 Banheiros</option>
+                          <option value="3">3 Banheiros</option>
+                          <option value="4">4 Banheiros</option>
+                          <option value="5">+4 Banheiros</option>
+                        </select>
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="area"> Quantas cozinhas?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="quartos" class="form-select">
+                          <option selected>Quantas cozinhas?</option>
+                          <option value="1">1 Cozinha</option>
+                          <option value="2">2 Cozinhas</option>
+                          <option value="3">3 Cozinhas</option>
+                          <option value="4">4 Cozinhas</option>
+                          <option value="5">+4 Cozinhas</option>
+                        </select>
+                    </div>
+              </div>
+                <!-- aqui vai os quartos -->
+                <div class="col-md-4">
+                  <label for="area"> Quantas garagem?</label>
+                  <div class="input-group input-group-lg mb-3">
+                      <span class="input-group-text" id="inputGroup-sizing-lg"
+                        ><i class="fas fa-dollar-sign"></i></span>
+      
+                        <select name="quartos" class="form-select">
+                          <option selected>Quantas garagem?</option>
+                          <option value="1">1 Garagem</option>
+                          <option value="2">2 Garagems</option>
+                          <option value="3">3 Garagems</option>
+                          <option value="4">4 Garagems</option>
+                          <option value="5">+4 Garagems</option>
+                        </select>
+                    </div>
+              </div>
+
+              <!-- mensagem -->
+
+              <div class="col-md-12">
+                <label for="area"> Descrição do Imóvel</label>
+                <div class="mb-3">
+                 
+                  <textarea class="form-control" rows="5" placeholder="Insira uma pequena descrição do Imovél"></textarea>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="area">Insira as imagens do Imóvel</label>
+                
+                <input class="form-control" type="file" id="formFileMultiple" multiple>
+              </div>
+              
+              <div class="d-grid gap-2">
+                <button class="btn btn-success" type="button">ADICIONAR IMÓVEL</button>
+                
+              </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <h1>CASAAVENDACUIABA.COM.BR</h1>
+          <p>&copy; Todos os Direitos Reservados</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

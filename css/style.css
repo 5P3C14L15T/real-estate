@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+/* font-family: 'Nunito', sans-serif; */
+/* font-family: 'Open Sans', sans-serif; */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 
+font-family: 'Lato', sans-serif;
+font-family: 'Lora', serif;
+font-family: 'Poppins', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(250, 250, 250) !important;
+}
+
+.main {
+  margin: 0 auto;
+}
+
+.menu{
+    padding: 10px;
+    background: rgb(244, 244, 244);
+    border-bottom: 5px solid rgb(237, 237, 237);
+}
+
+.filter-main-search{
+    background: rgb(248, 248, 248);
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.filter-main-search select{
+    font-size: 0.8em !important;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    min-height: 50px !important;
+}
+
+.search-nivel{
+    margin: 2px 0 !important;
+ 
+}
+
+.search {
+    width: 100%;
+    text-align: left !important;
+    min-height: 50px !important;
+    font-size: 1em !important;
+    font-family: 'Open Sans';
+}
+
+.logo{
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    
+}
+
+.imovel-main {
+  /* background: rgb(192, 138, 192) !important; */
+  width: 96% !important;
+  margin: 0 auto;
+  padding: 0 !important;
+
+}
+
+.imovel {
+  background: rgb(255, 255, 255);
+  border-radius: 5px !important;
+  box-shadow: 1px 1px 10px 1px rgb(235, 235, 235);
+  margin-bottom: 25px;
+}
+
+.imovel:hover {
+  background: rgb(255, 255, 255);
+  border-radius: 5px !important;
+  box-shadow: 1px 3px 11px 2px rgb(135, 197, 254);
+  margin-bottom: 25px;
+}
+
+
+.row .imovel {
+  padding: 0 !important;
+  border-radius: 30px;
+}
+
+.img-imovel {
+
+  min-height: 150px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+ 
+  object-fit: cover !important;
+  border-radius: 5px 0 0 5px;
+}
+
+.imovel .imovel-img-l {
+  float: left !important;
+  /* background: red !important; */
+  font-size: 2em !important;
+}
+
+.imovel-img-l {
+  width: 15%!important;
+  border-radius: 3px 0 0 3px !important;
+  /* object-fit: fill !important; */
+  margin: 0 !important;
+  padding: 0 !important;
+  float: left;
+  object-fit: fill !important;
+  /* background: red !important; */
+}
+.imovel-img-r {
+  width: 85% !important;
+  float: right;
+  margin: 0 !important;
+  padding: 0 !important;
+  /* background: red; */
+ 
+}
+
+.tituloepreco {
+  /* background: rgb(228, 115, 115) !important; */
+  float: left;
+  width: 100%;
+}
+
+
+.tituloimovel {
+  /* background: red; */
+  float: left;
+  /* background: rgb(86, 148, 210); */
+  
+}
+
+.tituloimovel h1{
+  font-family: 'Nunito';
+  font-size: 1.7em;
+  font-weight: 700;
+  margin-left: 5px;
+  margin-top: 5px;
+  color: rgb(59, 57, 57);
+}
+
+.precoimovel {
+  /* background: greenyellow; */
+  float: left;
+  text-align: right;
+  width:100%;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.precoimovel span {
+  font-size: 1.5em;
+  color: rgb(71, 71, 71);
+  font-family: 'Nunito';
+  font-weight: 300;
+ 
+
+}
+
+.imovel-itens {
+  width: 100%;
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 1em;
+  color: rgb(102, 102, 102);
+  font-family: 'Nunito';
+  font-weight: 300;
+}
+
+.cidade-visualizacao {
+  /* background: rgb(143, 39, 96); */
+  /* float: left; */
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: end;
+ 
+}
+
+.cid-visu-l {
+  /* background: rgb(33, 203, 50); */
+  margin-left: 5px;
+  font-family: 'Nunito';
+  font-size: 1.2em;
+  font-weight: 300;
+  color: rgb(47, 47, 47);
+
+  
+}
+
+.cid-visu-r {
+  /* background: rgb(115, 18, 139); */
+  margin-left: 5px;
+  display: flex;
+  font-size: 1em;
+  color: rgb(78, 78, 78);
+  font-family: 'Nunito';
+  font-weight: 300;
+
+
+}
+
+
+/* single */
+
+.info-desc {
+  background: rgb(249, 254, 254);
+}
+
+/* footer */
+
+.footer {
+  background: rgb(54, 53, 53);
+  color: #fff;
+  text-align: center;
+  margin-top: 30px;
+  padding: 30px 0 20px 0;
+}
+
+.footer h1 {
+  font-size: 1.3em;
+  font-weight: 400;
+  font-family: "Nunito";
+}
+
+/* media queries */
+
+@media (max-width: 575px) {
+  .main-casas {
+    padding: 0px !important;
+    margin: 0 auto !important;
+    /* background: #ccc; */
+  }
+
+  body{
+    /* background: red !important; */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .imovel {
+    border-radius: 3px;
+  }
+  .img-imovel {
+    /* max-width: 110px !important; */
+    border-radius: 3px 0 0 3px !important;
+    object-fit: cover !important;
+  }
+
+  .imovel-img-l {
+    width: 40% !important;
+    float: left !important;
+    border-radius: 3px 0 0 3px !important;
+    /* object-fit: fill !important; */
+  }
+  .imovel-img-r {
+    width: 60% !important;
+    float: right;
+  }
+
+  .precoimovel span {
+    font-size: 0.8em;
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+  }
+
+  .imovel-itens {
+    width: 100% !important;
+    float: left;
+    background: red;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-casas {
+    padding: 0px !important;
+    margin: 0 auto !important;
+    /* background: #ccc; */
+  }
+
+  body{
+    /* background: red !important; */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .img-imovel {
+    /* max-width: 150px !important; */
+    object-fit: cover !important;
+  }
+
+  .imovel-img-l {
+    width: 25% !important;
+    float: left !important;
+    border-radius: 3px 0 0 3px !important;
+    /* object-fit: fill !important; */
+  }
+  .imovel-img-r {
+    width: 75% !important;
+    float: right;
+  }
+
+}
+
+@media (max-width: 1200px) {
+
+  .imovel-img-l {
+    width: 25% !important;
+    float: left !important;
+    border-radius: 3px 0 0 3px !important;
+    /* object-fit: fill !important; */
+  }
+  .imovel-img-r {
+    width: 75% !important;
+    float: right;
+  }
+
+}
+
+/* página de login */
+
+.login-form {
+  margin-top: 30px;
+  background: rgb(245, 245, 245);
+  border: 1px solid rgb(210, 210, 210) ;
+  padding: 20px;
+}
+
+.login-form h2 {
+  font-size: 1.4em;
+  font-family: "Nunito";
+  font-weight: 400;
+  color: rgb(160, 160, 160);
+  text-align: center;
+}
+
+.login-form legend {
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 0.9em;
+  color: rgb(138, 138, 138);
+  font-family: "Nunito";
+  font-weight: 300;
+}
