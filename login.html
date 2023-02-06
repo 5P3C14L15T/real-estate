@@ -35,36 +35,71 @@
       </nav>
     </header>
 
-    <div class="section login" id="login">
-      <div class="container">
-        <div class="row">
-            <h1 class="display-4 text-center">Acesso ao Painel Administrativo</h1>
-          <div class="col-md-4 col-sm-12 mx-auto">
-            
-            <form
-              action="app/dashboard.html"
-              method="post"
-              enctype="multipart/form-data"
-            >
-              <div class="login-form">
-                <h2><i class="fas fa-lock"></i> Entrar no painel</h2>
-                <legend>Insira o seu nome</legend>
-                <input type="text" name="nome" id="nome" class="form-control form-control-lg">
-                <legend>Insira sua senha</legend>
-                <input type="password" name="senha" id="senha" class="form-control form-control-lg">
-                
-              </div>
 
-              <div class="d-grid gap-2">
-                
-                <input type="submit" class="btn btn-success mt-4" name="enviar" value="Entrar">
-              </div>
-
-            </form>
-          </div>
+  <div class="loginForm">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="imagem/frontImg.jpg" alt="">
+     
+      </div>
+      <div class="back">
+        <img class="backImg" src="imagem/frontImg.jpg" alt="">
+        <div class="text">
+         
         </div>
       </div>
     </div>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form">
+            <div class="title">Entrar</div>
+          <form action="app/dashboard.html" method="post">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Insira seu Email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Insira sua senha" required>
+              </div>
+              <div class="text"><a href="#">Esqueci minha senha?</a></div>
+              <div class="button input-box">
+                <input type="submit" value="Entrar">
+              </div>
+              <div class="text sign-up-text">Ainda não tem uma conta? <label for="flip">Criar conta</label></div>
+            </div>
+        </form>
+      </div>
+        <div class="signup-form">
+          <div class="title">Criar conta</div>
+        <form action="#">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Insira seu nome" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Insira seu email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Insira uma senha" required>
+              </div>
+              <div class="button input-box">
+                <input type="submit" value="Cadastrar">
+              </div>
+              <div class="text sign-up-text">Já possui sua conta? <label for="flip">Entrar</label></div>
+            </div>
+      </form>
+    </div>
+    </div>
+    </div>
+  </div>
+
+
 
     <footer class="footer">
       <div class="container">
