@@ -239,21 +239,23 @@ body {
 
 /* media queries */
 
-@media (max-width: 575px) {
+@media (min-width: 320px) {
+  
   .main-casas {
     padding: 0px !important;
     margin: 0 auto !important;
-    /* background: #ccc; */
+    /* background: rgb(37, 175, 46); */
   }
 
   body{
     /* background: red !important; */
     margin: 0 !important;
     padding: 0 !important;
+  
   }
 
   .tituloimovel {
-    font-size: 1em;
+
     display: block;
     width: 100% !important;
     /* background: red; */
@@ -263,13 +265,17 @@ body {
   }
 
   .tituloimovel h1 {
-    font-size: 1em !important;
+    font-size: 1.1em !important;
     margin: 0;
     padding: 0;
-    text-align: right;
-    padding-right: 10px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
     /* background: #5ea65e; */
-  
+    font-family: "NUNITO";
+    font-weight: 500;
+    color: rgb(116, 116, 116);
+
   }
 
 
@@ -316,7 +322,142 @@ body {
     font-family: 'Nunito';
     font-weight: 400;
     /* float: left !important; */
+    margin: 4px 0 !important;
+    padding: 0;
+    /* background: #7381bc; */
+  }
+
+  .imovel-itens {
+    /* width: 100% !important; */
+    /* background: red; */
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 10px !important;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    /* background: green; */
+
+  }
+
+  .imovel-itens ul {
     margin: 0 !important;
+    list-style: none;
+    padding: 0 10px 0 0 !important;
+  }
+ 
+  .cid-visu-bairro {
+    color: #333;
+    font-family: 'Nunito';
+    font-weight: 400;
+    background: #497c49;
+    
+  }
+
+  .precoImovelBtn {
+    position: relative;
+    /* margin-top: -100px; */
+    margin-bottom: 0;
+  }
+
+  .iconscondominio {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .bairro{
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+
+}
+
+@media (min-width: 375px) {
+  .main-casas {
+    padding: 0px !important;
+    margin: 0 auto !important;
+    /* background: rgb(37, 175, 46); */
+  }
+
+  body{
+    /* background: rgb(68, 224, 97) !important; */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tituloimovel {
+    font-size: 1em;
+    display: block;
+    width: 100% !important;
+    /* background: red; */
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .tituloimovel h1 {
+    font-size: 1.3em !important;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 5px;
+
+    /* background: #5ea65e; */
+    font-family: "NUNITO";
+    font-weight: 500;
+    color: rgb(116, 116, 116);
+
+  }
+
+
+
+  .imovel {
+    border-radius: 3px;
+    /* background: gray; */
+    margin: 10px auto;
+    width: 96% !important;
+    padding: 10px;
+  }
+  .img-imovel {
+    /* max-width: 110px !important; */
+    border-radius: 3px 0 0 3px !important;
+    object-fit: cover !important;
+  }
+
+  .imovel-img-l {
+    width: 40% !important;
+    float: left !important;
+    border-radius: 3px 0 0 3px !important;
+    /* object-fit: fill !important; */
+  }
+  .imovel-img-r {
+    width: 60% !important;
+    float: right;
+  }
+
+  .precoimovel{
+    /* font-size: 0.8em !important; */
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    width: 100% !important;
+    /* background: yellow; */
+    margin: 0;
+    padding-left: 10px;
+    text-align: left;
+    /* float: left !important; */
+  }
+  .precoimovel h2{
+    font-size: 1.2em !important;
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    /* float: left !important; */
+    margin: 4px 0 !important;
     padding: 0;
     /* background: #7381bc; */
   }
@@ -356,53 +497,670 @@ body {
     /* margin-top: -100px; */
     margin-bottom: 0;
   }
-}
 
-@media (max-width: 768px) {
+  .iconscondominio {
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+  }
+}
+@media (min-width: 425px) {
   .main-casas {
     padding: 0px !important;
     margin: 0 auto !important;
-    /* background: #ccc; */
+    /* background: rgb(37, 175, 46); */
   }
 
   body{
-    /* background: red !important; */
+    /* background: rgb(68, 224, 97) !important; */
     margin: 0 !important;
     padding: 0 !important;
   }
 
+  .tituloimovel {
+    font-size: 1em;
+    display: block;
+    width: 100% !important;
+    /* background: red; */
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .tituloimovel h1 {
+    font-size: 1.4em !important;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    /* background: #5ea65e; */
+    font-family: "NUNITO";
+    font-weight: 500;
+    color: rgb(116, 116, 116);
+
+  }
+
+
+
+  .imovel {
+    border-radius: 3px;
+    /* background: gray; */
+    margin: 10px auto;
+    width: 96% !important;
+    padding: 10px;
+  }
   .img-imovel {
-    /* max-width: 150px !important; */
+    /* max-width: 110px !important; */
+    border-radius: 3px 0 0 3px !important;
     object-fit: cover !important;
   }
 
   .imovel-img-l {
-    width: 25% !important;
+    width: 40% !important;
     float: left !important;
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
   .imovel-img-r {
-    width: 75% !important;
+    width: 60% !important;
     float: right;
   }
 
-}
+  .precoimovel{
+    /* font-size: 0.8em !important; */
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    width: 100% !important;
+    /* background: yellow; */
+    margin: 0;
+    padding-left: 10px;
+    text-align: left;
+    /* float: left !important; */
+  }
+  .precoimovel h2{
+    font-size: 1.2em !important;
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    /* float: left !important; */
+    margin: 2px 0 !important;
+    padding: 0;
+    /* background: #7381bc; */
+  }
 
-@media (max-width: 1200px) {
+  .imovel-itens {
+    /* width: 100% !important; */
+    /* background: red; */
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 10px !important;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    /* background: green; */
+
+  }
+
+  .imovel-itens ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 10px;
+  }
+  .imovel-itens ul li {
+    font-size: 1em !important;
+  }
+  .cid-visu-bairro {
+    color: #333;
+    font-family: 'Nunito';
+    font-weight: 400;
+    background: #497c49;
+    
+  }
+
+  .precoImovelBtn {
+    position: relative;
+    /* margin-top: -100px; */
+    margin-bottom: 0;
+  }
+
+  .iconscondominio {
+    margin-bottom: 4px !important;
+    margin-top: 4px !important;
+  }
+}
+@media (min-width: 768px) {
+  .main-casas {
+    padding: 0px !important;
+    margin: 0 auto !important;
+    /* background: rgb(37, 175, 46); */
+  }
+
+  body{
+    /* background: rgb(68, 224, 97) !important; */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tituloimovel {
+    font-size: 1em;
+    display: block;
+    width: 100% !important;
+    /* background: red; */
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .tituloimovel h1 {
+    font-size: 2em !important;
+    margin: 0;
+    margin-bottom: 10px !important;
+    padding: 0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    /* background: #5ea65e; */
+    font-family: "NUNITO";
+    font-weight: 400;
+    color: rgb(116, 116, 116);
+
+  }
+
+
+
+  .imovel {
+ margin: 25px auto !important;
+ /* margin-bottom: 20px !important; */
+  }
+  .img-imovel {
+    /* max-width: 110px !important; */
+    border-radius: 3px 0 0 3px !important;
+    object-fit: cover !important;
+  }
 
   .imovel-img-l {
-    width: 25% !important;
+    width: 40% !important;
     float: left !important;
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
   .imovel-img-r {
-    width: 75% !important;
+    width: 60% !important;
     float: right;
   }
 
+  .precoimovel{
+    /* font-size: 0.8em !important; */
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    width: 100% !important;
+    /* background: yellow; */
+    margin: 0;
+    padding-left: 10px;
+    text-align: left;
+    /* float: left !important; */
+  }
+  .precoimovel h2{
+    font-size: 2em !important;
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    /* float: left !important; */
+    margin: 5px 0 !important;
+    padding: 0;
+    /* background: #7381bc; */
+  }
+
+  .imovel-itens {
+    /* width: 100% !important; */
+    /* background: red; */
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 10px !important;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    /* background: green; */
+
+  }
+
+  .imovel-itens ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 10px;
+  }
+  .imovel-itens ul li {
+    font-size: 1.4em !important;
+    margin: 20px 0 10px 0 !important;
+  }
+  .imovel-itens ul li svg{
+    font-size: 1.4em !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .cid-visu-bairro {
+    color: #333;
+    font-family: 'Nunito';
+    font-weight: 400;
+    background: #497c49;
+    
+  }
+
+  .precoImovelBtn {
+    position: relative;
+    /* margin-top: -100px; */
+    margin-bottom: 0;
+  }
+
+  .iconscondominio {
+    margin-bottom: 4px !important;
+    margin-top: 4px !important;
+  }
 }
+@media (min-width: 1024px) {
+  .main-casas {
+    padding: 0px !important;
+    margin: 0 auto !important;
+    /* background: rgb(37, 175, 46); */
+  }
+
+  body{
+    /* background: rgb(178, 37, 138) !important; */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tituloimovel {
+    font-size: 1.4em;
+    display: block;
+    width: 100% !important;
+    /* background: red; */
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .tituloimovel h1 {
+    font-size: 1.3em !important;
+    margin: 0;
+    margin-bottom: 1px !important;
+    padding: 0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    /* background: #5ea65e; */
+    font-family: "NUNITO";
+    font-weight: 400;
+    color: rgb(116, 116, 116);
+
+  }
+
+
+
+  .imovel {
+ margin: 25px auto !important;
+ /* margin-bottom: 20px !important; */
+ width: 70% !important;
+  }
+  .img-imovel {
+    /* max-width: 110px !important; */
+    border-radius: 3px 0 0 3px !important;
+    object-fit: cover !important;
+  }
+
+  .imovel-img-l {
+    width: 30% !important;
+    float: left !important;
+    border-radius: 3px 0 0 3px !important;
+    /* object-fit: fill !important; */
+  }
+  .imovel-img-r {
+    width: 70% !important;
+    float: right;
+  }
+
+  .precoimovel{
+    /* font-size: 0.8em !important; */
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    width: 100% !important;
+    /* background: yellow; */
+    margin: 0;
+    padding-left: 10px;
+    text-align: left;
+    /* float: left !important; */
+  }
+  .precoimovel h2{
+    font-size: 1.4em !important;
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    /* float: left !important; */
+    margin: 5px 0 !important;
+    padding: 0;
+    /* background: #7381bc; */
+  }
+
+  .imovel-itens {
+    /* width: 100% !important; */
+    /* background: red; */
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 10px !important;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    /* background: green; */
+
+  }
+
+  .imovel-itens ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 10px;
+  }
+  .imovel-itens ul li {
+    font-size: 1.5em !important;
+    margin: 10px 0 !important;
+  }
+  .imovel-itens ul li svg {
+    font-size: 1.5em !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .cid-visu-bairro {
+    color: #333;
+    font-family: 'Nunito';
+    font-weight: 400;
+    background: #497c49;
+    
+  }
+
+  .precoImovelBtn {
+    position: relative;
+    /* margin-top: -100px; */
+    margin-bottom: 0;
+  }
+
+  .iconscondominio {
+    margin-bottom: 2px !important;
+    margin-top: 2px !important;
+  }
+}
+@media (min-width: 1280px) {
+  .main-casas {
+    padding: 0px !important;
+    margin: 0 auto !important;
+    /* background: rgb(37, 175, 46); */
+  }
+
+  body{
+    /* background: rgb(178, 37, 138) !important; */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tituloimovel {
+    font-size: 1.4em;
+    display: block;
+    width: 100% !important;
+    /* background: red; */
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .tituloimovel h1 {
+    font-size: 1.2em !important;
+    margin: 0;
+    margin-bottom: 10px !important;
+    padding: 0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    /* background: #5ea65e; */
+    font-family: "NUNITO";
+    font-weight: 400;
+    color: rgb(116, 116, 116);
+
+  }
+
+
+
+  .imovel {
+ margin: 25px auto !important;
+ /* margin-bottom: 20px !important; */
+ width: 70% !important;
+  }
+  .img-imovel {
+    /* max-width: 110px !important; */
+    border-radius: 3px 0 0 3px !important;
+    object-fit: cover !important;
+  }
+
+  .imovel-img-l {
+    width: 30% !important;
+    float: left !important;
+    border-radius: 3px 0 0 3px !important;
+    /* object-fit: fill !important; */
+  }
+  .imovel-img-r {
+    width: 70% !important;
+    float: right;
+  }
+
+  .precoimovel{
+    /* font-size: 0.8em !important; */
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    width: 100% !important;
+    /* background: yellow; */
+    margin: 0;
+    padding-left: 10px;
+    text-align: left;
+    /* float: left !important; */
+  }
+  .precoimovel h2{
+    font-size: 1.4em !important;
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    /* float: left !important; */
+    margin: 5px 0 !important;
+    padding: 0;
+    /* background: #7381bc; */
+  }
+
+  .imovel-itens {
+    /* width: 100% !important; */
+    /* background: red; */
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 10px !important;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    /* background: green; */
+
+  }
+
+  .imovel-itens ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 10px;
+  }
+  .imovel-itens ul li {
+    font-size: 1.7em !important;
+    margin: 15px 0 !important;
+  }
+  .imovel-itens ul li svg {
+    font-size: 1.5em !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .cid-visu-bairro {
+    color: #333;
+    font-family: 'Nunito';
+    font-weight: 400;
+    background: #497c49;
+    
+  }
+
+  .precoImovelBtn {
+    position: relative;
+    /* margin-top: -100px; */
+    margin-bottom: 0;
+  }
+
+  .iconscondominio {
+    margin-bottom: 2px !important;
+    margin-top: 2px !important;
+  }
+}
+@media (min-width: 1440px) {
+  .main-casas {
+    padding: 0px !important;
+    margin: 0 auto !important;
+    /* background: rgb(37, 175, 46); */
+  }
+
+  body{
+    /* background: rgb(178, 37, 138) !important; */
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tituloimovel {
+    font-size: 1.4em;
+    display: block;
+    width: 100% !important;
+    /* background: red; */
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .tituloimovel h1 {
+    font-size: 1.3em !important;
+    margin: 0;
+    margin-bottom: 1px !important;
+    padding: 0;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    /* background: #5ea65e; */
+    font-family: "NUNITO";
+    font-weight: 400;
+    color: rgb(116, 116, 116);
+
+  }
+
+
+
+  .imovel {
+ margin: 25px auto !important;
+ /* margin-bottom: 20px !important; */
+ width: 60% !important;
+  }
+  .img-imovel {
+    /* max-width: 110px !important; */
+    border-radius: 3px 0 0 3px !important;
+    object-fit: cover !important;
+  }
+
+  .imovel-img-l {
+    width: 20% !important;
+    float: left !important;
+    border-radius: 3px 0 0 3px !important;
+    /* object-fit: fill !important; */
+  }
+  .imovel-img-r {
+    width: 80% !important;
+    float: right;
+  }
+
+  .precoimovel{
+    /* font-size: 0.8em !important; */
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    width: 100% !important;
+    /* background: yellow; */
+    margin: 0;
+    padding-left: 10px;
+    text-align: left;
+    /* float: left !important; */
+  }
+  .precoimovel h2{
+    font-size: 1.3em !important;
+    color: rgb(71, 71, 71);
+    font-family: 'Nunito';
+    font-weight: 400;
+    /* float: left !important; */
+    margin: 1px 0 !important;
+    padding: 0;
+    /* background: #7381bc; */
+  }
+
+  .imovel-itens {
+    /* width: 100% !important; */
+    /* background: red; */
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 10px !important;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    /* background: green; */
+
+  }
+
+  .imovel-itens ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 10px;
+  }
+  .imovel-itens ul li {
+    font-size: 1.5em !important;
+    margin: 5px 0 !important;
+  }
+  .imovel-itens ul li svg {
+    font-size: 1.5em !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .cid-visu-bairro {
+    color: #333;
+    font-family: 'Nunito';
+    font-weight: 400;
+    background: #497c49;
+    
+  }
+
+  .precoImovelBtn {
+    position: relative;
+    /* margin-top: -100px; */
+    margin-bottom: 0;
+  }
+
+  .iconscondominio {
+    margin-bottom: 1px !important;
+    margin-top: 1px !important;
+  }
+}
+
+
+
+
 
 /* página de login */
 
