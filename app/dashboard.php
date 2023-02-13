@@ -1,3 +1,10 @@
+<?php
+  require_once "../config/DB.php";
+  require_once "./logado.php";
+
+  $db = new DB;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -43,6 +50,9 @@
                 </div>
                 <div class="col-md-3 my-3">
                     <a href="#!" class="btn btn-primary d-block">Editar Perfil</a>
+                </div>
+                <div class="col-md-3 my-3">
+                    <a href="./logout.php" class="btn btn-secondary d-block">Sair do perfil</a>
                 </div>
             </div>
         </div>

@@ -1,3 +1,7 @@
+<?php
+  require_once "config/db.php"; 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -54,19 +58,32 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Entrar</div>
-          <form action="app/dashboard.html" method="post">
+            <?php 
+              if(isset($_SESSION['login']) and $_SESSION['login'] == "error") {
+                $css = "display:block;";
+              } else {
+                $css = "display:none;";
+              }
+
+              unset($_SESSION['login']);
+               
+            ?>
+            <div style="<?=$css;?>" class="alert alert-danger" role="alert">
+  Seu email ou senha não conferem!
+</div>
+          <form action="config/verify.php" method="post" enctype="multipart/form-data">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Insira seu Email" required>
+                <input type="email" name="email" placeholder="Insira seu Email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Insira sua senha" required>
+                <input type="password" name="senha" placeholder="Insira sua senha" required>
               </div>
               <div class="text"><a href="#">Esqueci minha senha?</a></div>
               <div class="button input-box">
-                <input type="submit" value="Entrar">
+                <input type="submit" value="Entrar" name="login">
               </div>
               <div class="text sign-up-text">Ainda não tem uma conta? <label for="flip">Criar conta</label></div>
             </div>
@@ -74,22 +91,22 @@
       </div>
         <div class="signup-form">
           <div class="title">Criar conta</div>
-        <form action="#">
+        <form action="config/verify.php" method="post" enctype="multipart/form-data">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Insira seu nome" required>
+                <input type="text" name="name" placeholder="Insira seu nome" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Insira seu email" required>
+                <input type="email" name="email" placeholder="Insira seu email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Insira uma senha" required>
+                <input type="password" name="password" placeholder="Insira uma senha" required>
               </div>
               <div class="button input-box">
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Cadastrar" name="cadastrar">
               </div>
               <div class="text sign-up-text">Já possui sua conta? <label for="flip">Entrar</label></div>
             </div>
