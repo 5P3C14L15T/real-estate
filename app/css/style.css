@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+/* font-family: 'Nunito', sans-serif; */
+/* font-family: 'Open Sans', sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito";
+}
+
+.main {
+  margin: 0 auto !important;
+}
+
+.menu {
+  padding: 10px;
+  background: rgb(244, 244, 244) !important;
+  width: 100%;
+  border-bottom: 5px solid rgb(237, 237, 237);
+}
+
+
+.logo {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+
+}
+
+
+header,
+footer {
+  display: flex;
+  flex-direction: row;
+}
+
+header .profile-thumbnail {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+header .profile-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  /* background: red; */
+}
+
+header h3 {
+  display: flex;
+  margin: 0;
+  font-family: "nunito";
+  font-weight: 400;
+  font-size: 1em;
+  color: rgb(131, 131, 131);
+}
+
+header h4 {
+  display: flex;
+  margin: 0;
+  font-size: 0.8em;
+  font-family: "nunito";
+  font-weight: 500;
+  color: rgb(131, 131, 131);
+}
+
+#inner p {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-family: "nunito";
+  font-weight: 400;
+  font-size: 1em;
+  color: rgb(131, 131, 131);
+}
+
+#inner hr {
+  margin: 2px 0;
+  border-style: solid;
+  opacity: 0.1;
+}
+
+#inner .creci {
+  font-size: 1em !important;
+  color: rgb(110, 110, 110);
+  font-family: "Nunito";
+  font-weight: 700;
+}
+
+footer .stats {
+  display: flex;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  /* background: red; */
+}
+
+footer .stats .Retweets {
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: rgb(65, 65, 59);
+}
+
+footer .stats strong {
+  font-size: 18px;
+}
+
+footer .stats .likes {
+  margin-left: 10px;
+}
+
+footer .cta {
+  margin-left: auto;
+}
+
+footer .cta button {
+  border: 0;
+  background: transparent;
+}
+
+
+.footer {
+  background: rgb(54, 53, 53);
+  color: #fff;
+  text-align: center;
+  margin-top: 30px;
+  padding: 30px 0 20px 0;
+}
+
+.footer h1 {
+  font-size: 1.3em;
+  font-weight: 400;
+  font-family: "Nunito";
+}
+
+/* componentes */
+
+.componentes {
+  margin-top: 20px;
+  font-family: "Nunito";
+}
+
+/* tabela */
+
+.tabela-post i {
+
+  color: rgb(102, 95, 92);
+  margin: 0 5px;
+}
+
+.tabela-post td,
+th {
+  font-size: 1.2em;
+  font-family: "Nunito";
+  color: rgb(102, 95, 92);
+}
+
+/* visualização */
+
+.post-views {
+  background: rgb(239, 212, 31);
+  padding: 10px;
+  border-radius: 15px;
+
+
+}
+
+.post-views,
+.post-views h3 {
+  text-align: center;
+  font-size: 1.1em !important;
+}
+
+.post-views i {
+  font-size: 3em;
+}
+
+/* mais visualizados */
+
+.mais-visu {
+  padding: 10px;
+  margin: 20px 0 0 0 !important;
+  background: rgb(233, 241, 231);
+  border-radius: 15px;
+}
+
+.mais-visu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.mais-visu ul li {
+  margin: 0 0 5px 0;
+}
+
+.mais-visu ul li a {
+  color: rgb(102, 95, 92);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8em;
+
+}
+
+.mais-visu ul li a:hover {
+  background: rgb(212, 221, 211);
+}
+
+.mais-visu h3 {
+  font-size: 1.2em;
+  font-family: "Nunito";
+  color: rgb(102, 95, 92);
+  text-align: center;
+}
+
+/* página add imóvel */
+
+.add-imovel {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(239, 239, 239);
+}
+
+/* add checkbox card */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+
+
+.wrapper {
+  width: 780px;
+  margin: 100px auto 0;
+}
+
+.wrapper .title {
+  font-size: 24px;
+  color: #8d8d8d;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.container {
+  /* display: flex; */
+  /* flex-wrap: ; */
+  text-align: center;
+  margin: 0 auto;
+}
+
+.container .option_item {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin:10px auto;
+}
+
+.container .option_item .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.option_item .option_inner {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px 6px;
+  cursor: pointer;
+  color: #585c68;
+  display: block;
+  border: 5px solid transparent;
+  position: relative;
+}
+
+.option_item .option_inner .icon {
+  margin-bottom: 4px;
+  margin-top: 5px;
+}
+
+.option_item .option_inner .icon .fab {
+  font-size: 32px;
+}
+.option_item .option_inner .icon .fas {
+  font-size: 32px;
+}
+
+.option_item .option_inner .name {
+  user-select: none;
+}
+
+.option_item .checkbox:checked~.option_inner.facebook {
+  border-color: #3b5999;
+  color: #3b5999;
+}
+
+.option_item .checkbox:checked~.option_inner.twitter {
+  border-color: #55acee;
+  color: #55acee;
+}
+
+.option_item .checkbox:checked~.option_inner.instagram {
+  border-color: #e4405f;
+  color: #e4405f;
+}
+
+.option_item .checkbox:checked~.option_inner.linkedin {
+  border-color: #0077b5;
+  color: #0077b5;
+}
+
+.option_item .checkbox:checked~.option_inner.whatsapp {
+  border-color: #25d366;
+  color: #25d366;
+}
+
+.option_item .checkbox:checked~.option_inner.google {
+  border-color: #dd4b39;
+  color: #dd4b39;
+}
+
+.option_item .checkbox:checked~.option_inner.reddit {
+  border-color: #ff5700;
+  color: #ff5700;
+}
+
+.option_item .checkbox:checked~.option_inner.quora {
+  border-color: #b92b27;
+  color: #b92b27;
+}
+
+.option_item .option_inner .tickmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 20px solid;
+  border-color: #000 transparent transparent #000;
+  display: none;
+}
+
+.option_item .option_inner .tickmark:before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 15px;
+  height: 5px;
+  border: 3px solid;
+  border-color: transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+}
+
+.option_item .checkbox:checked~.option_inner .tickmark {
+  display: block;
+}
+
+.option_item .option_inner.facebook .tickmark {
+  border-color: #3b5999 transparent transparent #3b5999;
+}
+
+.option_item .option_inner.twitter .tickmark {
+  border-color: #55acee transparent transparent #55acee;
+}
+
+.option_item .option_inner.instagram .tickmark {
+  border-color: #e4405f transparent transparent #e4405f;
+}
+
+.option_item .option_inner.linkedin .tickmark {
+  border-color: #0077b5 transparent transparent #0077b5;
+}
+
+.option_item .option_inner.whatsapp .tickmark {
+  border-color: #25d366 transparent transparent #25d366;
+}
+
+.option_item .option_inner.google .tickmark {
+  border-color: #dd4b39 transparent transparent #dd4b39;
+}
+
+.option_item .option_inner.reddit .tickmark {
+  border-color: #ff5700 transparent transparent #ff5700;
+}
+
+.option_item .option_inner.quora .tickmark {
+  border-color: #b92b27 transparent transparent #b92b27;
+}
