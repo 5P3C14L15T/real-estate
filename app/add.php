@@ -169,7 +169,7 @@
                         <input type="checkbox" class="checkbox" checked>
                         <div class="option_inner twitter">
                           <div class="tickmark"></div>
-                          <div class="icon"><i class="fab fa-twitter"></i></div>
+                          <div class="icon"><i class="fas fa-tv"></i></div>
                           <div class="name">Sala</div>
                         </div>
                       </label>
@@ -179,7 +179,7 @@
                         <input type="checkbox" class="checkbox">
                         <div class="option_inner instagram">
                           <div class="tickmark"></div>
-                          <div class="icon"><i class="fab fa-instagram"></i></div>
+                          <div class="icon"><i class="fas fa-seedling"></i></div>
                           <div class="name">Gardem</div>
                         </div>
                       </label>
@@ -189,7 +189,7 @@
                         <input type="checkbox" class="checkbox">
                         <div class="option_inner linkedin">
                           <div class="tickmark"></div>
-                          <div class="icon"><i class="fab fa-linkedin-in"></i></div>
+                          <div class="icon"><i class="fas fa-person-booth"></i></div>
                           <div class="name">Sacada</div>
                         </div>
                       </label>
@@ -199,7 +199,7 @@
                         <input type="checkbox" class="checkbox">
                         <div class="option_inner whatsapp">
                           <div class="tickmark"></div>
-                          <div class="icon"><i class="fab fa-whatsapp"></i></div>
+                          <div class="icon"><i class="fas fa-faucet"></i></div>
                           <div class="name">Lavanderia</div>
                         </div>
                       </label>
@@ -209,7 +209,7 @@
                         <input type="checkbox" class="checkbox">
                         <div class="option_inner google">
                           <div class="tickmark"></div>
-                          <div class="icon"><i class="fab fa-google-plus-g"></i></div>
+                          <div class="icon"><i class="fas fa-bed"></i></div>
                           <div class="name">Suíte</div>
                         </div>
                       </label>
@@ -219,7 +219,7 @@
                         <input type="checkbox" class="checkbox">
                         <div class="option_inner reddit">
                           <div class="tickmark"></div>
-                          <div class="icon"><i class="fab fa-reddit"></i></div>
+                          <div class="icon"><i class="fas fa-arrow-alt-circle-up"></i></div>
                           <div class="name">Elevador</div>
                         </div>
                       </label>
@@ -229,7 +229,7 @@
                         <input type="checkbox" class="checkbox">
                         <div class="option_inner quora">
                           <div class="tickmark"></div>
-                          <div class="icon"><i class="fab fa-quora"></i></div>
+                          <div class="icon"><i class="fas fa-swimming-pool"></i></div>
                           <div class="name">Área Lazer</div>
                         </div>
                       </label>
