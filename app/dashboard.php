@@ -61,7 +61,7 @@
     <section class="main mt-5">
         <div class="container">
             <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <table class="table table-striped tabela-post">
                 <thead>
                     <tr>
@@ -108,7 +108,7 @@
             </nav>
         </div>
 
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
            <div class="row">
             <div class="post-views">
                 <h2>Visualizações</h2>
@@ -134,7 +134,7 @@
                 </ul>
             </div>
            </div>
-        </div>
+        </div> -->
     </div>
     </div>
     </section>

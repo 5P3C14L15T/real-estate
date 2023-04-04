@@ -98,6 +98,21 @@
       </div>
         <div class="signup-form">
           <div class="title">Criar conta</div>
+          <?php 
+              if(isset($_SESSION['loginExiste']) and $_SESSION['loginExiste'] == "existe") {
+                $css = "display:block;";
+              } else {
+                $css = "display:none;";
+              }
+
+              unset($_SESSION['loginExiste']);
+               
+            ?>
+
+            
+             <div style="<?=$css;?>" class="alert alert-danger mt-4" role="alert">
+  Esse e-mail já foi cadastrado!
+</div>
         <form action="config/verify.php" method="post" enctype="multipart/form-data">
             <div class="input-boxes">
               <div class="input-box">

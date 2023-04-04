@@ -1,3 +1,10 @@
+<?php
+  require_once "../config/DB.php";
+  require_once "./logado.php";
+
+  $db = new DB;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -29,7 +36,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <a href="dashboard.html" class="btn btn-info d-block">Voltar ao dashboard</a>
+          <a href="dashboard.php" class="btn btn-info d-block">Voltar ao dashboard</a>
         </div>
         <div class="col-md-3">
           <a href="#!" class="btn btn-primary d-block">Editar Perfil</a>
@@ -44,13 +51,13 @@
         <div class="col-md-9 mx-auto">
           <h1 class="text-center">Adicione um novo Apartamento</h1>
 
-          <form action="#!" class="add-imovel">
+          <form action="inserir.php" class="add-imovel" method="post" enctype="multipart/form-data">
             <label for="titulo"> Insira o Título do Imóvel</label>
             <div class="input-group input-group-lg mb-3">
               <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-home"></i></span>
 
               <input type="text" class="form-control" name="titulo" placeholder="Casa de 3 quartos próximo ao centro"
-                aria-describedby="inputGroup-sizing-lg" />
+                aria-describedby="inputGroup-sizing-lg" required />
             </div>
 
             <div class="row">
@@ -73,7 +80,7 @@
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
                   <input type="text" class="form-control" name="preco" placeholder="200.000,00"
-                    aria-describedby="inputGroup-sizing-lg" />
+                    aria-describedby="inputGroup-sizing-lg" required />
                 </div>
               </div>
 
@@ -84,7 +91,7 @@
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
                   <input type="text" class="form-control" name="condominio" placeholder="400,00"
-                    aria-describedby="inputGroup-sizing-lg" />
+                    aria-describedby="inputGroup-sizing-lg" required />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -93,8 +100,8 @@
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="condominio" placeholder="1300,00"
-                    aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" name="iptu" placeholder="1300,00"
+                    aria-describedby="inputGroup-sizing-lg"  />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -104,7 +111,7 @@
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-ruler-vertical"></i></span>
 
                   <input type="text" class="form-control" name="area" placeholder="120"
-                    aria-describedby="inputGroup-sizing-lg" />
+                    aria-describedby="inputGroup-sizing-lg" required />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -115,7 +122,7 @@
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-bed"></i></span>
 
-                  <input class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0">
+                  <input class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0" required>
                   </select>
                 </div>
               </div>
@@ -128,7 +135,7 @@
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-shower"></i></span>
 
-                  <input class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0">
+                  <input class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0" required>
                 </div>
               </div>
 
@@ -138,7 +145,7 @@
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-car"></i></span>
 
-                  <input class="text-center form-control" type="number" min="0" name="qtdGaragem" id="" placeholder="0">
+                  <input class="text-center form-control" type="number" min="0" name="qtdGaragem" id="" placeholder="0" required>
                 </div>
               </div>
               <!--  -->
@@ -156,7 +163,7 @@
                   <div class="row">
                     <div class="col-md-3 text-center">
                       <label class="option_item">
-                        <input type="checkbox" class="checkbox" checked>
+                        <input type="checkbox" name="cozinha" class="checkbox" checked>
                         <div class="option_inner facebook">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-utensils"></i></div>
@@ -166,7 +173,7 @@
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" class="checkbox" checked>
+                        <input type="checkbox" name="sala" class="checkbox" checked>
                         <div class="option_inner twitter">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-tv"></i></div>
@@ -176,17 +183,17 @@
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" name="garden" class="checkbox">
                         <div class="option_inner instagram">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-seedling"></i></div>
-                          <div class="name">Gardem</div>
+                          <div class="name">Garden</div>
                         </div>
                       </label>
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" name="sacada" class="checkbox">
                         <div class="option_inner linkedin">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-person-booth"></i></div>
@@ -196,7 +203,7 @@
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" name="lavanderia" class="checkbox">
                         <div class="option_inner whatsapp">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-faucet"></i></div>
@@ -206,7 +213,7 @@
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" name="suite" class="checkbox">
                         <div class="option_inner google">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-bed"></i></div>
@@ -216,7 +223,7 @@
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" name="elevador" class="checkbox">
                         <div class="option_inner reddit">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-arrow-alt-circle-up"></i></div>
@@ -226,7 +233,7 @@
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" class="checkbox">
+                        <input type="checkbox" name="lazer" class="checkbox">
                         <div class="option_inner quora">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-swimming-pool"></i></div>
@@ -245,7 +252,7 @@
                 <label for="area"> Descrição do Imóvel</label>
                 <div class="mb-3">
 
-                  <textarea class="form-control" rows="5"
+                  <textarea class="form-control" rows="5" name="msg"
                     placeholder="Insira uma pequena descrição do Imovél"></textarea>
                 </div>
               </div>
@@ -253,11 +260,11 @@
               <div class="mb-3">
                 <label for="area">Insira as imagens do Imóvel</label>
 
-                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                <input class="form-control" type="file" name="fileUpload[]" id="chooseFile" multiple>
               </div>
 
               <div class="d-grid gap-2">
-                <button class="btn btn-success" type="button">ADICIONAR IMÓVEL</button>
+                <input type="submit" class="btn btn-success" name="enviar" value="ADICIONAR IMÓVEL" />
 
               </div>
             </div>

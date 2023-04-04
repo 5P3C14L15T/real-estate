@@ -2,12 +2,12 @@
 session_start();
 class DB {
 
-
 private $servername = "localhost";
 private $username   = "root";
 private $password   = "";
 private $database   = "db_imoveis";
 private $conn;
+
 
 public function __construct()
 {
