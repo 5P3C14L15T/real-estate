@@ -232,9 +232,18 @@ body {
 }
 
 .footer h1 {
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: 400;
   font-family: "Nunito";
+}
+
+footer {
+  width: 100%;
+}
+
+.footerContainer {
+  width: 100%;
+  text-align: center;
 }
 
 /* media queries */
@@ -1408,3 +1417,42 @@ body {
 .fa, .fas {
   padding-left: 10px;
 }
+
+/* paginação */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-link, .pagina-atual {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #eee;
+  color: #c2c2c2 !important;
+  border-radius: 3px;
+  border: 2px solid #aaaaaa !important;
+  text-decoration: none !important;
+  transition: background-color 0.3s;
+
+}
+
+.page-link:hover, .pagina-atual:hover  {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.page-link.active, .pagina-atual.active {
+  background-color: #c9c9c9 !important ;
+  color: #ffffff !important;
+}
+
+.resultados {
+  font-size: 1em;
+  font-family: 'Nunito';
+  color: #aaaaaa;
+}
+
+/* login novo */

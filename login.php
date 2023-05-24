@@ -16,6 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="imagem/icon.png">
     <!-- CSS only -->
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -143,7 +144,7 @@
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <h1>CASAAVENDACUIABA.COM.BR</h1>
+          <h1>APARTAMENTOAVENDACUIABA.COM.BR</h1>
           <p>&copy; Todos os Direitos Reservados</p>
         </div>
       </div>

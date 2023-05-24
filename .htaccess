@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteRule ^(.*)-([0-9]+)$ single.php?codimovel=$2 [L,QSA]
+
+
+# redireciona todas as solicitações que não são arquivos ou diretórios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+

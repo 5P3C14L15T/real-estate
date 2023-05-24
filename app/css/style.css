@@ -222,7 +222,7 @@ th {
 .add-imovel {
   padding: 20px;
   border-radius: 10px;
-  background: rgb(239, 239, 239);
+  background: rgb(246, 246, 246);
 }
 
 /* add checkbox card */
@@ -393,4 +393,60 @@ th {
 
 .option_item .option_inner.quora .tickmark {
   border-color: #b92b27 transparent transparent #b92b27;
+}
+
+/* página inserir */
+
+.add-imovel label {
+  text-align: left;
+  width: 100%;
+}
+
+/* dashbord */
+
+table { 
+  /* background: red; */
+}
+
+table tr {
+  /* background: forestgreen; */
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  /* background: forestgreen; */
+}
+
+
+
+table tr .icons-action {
+  /* background: red; */
+  text-align: center;
+  /* display: grid; */
+}
+
+
+
+
+table tr .icons-action a {
+  /* display: grid; */
+  /* float: left; */
+/* background: gold; */
+align-content: space-between;
+margin: 5px !important;
+text-align: center;
+align-items: center;
+text-decoration: none;
+}
+
+/* MÉDIA QUERIES */
+
+@media only screen and (max-width: 768px) {
+  table tr .icons-action {
+    /* background: red !important; */
+    text-align: center;
+    display: grid;
+    
+  }
+
+  
 }

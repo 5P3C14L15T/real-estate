@@ -12,6 +12,7 @@ if (isset($_POST['login'])) {
         if ($logado) {
             $_SESSION['login'] = 'logado';
             $_SESSION['login2'] = 'logado2';
+            $_SESSION['user'] = $_POST['email'];
             header("Location: ../app/dashboard.php");
         } else {
             $_SESSION['login'] = "error";
@@ -52,6 +53,7 @@ if (isset($_POST['cadastrar'])) {
 
         $_SESSION['login'] = 'logado';
         $_SESSION['login2'] = 'logado2';
+        $_SESSION['user'] = $_POST['email'];
         header("Location: ../app/dashboard.php");
     }
 

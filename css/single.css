@@ -8,6 +8,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .main {
   margin: 0 auto !important;
 }
@@ -52,6 +53,7 @@
   border-radius: 15px;
 
 }
+
 header,
 footer {
   display: flex;
@@ -63,6 +65,7 @@ header .profile-thumbnail {
   height: 50px;
   border-radius: 4px;
 }
+
 header .profile-name {
   display: flex;
   flex-direction: column;
@@ -97,6 +100,7 @@ header h4 {
   font-size: 1em;
   color: rgb(131, 131, 131);
 }
+
 #inner hr {
   margin: 2px 0;
   border-style: solid;
@@ -110,27 +114,55 @@ header h4 {
   font-weight: 700;
 }
 
+
+
 footer .stats {
-  display: flex;
+  /* display: flex; */
   font-size: 15px;
   margin: 0;
   padding: 0;
   /* background: red; */
 }
+
+.stats {
+  width: 100%;
+  margin-top: 10px !important;
+  /* padding-top: 20px !important; */
+}
+
+.Retweets {
+  /* background: greenyellow; */
+  float: left;
+  margin: 1px;
+  width: 50px;
+  text-align: center;
+  /* margin: 0 auto; */
+  padding: 0;
+}
+
+.Retweets i {
+  margin: 0;
+  padding: 0;
+}
+
 footer .stats .Retweets {
   margin-right: 10px;
   font-size: 1.5em;
   color: rgb(65, 65, 59);
 }
+
 footer .stats strong {
   font-size: 18px;
 }
+
 footer .stats .likes {
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
+
 footer .cta {
   margin-left: auto;
 }
+
 footer .cta button {
   border: 0;
   background: transparent;
@@ -141,28 +173,92 @@ input {
 }
 
 .mensagem-corretor {
-  
+
   margin-bottom: 15px;
   background: rgb(248, 248, 248) !important;
-  
+
   padding: 10px !important;
   border-radius: 15px;
 }
 
 .mensagem-corretor h3 {
-font-family: "Nunito";
-font-size: 1.5em;
-color: rgb(120, 120, 120);
-font-weight: 500;
-text-align: center;
+  font-family: "Nunito";
+  font-size: 1.5em;
+  color: rgb(120, 120, 120);
+  font-weight: 500;
+  text-align: center;
 }
 
-.mensagem-corretor label, input {
+.mensagem-corretor label,
+input {
   font-size: 1em;
   color: rgb(125, 125, 125);
   font-family: "Nunito";
   font-weight: 500;
 }
+
+.form-header {
+  background: #075e54;
+  padding: 15px 10px 5px 10px;
+  font-size: 1em;
+  margin-top: 10px;
+  color: #fff;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.form-header h3 {
+
+  color: #fff;
+  /* background: red; */
+  font-family: 'Open Sans';
+  font-size: 1.1em;
+  font-weight: 400;
+}
+
+.form-body {
+  background: #ece5dd;
+  margin: 0;
+  padding: 10px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.form-body legend {
+font-size: 1em;
+font-family: 'Open Sans';
+font-weight: 400;
+/* background: red; */
+margin: 0;
+padding: 0;
+}
+
+.form-body .aviso-form {
+  background: #dcf8c6;
+  width: 90%;
+  margin: 10px auto;
+  padding: 5px;
+  border-radius: 4px;
+  font-family: 'Open Sans';
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.botao-zap {
+  padding: 5px;
+ background: url('../imagem/casa.jpg');
+ background-repeat: no-repeat;
+  background-size: 20px;
+  background: #25d366;
+  border: none;
+  color: white;
+  border-radius: 50px;
+  width: 70%;
+  margin: 0 auto;
+  cursor: pointer;
+  height: 50px;
+  
+}
+
 
 /* INFO DESC */
 
@@ -178,9 +274,34 @@ text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 75px;
-  margin: 10px 0;
+  margin-top: 30px;
+  margin-bottom: 15px !important;
+  /* height: 75px; */
+  /* background: red; */
+  /* margin: 50px 0 !important; */
   /* border: 1px solid rgb(228, 228, 228); */
+
+}
+
+.tituloLeft {
+  /* background: yellow; */
+  margin: 0;
+  padding: 0;
+
+}
+
+.precoRight {
+  /* background: gray; */
+  margin: 0 !important;
+  padding: 0 !important;
+  /* width: 100%; */
+  /* text-align: left; */
+}
+
+
+
+.titulo-preco .precoRight small {
+  color: rgb(172, 172, 172);
 }
 
 .info-desc-detais {
@@ -188,11 +309,18 @@ text-align: center;
   padding: 10px !important;
 }
 
+.descricao {
+  font-size: 1.1em;
+  color: rgb(142, 142, 142);
+  font-family: 'Open Sans';
+  font-weight: 400;
+}
+
 .imovel-title {
   font-size: 1.5em !important;
   font-family: "Nunito";
   font-weight: 800;
-  color: rgb(74, 74, 74);
+  color: rgb(142, 142, 142);
   /* background: gold; */
   margin: 0;
 }
@@ -208,34 +336,59 @@ text-align: center;
   border-radius: 15px;
 }
 
+.itens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+
+
+}
+
 .item {
   /* background: rgb(239, 239, 239); */
-  margin: 0 !important;
+  /* margin: 12px auto !important; */
   padding: 0 !important;
   display: flex;
-  align-items: center;
-  border-bottom: 1px solid #fff;
+  width: 33, 33% !important;
+  /* align-items: center; */
+  /* border-bottom: 10px solid #720b0b; */
+  /* background: red !important; */
+  /* float: left !important; */
+  margin-bottom: 10px;
+
+
+
 }
 
 .item p,
 .item i {
+  /* background: rebeccapurple; */
   margin: 0 !important;
   padding: 0 !important;
-  float: left;
+  /* float: left; */
+  font-size: 1.2em;
+
 }
 
 .item p {
-  font-size: 0.8em;
+
   color: rgb(130, 130, 130);
-  float: left !important;
-  margin-left: 3px !important;
+  /* float: left !important; */
+  margin-left: 10px !important;
   /* background: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .item i {
-  color: rgb(83, 85, 83);
+  color: c
   margin-left: 12px !important;
-  float: left !important;
+  /* float: left !important; */
+  /* background: green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery {
@@ -258,12 +411,13 @@ text-align: center;
 }
 
 .carousel-item img {
-width: 600px;
-height: 400px;
-  object-fit: contain; 
+  width: 600px;
+  height: 400px;
+  object-fit: contain;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
   background-color: rgba(0, 0, 0, 0.605);
 }
 
@@ -285,27 +439,43 @@ height: 400px;
 
   .titulo-preco {
     flex-direction: column !important;
-    height: 120px;
-    
+    /* height: 120px; */
+    align-items: flex-start;
+
   }
+
   .imovel-title {
-    width: 100% !important;  
-    margin-top: 20px; 
+    width: 100% !important;
+    margin-top: 20px;
     margin-bottom: 0 !important;
   }
 
   .imovel-valor {
-    width: 100% !important;
-    margin-top: 10px !important;
-    margin-bottom: 20px;
-    
+    /* width: 100% !important; */
+    margin-top: 20px !important;
+    margin-bottom: 1px;
+
   }
 
   .carousel-item img {
     width: 250px;
     height: 250px;
-    object-fit: contain; 
-    }
- 
+    object-fit: contain;
+  }
 
+  .item {
+    width: 100% !important;
+
+  }
+
+
+
+
+}
+
+.bairro-title {
+  color: rgb(167, 167, 167);
+  font-family: 'Nunito';
+  font-size: 0.9em;
+  font-weight: 400;
 }
