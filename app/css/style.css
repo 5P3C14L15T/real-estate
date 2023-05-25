@@ -402,6 +402,11 @@ th {
   width: 100%;
 }
 
+::placeholder {
+  color: #cdcdcd !important;
+  font-size: 0.8em !important;
+}
+
 /* dashbord */
 
 table { 

@@ -71,15 +71,15 @@
                           ><i class="fas fa-location-arrow"></i></span>
         
                           <select name="regime" class="form-select">
-                            <option selected>Imobiliária ou Autônomo</option>
-                            <option value="1">Imobiliária</option>
-                            <option value="2">Autônomo</option>
+                            <option selected>Proprietário ou Corretor</option>
+                            <option value="1">Proprietário</option>
+                            <option value="2">Corretor de Imóveis</option>
 
                           </select>
                       </div>
                 </div>
                 <div class="col-md-6">
-                  <label for="creci"> Qual o número do Creci?</label>
+                  <label for="creci"> Qual o CRECI? <small class="text-danger">apenas se for corretor</small> </label>
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-lg"
                           ><i class="fas fa-dollar-sign"></i></span>
@@ -93,8 +93,89 @@
                         />
                       </div>
                 </div>
+                <!-- campo separado -->
                 <div class="col-md-6">
-                  <label for="nomeNegocio"> Nome fantasia</label>
+                  <label for="nomeNegocio"> WhatsApp</label>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg"
+                          ><i class="fas fa-dollar-sign"></i></span>
+        
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="whatsapp"
+                          placeholder="(65) 99999-9999"
+                          aria-describedby="inputGroup-sizing-lg"
+                        />
+                      </div>
+                </div>
+                <!-- campo separado -->
+                <div class="col-md-6">
+                  <label for="nomeNegocio"> Email</label>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg"
+                          ><i class="fas fa-dollar-sign"></i></span>
+        
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="email"
+                          placeholder="seuemail@email.com"
+                          aria-describedby="inputGroup-sizing-lg"
+                        />
+                      </div>
+                </div>
+                <!-- campo separado -->
+                <div class="col-md-6">
+                  <label for="nomeNegocio"> Facebook Página ou Perfil</label>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg"
+                          ><i class="fas fa-dollar-sign"></i></span>
+        
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="facebook"
+                          placeholder="https://www.facebook.com/suapagina"
+                          aria-describedby="inputGroup-sizing-lg"
+                        />
+                      </div>
+                </div>
+                <!-- campo separado -->
+                <div class="col-md-6">
+                  <label for="nomeNegocio"> Instagram</label>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg"
+                          ><i class="fas fa-dollar-sign"></i></span>
+        
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="instagram"
+                          placeholder="https://www.instagram.com/seuinstagram"
+                          aria-describedby="inputGroup-sizing-lg"
+                        />
+                      </div>
+                </div>
+                <!-- campo separado -->
+                <div class="col-md-6">
+                  <label for="nomeNegocio"> LinkedIn</label>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg"
+                          ><i class="fas fa-dollar-sign"></i></span>
+        
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="linkedin"
+                          placeholder=""
+                          aria-describedby="inputGroup-sizing-lg"
+                        />
+                      </div>
+                </div>
+                <!-- campo separado -->
+                <div class="col-md-12">
+                  <label for="nomeNegocio"> Site</label>
                     <div class="input-group input-group-lg mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-lg"
                           ><i class="fas fa-dollar-sign"></i></span>
@@ -103,7 +184,7 @@
                           type="text"
                           class="form-control"
                           name="nomeNegocio"
-                          placeholder="Imobiliária Brasil CRECI-MT 11111 J"
+                          placeholder=""
                           aria-describedby="inputGroup-sizing-lg"
                         />
                       </div>
