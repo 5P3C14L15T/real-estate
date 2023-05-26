@@ -45,9 +45,9 @@ $bairros = $db->getBairros();
         <div class="col-md-3">
           <a href="dashboard.php" class="btn btn-info d-block">Voltar ao dashboard</a>
         </div>
-        <div class="col-md-3">
+        <!-- <div class="col-md-3">
           <a href="#!" class="btn btn-primary d-block">Editar Perfil</a>
-        </div>
+        </div> -->
       </div>
     </div>
   </nav>
