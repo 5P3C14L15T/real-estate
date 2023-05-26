@@ -29,7 +29,7 @@
     src="https://kit.fontawesome.com/6c66823518.js"
     crossorigin="anonymous"
   ></script>
-    <title>Casa a Venda Cuiabá</title>
+    <title>Apartamento a Venda Cuiabá</title>
   </head>
   <body>
     <header class="main">
