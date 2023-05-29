@@ -918,6 +918,86 @@ class DB
     
         return $selectOptions;
     }
+
+
+    // aqui é editar perfil
+
+    public function saveUserData($nome_user, $cargo, $whatsapp, $email, $password, $img = null,
+                                 $descricao_user = null, $fb = null, $ig = null, $linkedin = null,
+                                 $site = null, $creci = null, $access_type = "user", $payment = null) {
+        // Verificar se o usuário já existe no banco de dados
+        $userExists = $this->checkUserExists($email);
+        
+        if ($userExists) {
+            // Executar a atualização dos campos existentes
+            $this->updateUser($nome_user, $cargo, $whatsapp, $email, $password, $img, $descricao_user,
+                              $fb, $ig, $linkedin, $site, $creci, $access_type, $payment);
+        } else {
+            // Executar a inserção dos campos
+            $this->insertUser($nome_user, $cargo, $whatsapp, $email, $password, $img, $descricao_user,
+                              $fb, $ig, $linkedin, $site, $creci, $access_type, $payment);
+        }
+    }
+
+    public function checkUserExists($email) {
+        $query = "SELECT COUNT(*) FROM perfil WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        
+        return $count > 0;
+    }
+
+    private function insertUser($nome_user, $cargo, $whatsapp, $email, $password, $img,
+                                $descricao_user, $fb, $ig, $linkedin, $site, $creci,
+                                $access_type, $payment) {
+        $query = "INSERT INTO users (nome_user, cargo, whatsapp, email, password, img,
+                  descricao_user, fb, ig, linkedin, site, creci, access_type, payment)
+                  VALUES (:nome_user, :cargo, :whatsapp, :email, :password, :img,
+                  :descricao_user, :fb, :ig, :linkedin, :site, :creci, :access_type, :payment)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':nome_user', $nome_user);
+        $stmt->bindParam(':cargo', $cargo);
+        $stmt->bindParam(':whatsapp', $whatsapp);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':img', $img);
+        $stmt->bindParam(':descricao_user', $descricao_user);
+        $stmt->bindParam(':fb', $fb);
+        $stmt->bindParam(':ig', $ig);
+        $stmt->bindParam(':linkedin', $linkedin);
+        $stmt->bindParam(':site', $site);
+        $stmt->bindParam(':creci', $creci);
+        $stmt->bindParam(':access_type', $access_type);
+        $stmt->bindParam(':payment', $payment);
+        $stmt->execute();
+    }
+
+    private function updateUser($nome_user, $cargo, $whatsapp, $email, $password, $img,
+                                $descricao_user, $fb, $ig, $linkedin, $site, $creci, $access_type, $payment) {
+                                    $query = "UPDATE users SET nome_user = :nome_user, cargo = :cargo, whatsapp = :whatsapp,
+                                              password = :password, img = :img, descricao_user = :descricao_user, fb = :fb,
+                                              ig = :ig, linkedin = :linkedin, site = :site, creci = :creci,
+                                              access_type = :access_type, payment = :payment WHERE email = :email";
+                                    $stmt = $this->conn->prepare($query);
+                                    $stmt->bindParam(':nome_user', $nome_user);
+                                    $stmt->bindParam(':cargo', $cargo);
+                                    $stmt->bindParam(':whatsapp', $whatsapp);
+                                    $stmt->bindParam(':password', $password);
+                                    $stmt->bindParam(':img', $img);
+                                    $stmt->bindParam(':descricao_user', $descricao_user);
+                                    $stmt->bindParam(':fb', $fb);
+                                    $stmt->bindParam(':ig', $ig);
+                                    $stmt->bindParam(':linkedin', $linkedin);
+                                    $stmt->bindParam(':site', $site);
+                                    $stmt->bindParam(':creci', $creci);
+                                    $stmt->bindParam(':access_type', $access_type);
+                                    $stmt->bindParam(':payment', $payment);
+                                    $stmt->bindParam(':email', $email);
+                                    $stmt->execute();
+                                }
+                            
     
 
 }

@@ -1,3 +1,18 @@
+<?php
+require_once "../config/DB.php";
+require_once "./logado.php";
+
+$db = new DB;
+
+// $emailLogado = $_SESSION['user'];
+// var_dump($emailLogado);
+
+$emailLogado = $db->checkUserExists($_SESSION['user']);
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -47,7 +62,7 @@
             <div class="input-group input-group-lg mb-3">
               <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-home"></i></span>
 
-              <input type="text" class="form-control" name="titulo" placeholder="José Fulano de Tal"
+              <input type="text" class="form-control" name="nome" placeholder="José Fulano de Tal"
                 aria-describedby="inputGroup-sizing-lg" />
             </div>
 
