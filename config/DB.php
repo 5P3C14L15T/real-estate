@@ -999,7 +999,14 @@ class DB
                                 }
                             
     
+                                public function buscarPorEmail($email)
+                                {
+                                    $query = "SELECT * FROM perfil WHERE email = :email";
+                                    $stmt = $this->conn->prepare($query);
+                                    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+                                    $stmt->execute();
+                                    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                    return $result;
+                                }
 
 }
-
-?>
