@@ -8,7 +8,7 @@ $db = new DB;
 // var_dump($emailLogado);
 
 $perfilActive = $db->buscarPorEmail($_SESSION['user']);
-var_dump($perfilActive);
+// var_dump($perfilActive);
 
 // foreach para pegar os dados e preencher o form
 
@@ -18,10 +18,11 @@ foreach ($perfilActive as $value) {
   echo "</pre>";
 }
 
+echo $value['whatsapp'];
 
 
+// $emailLogado = $db->checkUserExists($_SESSION['user']);
 
-$emailLogado = $db->checkUserExists($_SESSION['user']);
 
 
 
@@ -70,11 +71,11 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
         <div class="col-md-9 mx-auto">
           <h1 class="text-center">Editar Perfil</h1>
 
-          <form action="#!" class="add-imovel">
+          <form action="perfil.php" method="post" class="add-imovel" id="myForm">
             <label for="nome"> Insira o seu nome</label>
             <div class="input-group input-group-lg mb-3">
               <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-home"></i></span>
-
+              <!-- <input type="text" class="form-control" name="nome" id="nameInput" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>"> -->
               <input type="text" class="form-control" name="nome" placeholder="José Fulano de Tal" value="<?php echo $value['nome_user'] ?>" aria-describedby="inputGroup-sizing-lg" />
             </div>
 
@@ -97,7 +98,7 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
                       }
                     }
                     ?>
-                    <option <?php echo ($proprietarioCorretor == '') ? 'selected' : ''; ?>>Proprietário ou Corretor</option>
+                    <option <?php echo ($proprietarioCorretor == null) ? 'selected' : ''; ?>>Proprietário ou Corretor</option>
                     <option value="1" <?php echo ($proprietarioCorretor == '1') ? 'selected' : ''; ?>>Proprietário</option>
                     <option value="2" <?php echo ($proprietarioCorretor == '2') ? 'selected' : ''; ?>>Corretor de Imóveis</option>
                   </select>
@@ -113,11 +114,11 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
               </div>
               <!-- campo separado -->
               <div class="col-md-6">
-                <label for="nomeNegocio"> WhatsApp</label>
+                <label for="nomeNegocio"> WhatsApp <small class="text-danger">***preencha somente os números</small></label>
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="whatsapp" id="telefone" maxlength="15" placeholder="(65) 99999-9999" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" name="whatsapp" value="<?php echo $value['whatsapp']; ?>" id="telefone" maxlength="15" placeholder="(65) 99999-9999" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -126,7 +127,7 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="email" placeholder="seuemail@email.com" aria-describedby="inputGroup-sizing-lg" />
+                  <input disabled type="text" class="form-control" value="<?php echo $value['email']; ?>" name="email" placeholder="seuemail@email.com" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -135,7 +136,7 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="facebook" placeholder="https://www.facebook.com/suapagina" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['fb']; ?>" name="facebook" placeholder="https://www.facebook.com/suapagina" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -144,7 +145,7 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="instagram" placeholder="https://www.instagram.com/seuinstagram" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['ig']; ?>" name="instagram" placeholder="https://www.instagram.com/seuinstagram" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -153,7 +154,7 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="linkedin" placeholder="https://www.linkedin.com/in/seuperfil/" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['linkedin']; ?>" name="linkedin" placeholder="https://www.linkedin.com/in/seuperfil/" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -162,7 +163,7 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="site" placeholder="https://www.seusite.com.br" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['site']; ?>" name="site" placeholder="https://www.seusite.com.br" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
 
@@ -174,7 +175,7 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
                 <label for="perfil"> Pequeno resumo do seu perfil</label>
                 <div class="mb-3">
 
-                  <textarea class="form-control" name="perfil" rows="3" placeholder="Ex: Corretor especialista em médio padrão. No mercado de trabalho há 10 anos."></textarea>
+                  <textarea class="form-control" value="" name="perfil" rows="3" placeholder="Ex: Corretor especialista em médio padrão. No mercado de trabalho há 10 anos."><?php echo $value['descricao_user']; ?></textarea>
                 </div>
               </div>
 
@@ -185,7 +186,7 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
               </div>
 
               <div class="d-grid gap-2">
-                <button class="btn btn-success" type="button">ATUALIZAR PERFIL</button>
+                <input class="btn btn-success" name="enviar" type="submit" value="ATUALIZAR PERFIL">
 
               </div>
             </div>
@@ -194,6 +195,50 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
       </div>
     </div>
   </section>
+
+  <?php
+
+  if (isset($_POST['enviar'])) {
+
+
+
+    $nome_user = $_POST['nome'];
+    $imob_autonomo = $_POST['regime'];
+    $whatsapp = $_POST['whatsapp'];
+    $email = $_SESSION['user'];
+    $img = $_POST['img'];
+    $descricao_user = $_POST['descricao_user'];
+    $fb = $_POST['fb'];
+    $ig = $_POST['ig'];
+    $linkedin = $_POST['linkedin'];
+    $site = $_POST['site'];
+    $creci = $_POST['creci'];
+    $access_type = "user";
+    $payment = null;
+
+
+    $db->saveUserData(
+      $nome_user,
+      $imob_autonomo,
+      $whatsapp,
+      $email,
+      $img,
+      $descricao_user,
+      $fb,
+      $ig,
+      $linkedin,
+      $site,
+      $creci,
+      $access_type = "user",
+      $payment = ""
+    );
+  }
+
+  var_dump($_POST['regime']);
+
+
+
+  ?>
 
   <footer class="footer">
     <div class="container">
@@ -235,6 +280,8 @@ $emailLogado = $db->checkUserExists($_SESSION['user']);
       }
     }
   </script>
+
+ 
 </body>
 
 </html>

@@ -16,7 +16,6 @@ class DB
             //code...
             $dsn = "mysql:host=" . $this->servername . ";dbname=" . $this->database;
             $this->conn = new PDO($dsn, $this->username, $this->password);
-
         } catch (PDOException $e) {
             echo "Conexão falhada: " . $e->getMessage();
         }
@@ -58,28 +57,29 @@ class DB
         return $result;
     }
 
-    function generateBairroOptions() {
+    function generateBairroOptions()
+    {
         $bairros = $this->getBairros();
-    
+
         $selectOptions = '';
-    
+
         foreach ($bairros as $bairro) {
             $value = $bairro['id'];
             $text = $bairro['nome'];
-    
+
             $selected = '';
             if (isset($_GET['bairro']) && $_GET['bairro'] == $value) {
                 $selected = 'selected';
             }
-    
+
             $selectOptions .= "<option value='$value' $selected>$text</option>";
         }
-    
+
         return $selectOptions;
     }
-    
 
-    public function getEmailExist($email, )
+
+    public function getEmailExist($email,)
     {
         $sql = "SELECT email FROM perfil WHERE email = :email";
         $stmt = $this->conn->prepare($sql);
@@ -183,7 +183,7 @@ class DB
 
 
     // *************************************************************************
-// Query para obter o último ID inserido na tabela
+    // Query para obter o último ID inserido na tabela
     public function ultimoImovelId()
     {
         $query = "SELECT MAX(id_imovel) as ultimo_id FROM imovel";
@@ -203,11 +203,10 @@ class DB
         }
 
         return $codigo;
-
     }
     // *************************************************************************
-// *************************************************************************
-// Query para obter o último ID inserido na tabela
+    // *************************************************************************
+    // Query para obter o último ID inserido na tabela
     public function ultimoImovel()
     {
         $query = "SELECT MAX(cod_imovel) as ultimo_id FROM imovel";
@@ -227,7 +226,6 @@ class DB
         }
 
         return $codigo;
-
     }
     // *************************************************************************
 
@@ -270,14 +268,11 @@ class DB
         } else {
             echo "erro ao inserir";
         }
-
-
-
     }
 
     // ************************************************************
-// ******************UPLOAD DE IMAGEM**************************
-// ************************************************************
+    // ******************UPLOAD DE IMAGEM**************************
+    // ************************************************************
 
 
     // select imóveis
@@ -495,9 +490,6 @@ class DB
             'links_paginacao' => $links_paginacao,
             'registro' => $total_registros
         );
-
-
-
     }
 
     function paginarImoveisComImagens($pagina = 1, $registros_por_pagina = 10)
@@ -558,7 +550,6 @@ class DB
             $active_class = ($i == $pagina) ? 'active' : '';
 
             $links_paginacao .= '<a class="page-link ' . $active_class . '" href="?apartamentos=' . $i . '">' . $i . '</a>';
-
         }
 
         // adiciona o parâmetro de página na URL dos links de paginação
@@ -572,8 +563,6 @@ class DB
             'registros' => $total_registros,
             'links_paginacao' => $links_paginacao
         );
-
-
     }
 
 
@@ -696,7 +685,6 @@ class DB
             'links_paginacao' => $links_paginacao,
             'registro' => $total_registros
         );
-
     }
 
 
@@ -878,90 +866,142 @@ class DB
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
-
     }
 
-    function generateSelectOptions() {
+    function generateSelectOptions()
+    {
         $results = $this->faixaValor();
-    
+
         $selectOptions = '';
-    
+
         foreach ($results as $row) {
             $value = $row['faixa_preco'];
             $text = $row['faixa_desc'];
-    
+
             $selected = '';
             if (isset($_GET['valor']) && $_GET['valor'] == $value) {
                 $selected = 'selected';
             }
-    
+
             $selectOptions .= "<option value='$value' $selected>$text</option>";
         }
-    
+
         return $selectOptions;
     }
 
-    function generateQuartoOptions() {
+    function generateQuartoOptions()
+    {
         $min = 1; // Valor mínimo
         $max = 5; // Valor máximo
-    
+
         $selectOptions = '';
-    
+
         for ($i = $min; $i <= $max; $i++) {
             $selected = '';
             if (isset($_GET['quarto']) && $_GET['quarto'] == $i) {
                 $selected = 'selected';
             }
-    
+
             $selectOptions .= "<option value='$i' $selected>$i Quartos</option>";
         }
-    
+
         return $selectOptions;
     }
 
 
     // aqui é editar perfil
 
-    public function saveUserData($nome_user, $cargo, $whatsapp, $email, $password, $img = null,
-                                 $descricao_user = null, $fb = null, $ig = null, $linkedin = null,
-                                 $site = null, $creci = null, $access_type = "user", $payment = null) {
+    public function saveUserData(
+        $nome_user,
+        $imob_autonomo,
+        $whatsapp,
+        $email,
+        $img = null,
+        $descricao_user = null,
+        $fb = null,
+        $ig = null,
+        $linkedin = null,
+        $site = null,
+        $creci = null,
+        $access_type = "user",
+        $payment = null
+    ) {
         // Verificar se o usuário já existe no banco de dados
         $userExists = $this->checkUserExists($email);
-        
+
         if ($userExists) {
             // Executar a atualização dos campos existentes
-            $this->updateUser($nome_user, $cargo, $whatsapp, $email, $password, $img, $descricao_user,
-                              $fb, $ig, $linkedin, $site, $creci, $access_type, $payment);
+            $this->updateUser(
+                $nome_user,
+                $imob_autonomo,
+                $whatsapp,
+                $email,
+                $img,
+                $descricao_user,
+                $fb,
+                $ig,
+                $linkedin,
+                $site,
+                $creci,
+                $access_type,
+                $payment
+            );
         } else {
             // Executar a inserção dos campos
-            $this->insertUser($nome_user, $cargo, $whatsapp, $email, $password, $img, $descricao_user,
-                              $fb, $ig, $linkedin, $site, $creci, $access_type, $payment);
+            $this->insertUser(
+                $nome_user,
+                $imob_autonomo,
+                $whatsapp,
+                $email,
+                $img,
+                $descricao_user,
+                $fb,
+                $ig,
+                $linkedin,
+                $site,
+                $creci,
+                $access_type,
+                $payment
+            );
         }
     }
 
-    public function checkUserExists($email) {
+    private function checkUserExists($email)
+    {
         $query = "SELECT COUNT(*) FROM perfil WHERE email = :email";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
         $count = $stmt->fetchColumn();
-        
+
         return $count > 0;
     }
 
-    private function insertUser($nome_user, $cargo, $whatsapp, $email, $password, $img,
-                                $descricao_user, $fb, $ig, $linkedin, $site, $creci,
-                                $access_type, $payment) {
-        $query = "INSERT INTO users (nome_user, cargo, whatsapp, email, password, img,
+    private function insertUser(
+        $nome_user,
+        $imob_autonomo,
+        $whatsapp,
+        $email,
+        
+        $img,
+        $descricao_user,
+        $fb,
+        $ig,
+        $linkedin,
+        $site,
+        $creci,
+        $access_type,
+        $payment
+    ) {
+        $query = "INSERT INTO perfil (nome_user, imob_autonomo, whatsapp, email, img,
                   descricao_user, fb, ig, linkedin, site, creci, access_type, payment)
-                  VALUES (:nome_user, :cargo, :whatsapp, :email, :password, :img,
+                  VALUES (:nome_user, :imob_autonomo, :whatsapp, :email, :img,
                   :descricao_user, :fb, :ig, :linkedin, :site, :creci, :access_type, :payment)";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':nome_user', $nome_user);
-        $stmt->bindParam(':cargo', $cargo);
+        $stmt->bindParam(':imob_autonomo', $imob_autonomo);
         $stmt->bindParam(':whatsapp', $whatsapp);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
         $stmt->bindParam(':img', $img);
         $stmt->bindParam(':descricao_user', $descricao_user);
         $stmt->bindParam(':fb', $fb);
@@ -974,39 +1014,50 @@ class DB
         $stmt->execute();
     }
 
-    private function updateUser($nome_user, $cargo, $whatsapp, $email, $password, $img,
-                                $descricao_user, $fb, $ig, $linkedin, $site, $creci, $access_type, $payment) {
-                                    $query = "UPDATE users SET nome_user = :nome_user, cargo = :cargo, whatsapp = :whatsapp,
-                                              password = :password, img = :img, descricao_user = :descricao_user, fb = :fb,
+    private function updateUser(
+        $nome_user,
+        $imob_autonomo,
+        $whatsapp,
+        $email,
+        $img,
+        $descricao_user,
+        $fb,
+        $ig,
+        $linkedin,
+        $site,
+        $creci,
+        $access_type,
+        $payment
+    ) {
+        $query = "UPDATE perfil SET nome_user = :nome_user, imob_autonomo = :imob_autonomo, whatsapp = :whatsapp,
+                                              img = :img, descricao_user = :descricao_user, fb = :fb,
                                               ig = :ig, linkedin = :linkedin, site = :site, creci = :creci,
                                               access_type = :access_type, payment = :payment WHERE email = :email";
-                                    $stmt = $this->conn->prepare($query);
-                                    $stmt->bindParam(':nome_user', $nome_user);
-                                    $stmt->bindParam(':cargo', $cargo);
-                                    $stmt->bindParam(':whatsapp', $whatsapp);
-                                    $stmt->bindParam(':password', $password);
-                                    $stmt->bindParam(':img', $img);
-                                    $stmt->bindParam(':descricao_user', $descricao_user);
-                                    $stmt->bindParam(':fb', $fb);
-                                    $stmt->bindParam(':ig', $ig);
-                                    $stmt->bindParam(':linkedin', $linkedin);
-                                    $stmt->bindParam(':site', $site);
-                                    $stmt->bindParam(':creci', $creci);
-                                    $stmt->bindParam(':access_type', $access_type);
-                                    $stmt->bindParam(':payment', $payment);
-                                    $stmt->bindParam(':email', $email);
-                                    $stmt->execute();
-                                }
-                            
-    
-                                public function buscarPorEmail($email)
-                                {
-                                    $query = "SELECT * FROM perfil WHERE email = :email";
-                                    $stmt = $this->conn->prepare($query);
-                                    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-                                    $stmt->execute();
-                                    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                    return $result;
-                                }
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':nome_user', $nome_user);
+        $stmt->bindParam(':imob_autonomo', $imob_autonomo);
+        $stmt->bindParam(':whatsapp', $whatsapp);
+        $stmt->bindParam(':img', $img);
+        $stmt->bindParam(':descricao_user', $descricao_user);
+        $stmt->bindParam(':fb', $fb);
+        $stmt->bindParam(':ig', $ig);
+        $stmt->bindParam(':linkedin', $linkedin);
+        $stmt->bindParam(':site', $site);
+        $stmt->bindParam(':creci', $creci);
+        $stmt->bindParam(':access_type', $access_type);
+        $stmt->bindParam(':payment', $payment);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+    }
 
+
+    public function buscarPorEmail($email)
+    {
+        $query = "SELECT * FROM perfil WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
