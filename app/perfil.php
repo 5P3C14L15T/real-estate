@@ -10,6 +10,45 @@ $db = new DB;
 $perfilActive = $db->buscarPorEmail($_SESSION['user']);
 // var_dump($perfilActive);
 
+
+  if (isset($_POST['enviar'])) {
+
+
+    $nome_user = $_POST['nome'];
+    $imob_autonomo = $_POST['regime'];
+    $whatsapp = $_POST['whatsapp'];
+    $email = $_SESSION['user'];
+    $img = $_POST['img'];
+    $descricao_user = $_POST['descricao_user'];
+    $fb = $_POST['fb'];
+    $ig = $_POST['ig'];
+    $linkedin = $_POST['linkedin'];
+    $site = $_POST['site'];
+    $creci = $_POST['creci'];
+    $access_type = "user";
+    $payment = null;
+
+
+    $db->saveUserData(
+      $nome_user,
+      $imob_autonomo,
+      $whatsapp,
+      $email,
+      $img,
+      $descricao_user,
+      $fb,
+      $ig,
+      $linkedin,
+      $site,
+      $creci,
+      $access_type = "user",
+      $payment = ""
+    );
+  }
+
+
+  
+
 // foreach para pegar os dados e preencher o form
 
 foreach ($perfilActive as $value) {
@@ -136,7 +175,7 @@ echo $value['whatsapp'];
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" value="<?php echo $value['fb']; ?>" name="facebook" placeholder="https://www.facebook.com/suapagina" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['fb']; ?>" name="fb" placeholder="https://www.facebook.com/suapagina" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -145,7 +184,7 @@ echo $value['whatsapp'];
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" value="<?php echo $value['ig']; ?>" name="instagram" placeholder="https://www.instagram.com/seuinstagram" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['ig']; ?>" name="ig" placeholder="https://www.instagram.com/seuinstagram" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -175,7 +214,7 @@ echo $value['whatsapp'];
                 <label for="perfil"> Pequeno resumo do seu perfil</label>
                 <div class="mb-3">
 
-                  <textarea class="form-control" value="" name="perfil" rows="3" placeholder="Ex: Corretor especialista em médio padrão. No mercado de trabalho há 10 anos."><?php echo $value['descricao_user']; ?></textarea>
+                  <textarea class="form-control" value="<?php echo $value['descricao_user']; ?>" name="descricao_user" rows="3" placeholder="Ex: Corretor especialista em médio padrão. No mercado de trabalho há 10 anos."><?php echo $value['descricao_user']; ?></textarea>
                 </div>
               </div>
 
@@ -196,49 +235,7 @@ echo $value['whatsapp'];
     </div>
   </section>
 
-  <?php
-
-  if (isset($_POST['enviar'])) {
-
-
-
-    $nome_user = $_POST['nome'];
-    $imob_autonomo = $_POST['regime'];
-    $whatsapp = $_POST['whatsapp'];
-    $email = $_SESSION['user'];
-    $img = $_POST['img'];
-    $descricao_user = $_POST['descricao_user'];
-    $fb = $_POST['fb'];
-    $ig = $_POST['ig'];
-    $linkedin = $_POST['linkedin'];
-    $site = $_POST['site'];
-    $creci = $_POST['creci'];
-    $access_type = "user";
-    $payment = null;
-
-
-    $db->saveUserData(
-      $nome_user,
-      $imob_autonomo,
-      $whatsapp,
-      $email,
-      $img,
-      $descricao_user,
-      $fb,
-      $ig,
-      $linkedin,
-      $site,
-      $creci,
-      $access_type = "user",
-      $payment = ""
-    );
-  }
-
-  var_dump($_POST['regime']);
-
-
-
-  ?>
+  
 
   <footer class="footer">
     <div class="container">

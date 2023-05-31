@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 // Inclua o arquivo de configuração do banco de dados, se necessário
 require_once "../config/DB.php";
@@ -127,3 +128,5 @@ if (isset($_POST['enviar'])) {
 // } catch (PDOException $e) {
 //     echo json_encode(['error' => 'Erro no banco de dados: ' . $e->getMessage()]);
 // }
+=======
+>>>>>>> 11e0d8fcc298091a96b7536e43188404a6b215cd
