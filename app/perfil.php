@@ -11,45 +11,45 @@ $perfilActive = $db->buscarPorEmail($_SESSION['user']);
 // var_dump($perfilActive);
 
 
-  if (isset($_POST['enviar'])) {
+if (isset($_POST['enviar'])) {
 
 
-    $nome_user = $_POST['nome'];
-    $imob_autonomo = $_POST['regime'];
-    $whatsapp = $_POST['whatsapp'];
-    $email = $_SESSION['user'];
-    $img = $_FILES['img'];
-    $descricao_user = $_POST['descricao_user'];
-    $fb = $_POST['fb'];
-    $ig = $_POST['ig'];
-    $linkedin = $_POST['linkedin'];
-    $site = $_POST['site'];
-    $creci = $_POST['creci'];
-    $access_type = "user";
-    $payment = null;
+  $nome_user = $_POST['nome'];
+  $imob_autonomo = $_POST['regime'];
+  $whatsapp = $_POST['whatsapp'];
+  $email = $_SESSION['user'];
+  $img = $_FILES['img'];
+  $descricao_user = $_POST['descricao_user'];
+  $fb = $_POST['fb'];
+  $ig = $_POST['ig'];
+  $linkedin = $_POST['linkedin'];
+  $site = $_POST['site'];
+  $creci = $_POST['creci'];
+  $access_type = "user";
+  $payment = null;
 
-    var_dump($img);
-
-
-    $db->saveUserData(
-      $nome_user,
-      $imob_autonomo,
-      $whatsapp,
-      $email,
-      $img,
-      $descricao_user,
-      $fb,
-      $ig,
-      $linkedin,
-      $site,
-      $creci,
-      $access_type = "user",
-      $payment = ""
-    );
-  }
+  var_dump($img);
 
 
-  
+  $db->saveUserData(
+    $nome_user,
+    $imob_autonomo,
+    $whatsapp,
+    $email,
+    $img,
+    $descricao_user,
+    $fb,
+    $ig,
+    $linkedin,
+    $site,
+    $creci,
+    $access_type = "user",
+    $payment = ""
+  );
+}
+
+
+
 
 // foreach para pegar os dados e preencher o form
 
@@ -95,6 +95,8 @@ echo $value['whatsapp'];
     </nav>
   </header>
 
+
+
   <nav class="componentes">
     <div class="container">
       <div class="row">
@@ -113,11 +115,16 @@ echo $value['whatsapp'];
           <h1 class="text-center">Editar Perfil</h1>
 
           <?php
-            $imagem = $db->getProfileImage($_SESSION['user']);
-            // var_dump($imagem);
+          $imagem = $db->getProfileImage($_SESSION['user']);
+          // var_dump($imagem);
           ?>
 
-          <img class="imagemPerfil" src="<?php echo $imagem;?>" alt="" class="img-fluid">
+          <img class="imagemPerfil" src="<?php echo $imagem; ?>" alt="" class="img-fluid">
+
+          <div class="col-md-6 offset-md-3 mb-3">
+            <label for="formFile" class="form-label">atualizar imagem</label>
+            <input class="form-control" type="file" id="formFile">
+          </div>
 
           <form action="atualizar_post.php" method="post" class="add-imovel" id="myForm" enctype="multipart/form-data">
             <label for="nome"> Insira o seu nome</label>
@@ -227,13 +234,7 @@ echo $value['whatsapp'];
                 </div>
               </div>
 
-              <div class="mb-3">
-                <label for="fotoPerfil">Insira a foto do seu perfil</label>
 
-                <input type="file" class="form-control" name="fotoPerfil[]" >
-                <!-- <input class="form-control" type="file" name="fileUpload[]" id="chooseFile" multiple> -->
-              
-              </div>
 
               <div class="d-grid gap-2">
                 <input class="btn btn-success" name="enviar" type="submit" value="ATUALIZAR PERFIL">
@@ -246,7 +247,7 @@ echo $value['whatsapp'];
     </div>
   </section>
 
-  
+
 
   <footer class="footer">
     <div class="container">
@@ -289,7 +290,7 @@ echo $value['whatsapp'];
     }
   </script>
 
- 
+
 </body>
 
 </html>

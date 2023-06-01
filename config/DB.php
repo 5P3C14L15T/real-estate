@@ -1086,6 +1086,6 @@ class DB
         }
 
         // Caso não haja caminho de imagem no banco de dados, retornar o caminho da imagem genérica
-        return '../app/imagem/perfil.jpg';
+        return '../imagem/perfil.jpg';
     }
 }
