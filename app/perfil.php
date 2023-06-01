@@ -18,7 +18,7 @@ $perfilActive = $db->buscarPorEmail($_SESSION['user']);
     $imob_autonomo = $_POST['regime'];
     $whatsapp = $_POST['whatsapp'];
     $email = $_SESSION['user'];
-    $img = $_POST['img'];
+    $img = $_FILES['img'];
     $descricao_user = $_POST['descricao_user'];
     $fb = $_POST['fb'];
     $ig = $_POST['ig'];
@@ -27,6 +27,8 @@ $perfilActive = $db->buscarPorEmail($_SESSION['user']);
     $creci = $_POST['creci'];
     $access_type = "user";
     $payment = null;
+
+    var_dump($img);
 
 
     $db->saveUserData(
@@ -110,7 +112,14 @@ echo $value['whatsapp'];
         <div class="col-md-9 mx-auto">
           <h1 class="text-center">Editar Perfil</h1>
 
-          <form action="perfil.php" method="post" class="add-imovel" id="myForm">
+          <?php
+            $imagem = $db->getProfileImage($_SESSION['user']);
+            // var_dump($imagem);
+          ?>
+
+          <img class="imagemPerfil" src="<?php echo $imagem;?>" alt="" class="img-fluid">
+
+          <form action="atualizar_post.php" method="post" class="add-imovel" id="myForm" enctype="multipart/form-data">
             <label for="nome"> Insira o seu nome</label>
             <div class="input-group input-group-lg mb-3">
               <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-home"></i></span>
@@ -221,7 +230,9 @@ echo $value['whatsapp'];
               <div class="mb-3">
                 <label for="fotoPerfil">Insira a foto do seu perfil</label>
 
-                <input class="form-control" name="fotoPerfil" type="file" id="formFileMultiple" multiple>
+                <input type="file" class="form-control" name="fotoPerfil[]" >
+                <!-- <input class="form-control" type="file" name="fileUpload[]" id="chooseFile" multiple> -->
+              
               </div>
 
               <div class="d-grid gap-2">

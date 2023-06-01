@@ -174,11 +174,11 @@ echo "<br>";
 echo "<br>";
 
 $file_size = $_FILES["fileUpload"]["size"][0];
-var_dump($file_size);
+var_dump($_FILES["fileUpload"]);
 
 
 
-if (isset($_POST['enviar']) && $file_size <= 2 * 1024 * 1024) {
+if (isset($_POST['enviar'])) {
 
     // criando pasta do imóvel
 

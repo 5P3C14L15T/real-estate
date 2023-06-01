@@ -53,7 +53,7 @@ $userId = $usuario[0]['id'];
 
 
 // definir o número de resultados por página
-$perPage = 1;
+$perPage = 10;
 
 // obter o id do proprietário da URL
 $id_prop = isset($_GET['id_prop']) ? $_GET['id_prop'] : '';

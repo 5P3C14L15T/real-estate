@@ -143,8 +143,8 @@ class DB
                 $height = imagesy($image);
 
                 // calcular novas dimensões
-                $new_width = 600;
-                $new_height = 600;
+                $new_width = 500;
+                $new_height = 500;
 
                 if ($width > $height) {
                     // imagem horizontal
@@ -916,7 +916,7 @@ class DB
         $imob_autonomo,
         $whatsapp,
         $email,
-        $img = null,
+       
         $descricao_user = null,
         $fb = null,
         $ig = null,
@@ -936,7 +936,7 @@ class DB
                 $imob_autonomo,
                 $whatsapp,
                 $email,
-                $img,
+              
                 $descricao_user,
                 $fb,
                 $ig,
@@ -953,7 +953,7 @@ class DB
                 $imob_autonomo,
                 $whatsapp,
                 $email,
-                $img,
+             
                 $descricao_user,
                 $fb,
                 $ig,
@@ -982,8 +982,8 @@ class DB
         $imob_autonomo,
         $whatsapp,
         $email,
-        
-        $img,
+
+       
         $descricao_user,
         $fb,
         $ig,
@@ -993,16 +993,16 @@ class DB
         $access_type,
         $payment
     ) {
-        $query = "INSERT INTO perfil (nome_user, imob_autonomo, whatsapp, email, img,
+        $query = "INSERT INTO perfil (nome_user, imob_autonomo, whatsapp, email, 
                   descricao_user, fb, ig, linkedin, site, creci, access_type, payment)
-                  VALUES (:nome_user, :imob_autonomo, :whatsapp, :email, :img,
+                  VALUES (:nome_user, :imob_autonomo, :whatsapp, :email, 
                   :descricao_user, :fb, :ig, :linkedin, :site, :creci, :access_type, :payment)";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':nome_user', $nome_user);
         $stmt->bindParam(':imob_autonomo', $imob_autonomo);
         $stmt->bindParam(':whatsapp', $whatsapp);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':img', $img);
+     
         $stmt->bindParam(':descricao_user', $descricao_user);
         $stmt->bindParam(':fb', $fb);
         $stmt->bindParam(':ig', $ig);
@@ -1019,7 +1019,7 @@ class DB
         $imob_autonomo,
         $whatsapp,
         $email,
-        $img,
+     
         $descricao_user,
         $fb,
         $ig,
@@ -1030,14 +1030,14 @@ class DB
         $payment
     ) {
         $query = "UPDATE perfil SET nome_user = :nome_user, imob_autonomo = :imob_autonomo, whatsapp = :whatsapp,
-                                              img = :img, descricao_user = :descricao_user, fb = :fb,
+                                               descricao_user = :descricao_user, fb = :fb,
                                               ig = :ig, linkedin = :linkedin, site = :site, creci = :creci,
                                               access_type = :access_type, payment = :payment WHERE email = :email";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':nome_user', $nome_user);
         $stmt->bindParam(':imob_autonomo', $imob_autonomo);
         $stmt->bindParam(':whatsapp', $whatsapp);
-        $stmt->bindParam(':img', $img);
+       
         $stmt->bindParam(':descricao_user', $descricao_user);
         $stmt->bindParam(':fb', $fb);
         $stmt->bindParam(':ig', $ig);
@@ -1059,5 +1059,33 @@ class DB
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
+    }
+
+
+    // retornando imagem do perfil
+
+    // Função para buscar o caminho da imagem no banco de dados
+    public function getProfileImage($email)
+    {
+        // Query para buscar o caminho da imagem
+        $query = "SELECT img FROM perfil WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+
+        // Verificar se há um resultado
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $imagePath = $row['img'];
+
+            // Verificar se o caminho da imagem está vazio
+            if (!empty($imagePath)) {
+                // Retornar o caminho da imagem existente no banco de dados
+                return $imagePath;
+            }
+        }
+
+        // Caso não haja caminho de imagem no banco de dados, retornar o caminho da imagem genérica
+        return '../app/imagem/perfil.jpg';
     }
 }
