@@ -251,7 +251,7 @@ echo $value['whatsapp'];
                 <label for="perfil"> Pequeno resumo do seu perfil</label>
                 <div class="mb-3">
 
-                  <textarea class="form-control" value="<?php echo $value['descricao_user']; ?>" name="descricao_user"
+                  <textarea class="form-control" name="descricao_user"
                     rows="3"
                     placeholder="Ex: Corretor especialista em médio padrão. No mercado de trabalho há 10 anos."><?php echo $value['descricao_user']; ?></textarea>
                 </div>
