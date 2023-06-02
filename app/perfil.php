@@ -79,7 +79,8 @@ echo $value['whatsapp'];
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- CSS only -->
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/6c66823518.js" crossorigin="anonymous"></script>
   <title>Editar Perfil</title>
 </head>
@@ -121,9 +122,16 @@ echo $value['whatsapp'];
 
           <img class="imagemPerfil" src="<?php echo $imagem; ?>" alt="" class="img-fluid">
 
+
           <div class="col-md-6 offset-md-3 mb-3">
-            <label for="formFile" class="form-label">atualizar imagem</label>
-            <input class="form-control" type="file" id="formFile">
+            <form action="atualizar_post.php" method="post" class="add-imovel" id="myForm"
+              enctype="multipart/form-data">
+              <div class="input-group">
+                <input type="file" name="img" class="form-control" id="inputGroupFile04"
+                  aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <input class="btn btn-outline-secondary" type="submit" value="Editar">
+              </div>
+            </form>
           </div>
 
           <form action="atualizar_post.php" method="post" class="add-imovel" id="myForm" enctype="multipart/form-data">
@@ -131,7 +139,8 @@ echo $value['whatsapp'];
             <div class="input-group input-group-lg mb-3">
               <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-home"></i></span>
               <!-- <input type="text" class="form-control" name="nome" id="nameInput" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>"> -->
-              <input type="text" class="form-control" name="nome" placeholder="José Fulano de Tal" value="<?php echo $value['nome_user'] ?>" aria-describedby="inputGroup-sizing-lg" />
+              <input type="text" class="form-control" name="nome" placeholder="José Fulano de Tal"
+                value="<?php echo $value['nome_user'] ?>" aria-describedby="inputGroup-sizing-lg" />
             </div>
 
             <div class="row">
@@ -153,9 +162,12 @@ echo $value['whatsapp'];
                       }
                     }
                     ?>
-                    <option <?php echo ($proprietarioCorretor == null) ? 'selected' : ''; ?>>Proprietário ou Corretor</option>
-                    <option value="1" <?php echo ($proprietarioCorretor == '1') ? 'selected' : ''; ?>>Proprietário</option>
-                    <option value="2" <?php echo ($proprietarioCorretor == '2') ? 'selected' : ''; ?>>Corretor de Imóveis</option>
+                    <option <?php echo ($proprietarioCorretor == null) ? 'selected' : ''; ?>>Proprietário ou Corretor
+                    </option>
+                    <option value="1" <?php echo ($proprietarioCorretor == '1') ? 'selected' : ''; ?>>Proprietário
+                    </option>
+                    <option value="2" <?php echo ($proprietarioCorretor == '2') ? 'selected' : ''; ?>>Corretor de Imóveis
+                    </option>
                   </select>
                 </div>
               </div>
@@ -164,16 +176,20 @@ echo $value['whatsapp'];
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="creci" value="<?php echo $value['creci'] ?>" placeholder="CRECI-MT 11111 F" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" name="creci" value="<?php echo $value['creci'] ?>"
+                    placeholder="CRECI-MT 11111 F" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
               <div class="col-md-6">
-                <label for="nomeNegocio"> WhatsApp <small class="text-danger">***preencha somente os números</small></label>
+                <label for="nomeNegocio"> WhatsApp <small class="text-danger">***preencha somente os
+                    números</small></label>
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" name="whatsapp" value="<?php echo $value['whatsapp']; ?>" id="telefone" maxlength="15" placeholder="(65) 99999-9999" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" name="whatsapp" value="<?php echo $value['whatsapp']; ?>"
+                    id="telefone" maxlength="15" placeholder="(65) 99999-9999"
+                    aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -182,7 +198,8 @@ echo $value['whatsapp'];
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input disabled type="text" class="form-control" value="<?php echo $value['email']; ?>" name="email" placeholder="seuemail@email.com" aria-describedby="inputGroup-sizing-lg" />
+                  <input disabled type="text" class="form-control" value="<?php echo $value['email']; ?>" name="email"
+                    placeholder="seuemail@email.com" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -191,7 +208,8 @@ echo $value['whatsapp'];
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" value="<?php echo $value['fb']; ?>" name="fb" placeholder="https://www.facebook.com/suapagina" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['fb']; ?>" name="fb"
+                    placeholder="https://www.facebook.com/suapagina" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -200,7 +218,8 @@ echo $value['whatsapp'];
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" value="<?php echo $value['ig']; ?>" name="ig" placeholder="https://www.instagram.com/seuinstagram" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['ig']; ?>" name="ig"
+                    placeholder="https://www.instagram.com/seuinstagram" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -209,7 +228,8 @@ echo $value['whatsapp'];
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" value="<?php echo $value['linkedin']; ?>" name="linkedin" placeholder="https://www.linkedin.com/in/seuperfil/" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['linkedin']; ?>" name="linkedin"
+                    placeholder="https://www.linkedin.com/in/seuperfil/" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- campo separado -->
@@ -218,7 +238,8 @@ echo $value['whatsapp'];
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input type="text" class="form-control" value="<?php echo $value['site']; ?>" name="site" placeholder="https://www.seusite.com.br" aria-describedby="inputGroup-sizing-lg" />
+                  <input type="text" class="form-control" value="<?php echo $value['site']; ?>" name="site"
+                    placeholder="https://www.seusite.com.br" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
 
@@ -230,7 +251,9 @@ echo $value['whatsapp'];
                 <label for="perfil"> Pequeno resumo do seu perfil</label>
                 <div class="mb-3">
 
-                  <textarea class="form-control" value="<?php echo $value['descricao_user']; ?>" name="descricao_user" rows="3" placeholder="Ex: Corretor especialista em médio padrão. No mercado de trabalho há 10 anos."><?php echo $value['descricao_user']; ?></textarea>
+                  <textarea class="form-control" value="<?php echo $value['descricao_user']; ?>" name="descricao_user"
+                    rows="3"
+                    placeholder="Ex: Corretor especialista em médio padrão. No mercado de trabalho há 10 anos."><?php echo $value['descricao_user']; ?></textarea>
                 </div>
               </div>
 
@@ -259,7 +282,9 @@ echo $value['whatsapp'];
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 
   <script>
     /* Máscaras ER */
@@ -283,8 +308,8 @@ echo $value['whatsapp'];
     function id(el) {
       return document.getElementById(el);
     }
-    window.onload = function() {
-      id('telefone').onkeyup = function() {
+    window.onload = function () {
+      id('telefone').onkeyup = function () {
         mascara(this, mtel);
       }
     }

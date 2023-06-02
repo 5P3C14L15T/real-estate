@@ -27,11 +27,11 @@ if (isset($_POST['enviar'])) {
     echo "<pre>";
     print_r($dados);
     echo "</pre>";
-    $img = $_FILES['fotoPerfil'];
+    // $img = $_FILES['fotoPerfil'];
 
-    echo "<pre>";
-    print_r($img);
-    echo "</pre>";
+    // echo "<pre>";
+    // print_r($img);
+    // echo "</pre>";
 
     // Verifique se um arquivo foi enviado
 if (!empty($img['tmp_name'][0])) {
