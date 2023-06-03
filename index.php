@@ -230,7 +230,7 @@ echo "Total de Resultados: " . $data['registro'] ;
                       <?php
                       
                       $valorImovel = $value['valor'];
-                      $valorImovelMostrar = $valorImovel / 100;
+                      $valorImovelMostrar = $valorImovel / 1;
                       $valorImovelFormatado = number_format($valorImovelMostrar,2,",",".");
                       echo $valorImovelFormatado;
                       

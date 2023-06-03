@@ -157,7 +157,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <a href="perfil.php" class="btn btn-primary d-block">Editar Perfil</a>
         </div>
         <div class="col-md-3 my-3">
-          <a href="./logout.php" class="btn btn-secondary d-block">Sair do perfil</a>
+          <a href="./logout.php" class="btn btn-secondary d-block">Sair do Dashboard</a>
         </div>
       </div>
     </div>
@@ -185,15 +185,15 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
               
               // echo '<tr><th scope="row" class="text-center">ID do imóvel</th><th>Imagem</th><th>Titulo do Imóvel</th><th>Ação</th></tr>';
               foreach ($results as $row) {
-                
+            
                 
                 echo '<tr>';
                 echo '<td>' . $row['cod_imovel'] . '</td>';
                 // echo '<td>' . $row['id'] . '</td>';
                 echo '<td>' . $row['titulo'] . '</td>';
                 echo '<td class="text-center icons-action">
-    <a href="#!" title="Editar"> <i class="fas fa-edit"></i></a>
-    <a href="#!" title="Deletar"><i class="fas fa-trash-alt"></i></a>
+    <a href="editar.php?id='.$row['id_imovel'].'" title="Editar"> <i class="fas fa-edit"></i></a>
+    <a href="deletar.php?id='.$row['id_imovel'].'" title="Deletar"><i class="fas fa-trash-alt"></i></a>
     <a href="#!" title="Ver Imóvel"><i class="fas fa-home"></i></a>
 
   </td>';

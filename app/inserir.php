@@ -43,6 +43,8 @@ if(isset($_REQUEST['bairro'])) {
 if(isset($_REQUEST['preco'])) {
     $preco         = $_REQUEST['preco'];
     $preco = preg_replace("/[^0-9]/", "", $preco);
+    $preco = $preco / 100;
+    echo $preco;
     // $preco         = number_format($_REQUEST['preco'],2,",",".");
 } else {
     $preco = "";

@@ -1105,4 +1105,44 @@ class DB
         ]);
       }
 
+    //   pegar imóveis com base no id
+    function buscarImovelPorId($id) {
+        try {
+            
+            // Consulta SQL para buscar o imóvel por ID
+            $query = "SELECT * FROM imovel WHERE id_imovel = :id";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+    
+            // Retorna os resultados como um array associativo
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Trate o erro adequadamente (exibindo mensagem, log, etc.)
+            echo 'Erro no banco de dados: ' . $e->getMessage();
+            return false;
+        }
+    }
+
+    // bairro pelo ID
+
+    // Função para buscar o bairro pelo ID
+function buscarBairroPorId($id) {
+    try {
+
+        // Consulta SQL para buscar o bairro pelo ID
+        $query = "SELECT * FROM bairros WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        // Retorna o resultado como um array associativo
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        // Trate o erro adequadamente (exibindo mensagem, log, etc.)
+        echo 'Erro no banco de dados: ' . $e->getMessage();
+        return false;
+    }
+}
+
 }
