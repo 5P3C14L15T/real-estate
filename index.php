@@ -49,7 +49,7 @@ if (isset($_GET['quarto']) and $_GET['quarto'] !== '') {
 // var_dump($bairro);
 
 // define a quantidade de resultados por página
-$registros_por_pagina = 1;
+$registros_por_pagina = 10;
 
 // chama a função de paginação
 // $data = $db->paginarImoveisComImagens($page, $registros_por_pagina);

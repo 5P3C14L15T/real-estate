@@ -10,7 +10,7 @@ $conn = $db->getConnection();
 // // Verifica se o usuário está logado
 
 
-$fotoPerfil = $_FILES['fotoPerfil'];
+// $fotoPerfil = $_FILES['fotoPerfil'];
 // echo "<pre>";
 // print_r($fotoPerfil);
 // echo "</pre>";
@@ -24,88 +24,19 @@ if (isset($_POST['enviar'])) {
 
     $dados = $_REQUEST;
 
-    echo "<pre>";
-    print_r($dados);
-    echo "</pre>";
+    // echo "<pre>";
+    // print_r($dados);
+    // echo "</pre>";
+
+
+    
     // $img = $_FILES['fotoPerfil'];
 
     // echo "<pre>";
     // print_r($img);
     // echo "</pre>";
 
-    // Verifique se um arquivo foi enviado
-if (!empty($img['tmp_name'][0])) {
-    // Diretório onde as imagens serão armazenadas
-    $pasta = md5($_SESSION['user']);
-    $uploadDir = 'users/' . $pasta . '/';
-    if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0777, true);
-    }
-
-    // Gere um nome de arquivo único para evitar conflitos
-    $filename = 'perfil';
-
-    // Determinar a extensão do arquivo
-    $extension = '';
-
-    // Verificar o tipo MIME do arquivo
-    $fileType = $img['type'][0];
-
-    if ($fileType === 'image/jpeg' || $fileType === 'image/jpg') {
-        $extension = 'jpg';
-    } elseif ($fileType === 'image/png') {
-        $extension = 'png';
-    } else {
-        // Tipo de arquivo não suportado
-        // Retornar um erro ou fazer qualquer tratamento necessário
-    }
-
-    // Se a extensão for vazia, o tipo de arquivo não é suportado
-    if (!empty($extension)) {
-        // Adicionar a extensão ao nome do arquivo
-        $filename .= '.' . $extension;
-
-        // Caminho completo para salvar a imagem
-        $filePath = $uploadDir . $filename;
-
-        // Redimensionar a imagem para no máximo 300 pixels de altura e largura
-        $maxSize = 300;
-        $source = imagecreatefromstring(file_get_contents($img['tmp_name'][0]));
-        $width = imagesx($source);
-        $height = imagesy($source);
-        $aspectRatio = $width / $height;
-
-        if ($width > $maxSize || $height > $maxSize) {
-            if ($aspectRatio > 1) {
-                $newWidth = $maxSize;
-                $newHeight = $maxSize / $aspectRatio;
-            } else {
-                $newHeight = $maxSize;
-                $newWidth = $maxSize * $aspectRatio;
-            }
-
-            $thumb = imagecreatetruecolor($newWidth, $newHeight);
-            imagecopyresampled($thumb, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
-
-            // Salvar a imagem redimensionada na pasta do usuário
-            if ($extension === 'jpg') {
-                imagejpeg($thumb, $filePath);
-            } elseif ($extension === 'png') {
-                imagepng($thumb, $filePath);
-            }
-
-            // Liberar a memória da imagem redimensionada
-            imagedestroy($thumb);
-        } else {
-            // Salvar a imagem original na pasta do usuário
-            move_uploaded_file($img['tmp_name'][0], $filePath);
-        }
-
     
-    }
-}
-
-
 
     # code...
     // Recebe os dados do formulário
@@ -144,12 +75,98 @@ if (!empty($img['tmp_name'][0])) {
 
 
 
-    // header("Location: perfil.php");
+    header("Location: perfil.php");
+
+}
+
+if (isset($_POST['editar'])) {
+
+    echo "entrou";
+    # code...
+
+    $img = $_FILES['img'];
+
+    var_dump($img);
+
+    // Verifique se um arquivo foi enviado
+if (!empty($img['tmp_name'])) {
+    // Diretório onde as imagens serão armazenadas
+    $pasta = md5($_SESSION['user']);
+    $uploadDir = 'users/' . $pasta . '/';
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+
+    // Gere um nome de arquivo único para evitar conflitos
+    $filename = 'perfil';
+
+    // Determinar a extensão do arquivo
+    $extension = '';
+
+    // Verificar o tipo MIME do arquivo
+    $fileType = $img['type'];
+
+    if ($fileType === 'image/jpeg' || $fileType === 'image/jpg') {
+        $extension = 'jpg';
+    } elseif ($fileType === 'image/png') {
+        $extension = 'png';
+    } else {
+        // Tipo de arquivo não suportado
+        // Retornar um erro ou fazer qualquer tratamento necessário
+    }
+
+    // Se a extensão for vazia, o tipo de arquivo não é suportado
+    if (!empty($extension)) {
+        // Adicionar a extensão ao nome do arquivo
+        $filename .= '.' . $extension;
+
+        // Caminho completo para salvar a imagem
+        $filePath = $uploadDir . $filename;
+
+        // Redimensionar a imagem para no máximo 300 pixels de altura e largura
+        $maxSize = 300;
+        $source = imagecreatefromstring(file_get_contents($img['tmp_name']));
+        $width = imagesx($source);
+        $height = imagesy($source);
+        $aspectRatio = $width / $height;
+
+        if ($width > $maxSize || $height > $maxSize) {
+            if ($aspectRatio > 1) {
+                $newWidth = $maxSize;
+                $newHeight = $maxSize / $aspectRatio;
+            } else {
+                $newHeight = $maxSize;
+                $newWidth = $maxSize * $aspectRatio;
+            }
+
+            $thumb = imagecreatetruecolor($newWidth, $newHeight);
+            imagecopyresampled($thumb, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+
+            // Salvar a imagem redimensionada na pasta do usuário
+            if ($extension === 'jpg') {
+                imagejpeg($thumb, $filePath);
+            } elseif ($extension === 'png') {
+                imagepng($thumb, $filePath);
+            }
+
+            // Liberar a memória da imagem redimensionada
+            imagedestroy($thumb);
+        } else {
+            // Salvar a imagem original na pasta do usuário
+            move_uploaded_file($img['tmp_name'], $filePath);
+        }
+
+    
+    }
+}
+
+$db->atualizarImagemPerfil($_SESSION['user'],$filePath);
+
 
 }
 
 
-
+header("Location: perfil.php");
 
 
 // try {

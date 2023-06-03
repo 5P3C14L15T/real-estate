@@ -1088,4 +1088,21 @@ class DB
         // Caso não haja caminho de imagem no banco de dados, retornar o caminho da imagem genérica
         return '../imagem/perfil.jpg';
     }
+
+    // caminho da imagem no banco
+    public function atualizarImagemPerfil($email, $novoCaminhoImagem) {
+        // Incluir o arquivo de conexão com o banco de dados
+        
+      
+        // Preparar a query de atualização
+        $query = "UPDATE perfil SET img = :img WHERE email = :email";
+        $stmt = $this->conn->prepare($query);
+      
+        // Executar a query de atualização
+        $stmt->execute([
+          ':img' => $novoCaminhoImagem,
+          ':email' => $email
+        ]);
+      }
+
 }

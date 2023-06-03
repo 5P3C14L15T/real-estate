@@ -18,7 +18,7 @@ if (isset($_POST['enviar'])) {
   $imob_autonomo = $_POST['regime'];
   $whatsapp = $_POST['whatsapp'];
   $email = $_SESSION['user'];
-  $img = $_FILES['img'];
+  // $img = $_FILES['img'];
   $descricao_user = $_POST['descricao_user'];
   $fb = $_POST['fb'];
   $ig = $_POST['ig'];
@@ -28,7 +28,7 @@ if (isset($_POST['enviar'])) {
   $access_type = "user";
   $payment = null;
 
-  var_dump($img);
+  // var_dump($img);
 
 
   $db->saveUserData(
@@ -36,7 +36,7 @@ if (isset($_POST['enviar'])) {
     $imob_autonomo,
     $whatsapp,
     $email,
-    $img,
+    // $img,
     $descricao_user,
     $fb,
     $ig,
@@ -54,12 +54,12 @@ if (isset($_POST['enviar'])) {
 // foreach para pegar os dados e preencher o form
 
 foreach ($perfilActive as $value) {
-  echo "<pre>";
-  print_r($value);
-  echo "</pre>";
+  // echo "<pre>";
+  // print_r($value);
+  // echo "</pre>";
 }
 
-echo $value['whatsapp'];
+// echo $value['whatsapp'];
 
 
 // $emailLogado = $db->checkUserExists($_SESSION['user']);
@@ -129,7 +129,7 @@ echo $value['whatsapp'];
               <div class="input-group">
                 <input type="file" name="img" class="form-control" id="inputGroupFile04"
                   aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                <input class="btn btn-outline-secondary" type="submit" value="Editar">
+                <input name="editar" class="btn btn-outline-success" type="submit" value="Atualizar">
               </div>
             </form>
           </div>
@@ -174,7 +174,7 @@ echo $value['whatsapp'];
               <div class="col-md-6">
                 <label for="creci"> Qual o CRECI? <small class="text-danger">apenas se for corretor</small> </label>
                 <div class="input-group input-group-lg mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-address-card"></i></span>
 
                   <input type="text" class="form-control" name="creci" value="<?php echo $value['creci'] ?>"
                     placeholder="CRECI-MT 11111 F" aria-describedby="inputGroup-sizing-lg" />
@@ -185,18 +185,18 @@ echo $value['whatsapp'];
                 <label for="nomeNegocio"> WhatsApp <small class="text-danger">***preencha somente os
                     números</small></label>
                 <div class="input-group input-group-lg mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fab fa-whatsapp-square"></i></span>
 
                   <input type="text" class="form-control" name="whatsapp" value="<?php echo $value['whatsapp']; ?>"
                     id="telefone" maxlength="15" placeholder="(65) 99999-9999"
-                    aria-describedby="inputGroup-sizing-lg" />
+                    aria-describedby="inputGroup-sizing-lg" required />
                 </div>
               </div>
               <!-- campo separado -->
               <div class="col-md-6">
                 <label for="nomeNegocio"> Email</label>
                 <div class="input-group input-group-lg mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-envelope"></i></span>
 
                   <input disabled type="text" class="form-control" value="<?php echo $value['email']; ?>" name="email"
                     placeholder="seuemail@email.com" aria-describedby="inputGroup-sizing-lg" />
@@ -206,7 +206,7 @@ echo $value['whatsapp'];
               <div class="col-md-6">
                 <label for="nomeNegocio"> Facebook Página ou Perfil</label>
                 <div class="input-group input-group-lg mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fab fa-facebook-square"></i></span>
 
                   <input type="text" class="form-control" value="<?php echo $value['fb']; ?>" name="fb"
                     placeholder="https://www.facebook.com/suapagina" aria-describedby="inputGroup-sizing-lg" />
@@ -216,7 +216,7 @@ echo $value['whatsapp'];
               <div class="col-md-6">
                 <label for="nomeNegocio"> Instagram</label>
                 <div class="input-group input-group-lg mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fab fa-instagram-square"></i></span>
 
                   <input type="text" class="form-control" value="<?php echo $value['ig']; ?>" name="ig"
                     placeholder="https://www.instagram.com/seuinstagram" aria-describedby="inputGroup-sizing-lg" />
@@ -226,7 +226,7 @@ echo $value['whatsapp'];
               <div class="col-md-6">
                 <label for="nomeNegocio"> LinkedIn</label>
                 <div class="input-group input-group-lg mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fab fa-linkedin"></i></span>
 
                   <input type="text" class="form-control" value="<?php echo $value['linkedin']; ?>" name="linkedin"
                     placeholder="https://www.linkedin.com/in/seuperfil/" aria-describedby="inputGroup-sizing-lg" />
@@ -236,7 +236,7 @@ echo $value['whatsapp'];
               <div class="col-md-6">
                 <label for="nomeNegocio"> Site</label>
                 <div class="input-group input-group-lg mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
+                  <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-link"></i></span>
 
                   <input type="text" class="form-control" value="<?php echo $value['site']; ?>" name="site"
                     placeholder="https://www.seusite.com.br" aria-describedby="inputGroup-sizing-lg" />
@@ -275,7 +275,7 @@ echo $value['whatsapp'];
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <h1>CASAAVENDACUIABA.COM.BR</h1>
+        <h1>APARTAMENTOAVENDACUIABA.COM.BR</h1>
         <p>&copy; Todos os Direitos Reservados</p>
       </div>
     </div>
