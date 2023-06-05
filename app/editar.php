@@ -15,9 +15,24 @@ echo "<hr>";
 $bairros = $db->getBairros();
 // var_dump($bairros);
 
-$bairroId = $db->buscarBairroPorId($imovel['id_imovel']);
+$bairroId = $db->buscarBairroPorId($imovel['id_bairro']);
 
 var_dump($bairroId);
+
+
+// Verifica se há resultado da busca
+if ($bairroId) {
+  // ID e nome do bairro já existente no banco de dados
+  $id_bairro_selecionado = $bairroId['id'];
+  $nome_bairro_selecionado = $bairroId['nome'];
+
+} else {
+  // ID e nome do bairro a serem buscados da tabela "bairros"
+  $id_bairro_selecionado = null;
+  $nome_bairro_selecionado = null;
+}
+
+
 
 
 ?>
@@ -32,7 +47,8 @@ var_dump($bairroId);
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- CSS only -->
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/6c66823518.js" crossorigin="anonymous"></script>
 
 
@@ -74,7 +90,9 @@ var_dump($bairroId);
             <div class="input-group input-group-lg mb-3">
               <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-building"></i></span>
 
-              <input type="text" class="form-control" name="titulo" value="<?php echo $imovel['titulo'] ?>" placeholder="Apartamento de 3 quartos próximo ao centro" aria-describedby="inputGroup-sizing-lg" required />
+              <input type="text" class="form-control" name="titulo" value="<?php echo $imovel['titulo'] ?>"
+                placeholder="Apartamento de 3 quartos próximo ao centro" aria-describedby="inputGroup-sizing-lg"
+                required />
             </div>
 
             <div class="row">
@@ -83,23 +101,36 @@ var_dump($bairroId);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-location-arrow"></i></span>
 
+
+
+                  <!-- Formulário -->
                   <select name="bairro" class="form-select">
-                    <option selected>Escolha o Bairro</option>
+                    <option>Escolha o Bairro</option>
                     <?php foreach ($bairros as $bairro) { ?>
-                      <option value="<?php echo $bairro['id']; ?>"><?php echo $bairro['nome'] ?></option>
+
+                      <option value="<?php echo $bairro['id']; ?>" <?php if ($bairro['id'] == $id_bairro_selecionado) {
+                           echo 'selected';
+                         } ?>><?php echo $bairro['nome']; ?></option>
                     <?php } ?>
                   </select>
 
-                  
+
+
 
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="preco"> Qual o valor do Imóvel? <small class="text-danger">(insira somente números)</small></label>
+                <label for="preco"> Qual o valor do Imóvel? <small class="text-danger">(insira somente
+                    números)</small></label>
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input size="12" onKeyUp="mascaraMoeda(this, event)" type="text" class="form-control" name="preco" placeholder="200.000,00" aria-describedby="inputGroup-sizing-lg" required />
+                                 
+
+                  <input type="text" name="preco" class="form-control" value="<?php echo number_format($imovel['valor'], 2, ',', '.') ; ?>" aria-describedby="inputGroup-sizing-lg"
+                  onKeyUp="mascaraMoeda(this, event);">
+
+                  
                 </div>
               </div>
 
@@ -109,7 +140,8 @@ var_dump($bairroId);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input size="12" onKeyUp="mascaraMoeda(this, event)" type="text" class="form-control" name="condominio" placeholder="400,00" aria-describedby="inputGroup-sizing-lg" required />
+                  <input size="12" onKeyUp="mascaraMoeda(this, event)" type="text" class="form-control"
+                    name="condominio" value="<?php echo number_format($imovel['valor_condominio'], 2, ',', '.') ; ?>" placeholder="400,00" aria-describedby="inputGroup-sizing-lg" required />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -118,7 +150,8 @@ var_dump($bairroId);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                  <input size="12" onKeyUp="mascaraMoeda(this, event)" type="text" class="form-control" name="iptu" placeholder="1300,00" aria-describedby="inputGroup-sizing-lg" />
+                  <input size="12" onKeyUp="mascaraMoeda(this, event)" type="text" class="form-control" name="iptu"
+                  value="<?php echo number_format($imovel['iptu'], 2, ',', '.') ; ?>" placeholder="1300,00" aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -127,7 +160,8 @@ var_dump($bairroId);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-ruler-vertical"></i></span>
 
-                  <input type="text" class="form-control" name="area" placeholder="120" aria-describedby="inputGroup-sizing-lg" required />
+                  <input type="text" class="form-control" name="area" placeholder="120"
+                    aria-describedby="inputGroup-sizing-lg" required />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -138,7 +172,8 @@ var_dump($bairroId);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-bed"></i></span>
 
-                  <input class="text-center form-control" type="number" name="qtdQuarto" min="0" id="" placeholder="0" required>
+                  <input class="text-center form-control" type="number" name="qtdQuarto" min="0" id="" placeholder="0"
+                    required>
                   </select>
                 </div>
               </div>
@@ -151,7 +186,8 @@ var_dump($bairroId);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-shower"></i></span>
 
-                  <input class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0" required>
+                  <input class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0"
+                    required>
                 </div>
               </div>
 
@@ -161,7 +197,8 @@ var_dump($bairroId);
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-car"></i></span>
 
-                  <input class="text-center form-control" type="number" min="0" name="qtdGaragem" id="" placeholder="0" required>
+                  <input class="text-center form-control" type="number" min="0" name="qtdGaragem" id="" placeholder="0"
+                    required>
                 </div>
               </div>
               <!--  -->
@@ -268,7 +305,8 @@ var_dump($bairroId);
                 <label for="area"> Descrição do Imóvel</label>
                 <div class="mb-3">
 
-                  <textarea class="form-control" rows="5" name="msg" placeholder="Insira uma pequena descrição do Imovél"></textarea>
+                  <textarea class="form-control" rows="5" name="msg"
+                    placeholder="Insira uma pequena descrição do Imovél"></textarea>
                 </div>
               </div>
 
@@ -303,12 +341,14 @@ var_dump($bairroId);
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="http://example.com/jquery.min.js"></script>
   <script type="text/javascript" src="http://example.com/image-uploader.min.js"></script>
 
   <script>
-    String.prototype.reverse = function() {
+    String.prototype.reverse = function () {
       return this.split('').reverse().join('');
     };
 
@@ -316,7 +356,7 @@ var_dump($bairroId);
       var tecla = (!evento) ? window.event.keyCode : evento.which;
       var valor = campo.value.replace(/[^\d]+/gi, '').reverse();
       var resultado = "";
-      var mascara = "##.###.###,##".reverse();
+      var mascara = "###.###.###,##".reverse();
       for (var x = 0, y = 0; x < mascara.length && y < valor.length;) {
         if (mascara.charAt(x) != '#') {
           resultado += mascara.charAt(x);
