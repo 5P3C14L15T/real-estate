@@ -161,7 +161,7 @@ if ($bairroId) {
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-ruler-vertical"></i></span>
 
                   <input type="text" class="form-control" name="area" placeholder="120"
-                    aria-describedby="inputGroup-sizing-lg" required />
+                  value="<?php echo $imovel['area_construida']; ?>" aria-describedby="inputGroup-sizing-lg" required />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -172,7 +172,7 @@ if ($bairroId) {
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-bed"></i></span>
 
-                  <input class="text-center form-control" type="number" name="qtdQuarto" min="0" id="" placeholder="0"
+                  <input value="<?php echo $imovel['quartos']; ?>" class="text-center form-control" type="number" name="qtdQuarto" min="0" id="" placeholder="0"
                     required>
                   </select>
                 </div>
@@ -186,7 +186,7 @@ if ($bairroId) {
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-shower"></i></span>
 
-                  <input class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0"
+                  <input value="<?php echo $imovel['banheiros']; ?>" class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0"
                     required>
                 </div>
               </div>
@@ -197,7 +197,7 @@ if ($bairroId) {
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-car"></i></span>
 
-                  <input class="text-center form-control" type="number" min="0" name="qtdGaragem" id="" placeholder="0"
+                  <input value="<?php echo $imovel['garagem']; ?>" class="text-center form-control" type="number" min="0" name="qtdGaragem" id="" placeholder="0"
                     required>
                 </div>
               </div>

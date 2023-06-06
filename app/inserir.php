@@ -68,7 +68,7 @@ if(isset($_REQUEST['iptu'])) {
 
 // $area           = $_REQUEST['area'];
 if(isset($_REQUEST['area'])) {
-    $area         = $_REQUEST['area'] . "m²";
+    $area         = $_REQUEST['area'];
 } else {
     $area = "";
 }
