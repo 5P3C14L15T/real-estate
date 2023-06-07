@@ -224,9 +224,19 @@ if ($bairroId) {
                         </div>
                       </label>
                     </div>
+                    <!-- sala -->
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="sala" value="sala" class="checkbox" checked>
+                      
+                      <?php
+                        if ($imovel['sala']) {
+                          $sala = "checked";
+                        } else {
+                          $sala = "";
+                        }
+                      ?>
+
+                        <input type="checkbox" name="sala" value="sala" class="checkbox" <?php echo $sala; ?>>
                         <div class="option_inner twitter">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-tv"></i></div>
@@ -234,9 +244,18 @@ if ($bairroId) {
                         </div>
                       </label>
                     </div>
+
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="garden" value="garden" class="checkbox">
+
+                      <?php
+                        if ($imovel['garden']) {
+                          $garden = "checked";
+                        } else {
+                          $garden = "";
+                        }
+                      ?>
+                        <input type="checkbox" name="garden" value="garden" class="checkbox" <?php echo $garden; ?>>
                         <div class="option_inner instagram">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-seedling"></i></div>
@@ -246,7 +265,15 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="sacada" value="sacada" class="checkbox">
+
+                      <?php
+                        if ($imovel['sacada']) {
+                          $sacada = "checked";
+                        } else {
+                          $sacada = "";
+                        }
+                      ?>
+                        <input type="checkbox" name="sacada" value="sacada" class="checkbox" <?php echo $sacada; ?>>
                         <div class="option_inner linkedin">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-person-booth"></i></div>
@@ -256,7 +283,14 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="lavanderia" value="lavanderia" class="checkbox">
+                      <?php
+                        if ($imovel['lavanderia']) {
+                          $lavanderia = "checked";
+                        } else {
+                          $lavanderia = "";
+                        }
+                      ?>
+                        <input type="checkbox" name="lavanderia" value="lavanderia" class="checkbox" <?php echo $lavanderia; ?>>
                         <div class="option_inner whatsapp">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-faucet"></i></div>
@@ -266,7 +300,14 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="suite" value="suite" class="checkbox">
+                      <?php
+                        if ($imovel['suite']) {
+                          $suite = "checked";
+                        } else {
+                          $suite = "";
+                        }
+                      ?>
+                        <input type="checkbox" name="suite" value="suite" class="checkbox" <?php echo $lavanderia; ?>>
                         <div class="option_inner google">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-bed"></i></div>
@@ -276,7 +317,14 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="elevador" value="elevador" class="checkbox">
+                      <?php
+                        if ($imovel['elevador']) {
+                          $elevador = "checked";
+                        } else {
+                          $elevador = "";
+                        }
+                      ?>
+                        <input type="checkbox" name="elevador" value="elevador" class="checkbox" <?php echo $elevador; ?>>
                         <div class="option_inner reddit">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-arrow-alt-circle-up"></i></div>
@@ -286,7 +334,14 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="lazer" value="lazer" class="checkbox">
+                      <?php
+                        if ($imovel['area_lazer']) {
+                          $lazer = "checked";
+                        } else {
+                          $lazer = "";
+                        }
+                      ?>
+                        <input type="checkbox" name="lazer" value="lazer" class="checkbox" <?php echo $lazer; ?>>
                         <div class="option_inner quora">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-swimming-pool"></i></div>
@@ -306,12 +361,12 @@ if ($bairroId) {
                 <div class="mb-3">
 
                   <textarea class="form-control" rows="5" name="msg"
-                    placeholder="Insira uma pequena descrição do Imovél"></textarea>
+                    placeholder="Insira uma pequena descrição do Imovél"><?php echo $imovel['descricao']; ?></textarea>
                 </div>
               </div>
 
               <div class="col-md-12">
-                <div class="input-images"></div>
+                <div class="input-images">aqui vai as imagens</div>
               </div>
 
               <div class="mb-3">
