@@ -32,6 +32,12 @@ if ($bairroId) {
   $nome_bairro_selecionado = null;
 }
 
+$imagensIdImovel = $db->getImageByIdImovel($imovel['id_imovel']);
+
+echo "<pre>";
+print_r($imagensIdImovel);
+echo "</pre>";
+
 
 
 
@@ -125,12 +131,13 @@ if ($bairroId) {
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
-                                 
 
-                  <input type="text" name="preco" class="form-control" value="<?php echo number_format($imovel['valor'], 2, ',', '.') ; ?>" aria-describedby="inputGroup-sizing-lg"
-                  onKeyUp="mascaraMoeda(this, event);">
 
-                  
+                  <input type="text" name="preco" class="form-control"
+                    value="<?php echo number_format($imovel['valor'], 2, ',', '.'); ?>"
+                    aria-describedby="inputGroup-sizing-lg" onKeyUp="mascaraMoeda(this, event);">
+
+
                 </div>
               </div>
 
@@ -141,7 +148,8 @@ if ($bairroId) {
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
                   <input size="12" onKeyUp="mascaraMoeda(this, event)" type="text" class="form-control"
-                    name="condominio" value="<?php echo number_format($imovel['valor_condominio'], 2, ',', '.') ; ?>" placeholder="400,00" aria-describedby="inputGroup-sizing-lg" required />
+                    name="condominio" value="<?php echo number_format($imovel['valor_condominio'], 2, ',', '.'); ?>"
+                    placeholder="400,00" aria-describedby="inputGroup-sizing-lg" required />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -151,7 +159,8 @@ if ($bairroId) {
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-dollar-sign"></i></span>
 
                   <input size="12" onKeyUp="mascaraMoeda(this, event)" type="text" class="form-control" name="iptu"
-                  value="<?php echo number_format($imovel['iptu'], 2, ',', '.') ; ?>" placeholder="1300,00" aria-describedby="inputGroup-sizing-lg" />
+                    value="<?php echo number_format($imovel['iptu'], 2, ',', '.'); ?>" placeholder="1300,00"
+                    aria-describedby="inputGroup-sizing-lg" />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -161,7 +170,8 @@ if ($bairroId) {
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-ruler-vertical"></i></span>
 
                   <input type="text" class="form-control" name="area" placeholder="120"
-                  value="<?php echo $imovel['area_construida']; ?>" aria-describedby="inputGroup-sizing-lg" required />
+                    value="<?php echo $imovel['area_construida']; ?>" aria-describedby="inputGroup-sizing-lg"
+                    required />
                 </div>
               </div>
               <!-- aqui vai os quartos -->
@@ -172,8 +182,8 @@ if ($bairroId) {
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-bed"></i></span>
 
-                  <input value="<?php echo $imovel['quartos']; ?>" class="text-center form-control" type="number" name="qtdQuarto" min="0" id="" placeholder="0"
-                    required>
+                  <input value="<?php echo $imovel['quartos']; ?>" class="text-center form-control" type="number"
+                    name="qtdQuarto" min="0" id="" placeholder="0" required>
                   </select>
                 </div>
               </div>
@@ -186,8 +196,8 @@ if ($bairroId) {
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-shower"></i></span>
 
-                  <input value="<?php echo $imovel['banheiros']; ?>" class="text-center form-control" type="number" name="qtdBanheiro" min="0" id="" placeholder="0"
-                    required>
+                  <input value="<?php echo $imovel['banheiros']; ?>" class="text-center form-control" type="number"
+                    name="qtdBanheiro" min="0" id="" placeholder="0" required>
                 </div>
               </div>
 
@@ -197,8 +207,8 @@ if ($bairroId) {
                 <div class="input-group input-group-lg mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-car"></i></span>
 
-                  <input value="<?php echo $imovel['garagem']; ?>" class="text-center form-control" type="number" min="0" name="qtdGaragem" id="" placeholder="0"
-                    required>
+                  <input value="<?php echo $imovel['garagem']; ?>" class="text-center form-control" type="number"
+                    min="0" name="qtdGaragem" id="" placeholder="0" required>
                 </div>
               </div>
               <!--  -->
@@ -227,14 +237,14 @@ if ($bairroId) {
                     <!-- sala -->
                     <div class="col-md-3">
                       <label class="option_item">
-                      
-                      <?php
+
+                        <?php
                         if ($imovel['sala']) {
                           $sala = "checked";
                         } else {
                           $sala = "";
                         }
-                      ?>
+                        ?>
 
                         <input type="checkbox" name="sala" value="sala" class="checkbox" <?php echo $sala; ?>>
                         <div class="option_inner twitter">
@@ -248,13 +258,13 @@ if ($bairroId) {
                     <div class="col-md-3">
                       <label class="option_item">
 
-                      <?php
+                        <?php
                         if ($imovel['garden']) {
                           $garden = "checked";
                         } else {
                           $garden = "";
                         }
-                      ?>
+                        ?>
                         <input type="checkbox" name="garden" value="garden" class="checkbox" <?php echo $garden; ?>>
                         <div class="option_inner instagram">
                           <div class="tickmark"></div>
@@ -266,13 +276,13 @@ if ($bairroId) {
                     <div class="col-md-3">
                       <label class="option_item">
 
-                      <?php
+                        <?php
                         if ($imovel['sacada']) {
                           $sacada = "checked";
                         } else {
                           $sacada = "";
                         }
-                      ?>
+                        ?>
                         <input type="checkbox" name="sacada" value="sacada" class="checkbox" <?php echo $sacada; ?>>
                         <div class="option_inner linkedin">
                           <div class="tickmark"></div>
@@ -283,13 +293,13 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                      <?php
+                        <?php
                         if ($imovel['lavanderia']) {
                           $lavanderia = "checked";
                         } else {
                           $lavanderia = "";
                         }
-                      ?>
+                        ?>
                         <input type="checkbox" name="lavanderia" value="lavanderia" class="checkbox" <?php echo $lavanderia; ?>>
                         <div class="option_inner whatsapp">
                           <div class="tickmark"></div>
@@ -300,13 +310,13 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                      <?php
+                        <?php
                         if ($imovel['suite']) {
                           $suite = "checked";
                         } else {
                           $suite = "";
                         }
-                      ?>
+                        ?>
                         <input type="checkbox" name="suite" value="suite" class="checkbox" <?php echo $lavanderia; ?>>
                         <div class="option_inner google">
                           <div class="tickmark"></div>
@@ -317,13 +327,13 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                      <?php
+                        <?php
                         if ($imovel['elevador']) {
                           $elevador = "checked";
                         } else {
                           $elevador = "";
                         }
-                      ?>
+                        ?>
                         <input type="checkbox" name="elevador" value="elevador" class="checkbox" <?php echo $elevador; ?>>
                         <div class="option_inner reddit">
                           <div class="tickmark"></div>
@@ -334,13 +344,13 @@ if ($bairroId) {
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                      <?php
+                        <?php
                         if ($imovel['area_lazer']) {
                           $lazer = "checked";
                         } else {
                           $lazer = "";
                         }
-                      ?>
+                        ?>
                         <input type="checkbox" name="lazer" value="lazer" class="checkbox" <?php echo $lazer; ?>>
                         <div class="option_inner quora">
                           <div class="tickmark"></div>
@@ -365,18 +375,38 @@ if ($bairroId) {
                 </div>
               </div>
 
-              <div class="col-md-12">
-                <div class="input-images">aqui vai as imagens</div>
-              </div>
+              <?php
 
-              <div class="mb-3">
-                <label for="area">Insira as imagens do Imóvel</label>
+             
+
+              foreach ($imagensIdImovel as $value) {
+                // var_dump($value)              
+                ?>
+
+                <div class="col-md-3">
+                  <div class="input-images">
+                    <a href="deletarimagem.php?id=<?php echo $imovel['id_imovel'] ?>&delete=<?php echo $value['id']; ?>
+                    &url=<?php echo $value['url'];?>">
+                      <img src="<?php echo $value['url']; ?>" class="img-fluid img-edit" alt="" srcset="">
+                      <h3 class="deletarImg btn btn-danger mt-2">Deletar</h3>
+                    </a>
+                  </div>
+                </div>
+
+                <?php
+              }
+
+               
+              ?>
+
+              <div class="mb-3 mt-4">
+                <label for="area">Inserir novas imagens</label>
 
                 <input class="form-control" type="file" name="fileUpload[]" id="chooseFile" multiple>
               </div>
 
               <div class="d-grid gap-2">
-                <input type="submit" class="btn btn-success" name="enviar" value="ADICIONAR IMÓVEL" />
+                <input type="submit" class="btn btn-info" name="atualizar" value="ATUALIZAR IMÓVEL" />
 
               </div>
             </div>

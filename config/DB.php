@@ -79,7 +79,7 @@ class DB
     }
 
 
-    public function getEmailExist($email,)
+    public function getEmailExist($email, )
     {
         $sql = "SELECT email FROM perfil WHERE email = :email";
         $stmt = $this->conn->prepare($sql);
@@ -916,7 +916,7 @@ class DB
         $imob_autonomo,
         $whatsapp,
         $email,
-       
+
         $descricao_user = null,
         $fb = null,
         $ig = null,
@@ -936,7 +936,7 @@ class DB
                 $imob_autonomo,
                 $whatsapp,
                 $email,
-              
+
                 $descricao_user,
                 $fb,
                 $ig,
@@ -953,7 +953,7 @@ class DB
                 $imob_autonomo,
                 $whatsapp,
                 $email,
-             
+
                 $descricao_user,
                 $fb,
                 $ig,
@@ -983,7 +983,7 @@ class DB
         $whatsapp,
         $email,
 
-       
+
         $descricao_user,
         $fb,
         $ig,
@@ -1002,7 +1002,7 @@ class DB
         $stmt->bindParam(':imob_autonomo', $imob_autonomo);
         $stmt->bindParam(':whatsapp', $whatsapp);
         $stmt->bindParam(':email', $email);
-     
+
         $stmt->bindParam(':descricao_user', $descricao_user);
         $stmt->bindParam(':fb', $fb);
         $stmt->bindParam(':ig', $ig);
@@ -1019,7 +1019,7 @@ class DB
         $imob_autonomo,
         $whatsapp,
         $email,
-     
+
         $descricao_user,
         $fb,
         $ig,
@@ -1037,7 +1037,7 @@ class DB
         $stmt->bindParam(':nome_user', $nome_user);
         $stmt->bindParam(':imob_autonomo', $imob_autonomo);
         $stmt->bindParam(':whatsapp', $whatsapp);
-       
+
         $stmt->bindParam(':descricao_user', $descricao_user);
         $stmt->bindParam(':fb', $fb);
         $stmt->bindParam(':ig', $ig);
@@ -1090,31 +1090,33 @@ class DB
     }
 
     // caminho da imagem no banco
-    public function atualizarImagemPerfil($email, $novoCaminhoImagem) {
+    public function atualizarImagemPerfil($email, $novoCaminhoImagem)
+    {
         // Incluir o arquivo de conexão com o banco de dados
-        
-      
+
+
         // Preparar a query de atualização
         $query = "UPDATE perfil SET img = :img WHERE email = :email";
         $stmt = $this->conn->prepare($query);
-      
+
         // Executar a query de atualização
         $stmt->execute([
-          ':img' => $novoCaminhoImagem,
-          ':email' => $email
+            ':img' => $novoCaminhoImagem,
+            ':email' => $email
         ]);
-      }
+    }
 
     //   pegar imóveis com base no id
-    function buscarImovelPorId($id) {
+    function buscarImovelPorId($id)
+    {
         try {
-            
+
             // Consulta SQL para buscar o imóvel por ID
             $query = "SELECT * FROM imovel WHERE id_imovel = :id";
             $stmt = $this->conn->prepare($query);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-    
+
             // Retorna os resultados como um array associativo
             return $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
@@ -1127,22 +1129,69 @@ class DB
     // bairro pelo ID
 
     // Função para buscar o bairro pelo ID
-function buscarBairroPorId($id) {
-    try {
+    function buscarBairroPorId($id)
+    {
+        try {
 
-        // Consulta SQL para buscar o bairro pelo ID
-        $query = "SELECT * FROM bairros WHERE id = :id";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-        $stmt->execute();
+            // Consulta SQL para buscar o bairro pelo ID
+            $query = "SELECT * FROM bairros WHERE id = :id";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
 
-        // Retorna o resultado como um array associativo
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-        // Trate o erro adequadamente (exibindo mensagem, log, etc.)
-        echo 'Erro no banco de dados: ' . $e->getMessage();
-        return false;
+            // Retorna o resultado como um array associativo
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Trate o erro adequadamente (exibindo mensagem, log, etc.)
+            echo 'Erro no banco de dados: ' . $e->getMessage();
+            return false;
+        }
     }
-}
+
+    // excluir imagem no editar imóvel
+
+    function deletarImagem($imagem_id, $caminho_imagem)
+    {
+        try {
+
+            // Verificar se o ID da imagem é válido
+            if (!is_numeric($imagem_id)) {
+                throw new Exception('ID da imagem inválido');
+            }
+
+            // Consulta SQL para verificar se o ID da imagem e o caminho correspondem
+            $query = "SELECT id FROM imagem WHERE id = :id AND url = :caminho";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindValue(':id', $imagem_id, PDO::PARAM_INT);
+            $stmt->bindValue(':caminho', $caminho_imagem, PDO::PARAM_STR);
+            $stmt->execute();
+
+            // Verificar se a imagem existe
+            if ($stmt->rowCount() > 0) {
+                // Excluir a imagem da tabela
+                $query_delete = "DELETE FROM imagem WHERE id = :id";
+                $stmt_delete = $this->conn->prepare($query_delete);
+                $stmt_delete->bindValue(':id', $imagem_id, PDO::PARAM_INT);
+                $stmt_delete->execute();
+
+                // Excluir a imagem do diretório
+                if (file_exists($caminho_imagem)) {
+                    unlink($caminho_imagem);
+                }
+
+                return true; // Exclusão bem-sucedida
+            } else {
+                throw new Exception('Imagem não encontrada');
+            }
+        } catch (PDOException $e) {
+            // Tratar o erro adequadamente (exibindo mensagem, log, etc.)
+            echo 'Erro no banco de dados: ' . $e->getMessage();
+            return false;
+        } catch (Exception $e) {
+            // Tratar o erro adequadamente (exibindo mensagem, log, etc.)
+            echo 'Erro: ' . $e->getMessage();
+            return false;
+        }
+    }
 
 }
