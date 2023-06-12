@@ -240,7 +240,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 </p>
               </div>
 
-              <?php if ($value['suite'] !== "") {
+              <?php if ($value['suite'] == "") {
                 ?>
 
                 <div class="col-md-4 text-center item">
@@ -251,7 +251,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <?php } ?>
 
               <!-- sala -->
-              <?php if ($value['suite'] !== "") {
+              <?php if ($value['sala'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-tv"></i>
@@ -265,12 +265,12 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
               <!-- cozinha -->
 
-              <?php if ($value['cozinha'] !== "") {
+              <?php if ($value['cozinha'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-utensil-spoon"></i>
                   <p>
-                    <?php echo $value['cozinha'] ?>
+                    <?php echo "Cozinha"; ?>
                   </p>
                 </div>
 
@@ -278,12 +278,12 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
               <!-- lavanderia -->
 
-              <?php if ($value['lavanderia'] !== "") {
+              <?php if ($value['lavanderia'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
                 <i class="fas fa-tshirt"></i>
                   <p>
-                    <?php echo $value['lavanderia'] ?>
+                    <?php echo "Lavanderia"; ?>
                   </p>
                 </div>
 
@@ -291,12 +291,12 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
               <!-- sacada -->
 
-              <?php if ($value['sacada'] !== "") {
+              <?php if ($value['sacada'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
                 <i class="fas fa-building"></i>
                   <p>
-                    <?php echo $value['sacada'] ?>
+                    <?php echo "Sacada"; ?>
                   </p>
                 </div>
               <?php } ?>
@@ -311,19 +311,19 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-shower"></i>
                   <p>
-                    <?php echo $value['banheiros'] ?> Banheiro Social
+                    <?php echo $value['banheiros'] ?> Banheiro
                   </p>
                 </div>
               <?php } ?>
 
               <!-- elevador -->
 
-              <?php if ($value['elevador'] !== "") {
+              <?php if ($value['elevador'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
                 <i class="fas fa-chevron-circle-up"></i>
                   <p>
-                    <?php echo $value['elevador'] ?>
+                    <?php echo "Elevador"; ?>
                   </p>
                 </div>
               <?php } ?>
@@ -336,7 +336,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 <div class="col-md-4 text-center item">
                 <i class="fas fa-car"></i>
                   <p>
-                    <?php echo $value['garagem'] ?> Garagem
+                    <?php echo $value['garagem']; ?> Garagem
                   </p>
                 </div>
               <?php } ?>
@@ -345,11 +345,11 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
               <!-- area de lazer -->
 
-              <?php if ($value['area_lazer'] !== "") {
+              <?php if ($value['area_lazer'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
                 <i class="fas fa-swimming-pool"></i>
-                  <p>Área de lazer</p>
+                  <p> <?php echo $value['lazer']; ?></p>
                 </div>
               <?php } ?>
 
@@ -360,7 +360,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-ruler-combined"></i>
                   <p>Área:
-                    <?php echo $value['area_construida'] ?>
+                  <?php echo $value['area_construida']. "m²"; ?>
                   </p>
                 </div>
               <?php } ?>

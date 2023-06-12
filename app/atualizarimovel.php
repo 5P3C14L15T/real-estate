@@ -100,66 +100,6 @@ if (isset($_REQUEST['qtdGaragem'])) {
 }
 
 
-if (isset($_REQUEST['cozinha'])) {
-    $cozinha = $_REQUEST['cozinha'];
-    echo "<hr>";
-    echo $cozinha;
-    echo "<hr>";
-} else {
-    $cozinha = "";
-}
-
-
-// $sala           = $_REQUEST['sala'];
-if (isset($_REQUEST['sala'])) {
-    $sala = $_REQUEST['sala'];
-} else {
-    $sala = "";
-}
-
-// $garden         = $_REQUEST['garden'];
-if (isset($_REQUEST['garden'])) {
-    $garden = $_REQUEST['garden'];
-} else {
-    $garden = "";
-}
-
-// $sacada         = $_REQUEST['sacada'];
-if (isset($_REQUEST['sacada'])) {
-    $sacada = $_REQUEST['sacada'];
-} else {
-    $sacada = "";
-}
-
-// $lavanderia     = $_REQUEST['lavanderia'];x  
-if (isset($_REQUEST['lavanderia'])) {
-    $lavanderia = $_REQUEST['lavanderia'];
-} else {
-    $lavanderia = "";
-}
-
-// $suite          = $_REQUEST['suite'];
-if (isset($_REQUEST['suite'])) {
-    $suite = $_REQUEST['suite'];
-} else {
-    $suite = "";
-    // echo $suite;
-}
-// $suite          = isset$suite ? $suite : "não"; 
-
-// $elevador       = $_REQUEST['elevador'];
-if (isset($_REQUEST['elevador'])) {
-    $elevador = $_REQUEST['elevador'];
-} else {
-    $elevador = "";
-}
-
-// $lazer          = $_REQUEST['lazer'];
-if (isset($_REQUEST['lazer'])) {
-    $lazer = $_REQUEST['lazer'];
-} else {
-    $lazer = "";
-}
 
 // $msg            = $_REQUEST['msg'];
 if (isset($_REQUEST['msg'])) {
@@ -196,8 +136,15 @@ var_dump($id);
 if (isset($_POST['atualizar'])) {
 
     $cozinha = isset($_POST['cozinha']) ? 1 : 0;
+    $sala = isset($_POST['sala']) ? 1 : 0;
+    $garden = isset($_POST['garden']) ? 1 : 0;
+    $sacada = isset($_POST['sacada']) ? 1 : 0;
+    $lavanderia = isset($_POST['lavanderia']) ? 1 : 0;
+    $suite = isset($_POST['suite']) ? 1 : 0;
+    $elevador = isset($_POST['elevador']) ? 1 : 0;
+    $lazer = isset($_POST['lazer']) ? 1 : 0;
 
-   
+
     $db->atualizarImovel(
         $id,
         $titulo,

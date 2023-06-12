@@ -256,7 +256,7 @@ echo "</pre>";
                         }
                         ?>
 
-                        <input type="checkbox" name="sala" value="sala" class="checkbox" <?php echo $sala; ?>>
+                        <input type="checkbox" name="sala" value="1" class="checkbox" <?php echo $sala; ?>>
                         <div class="option_inner twitter">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-tv"></i></div>
@@ -275,7 +275,7 @@ echo "</pre>";
                           $garden = "";
                         }
                         ?>
-                        <input type="checkbox" name="garden" value="garden" class="checkbox" <?php echo $garden; ?>>
+                        <input type="checkbox" name="garden" value="1" class="checkbox" <?php echo $garden; ?>>
                         <div class="option_inner instagram">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-seedling"></i></div>
@@ -293,7 +293,7 @@ echo "</pre>";
                           $sacada = "";
                         }
                         ?>
-                        <input type="checkbox" name="sacada" value="sacada" class="checkbox" <?php echo $sacada; ?>>
+                        <input type="checkbox" name="sacada" value="1" class="checkbox" <?php echo $sacada; ?>>
                         <div class="option_inner linkedin">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-person-booth"></i></div>
@@ -310,7 +310,7 @@ echo "</pre>";
                           $lavanderia = "";
                         }
                         ?>
-                        <input type="checkbox" name="lavanderia" value="lavanderia" class="checkbox" <?php echo $lavanderia; ?>>
+                        <input type="checkbox" name="lavanderia" value="1" class="checkbox" <?php echo $lavanderia; ?>>
                         <div class="option_inner whatsapp">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-faucet"></i></div>
@@ -327,7 +327,7 @@ echo "</pre>";
                           $suite = "";
                         }
                         ?>
-                        <input type="checkbox" name="suite" value="suite" class="checkbox" <?php echo $lavanderia; ?>>
+                        <input type="checkbox" name="suite" value="1" class="checkbox" <?php echo $lavanderia; ?>>
                         <div class="option_inner google">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-bed"></i></div>
@@ -344,7 +344,7 @@ echo "</pre>";
                           $elevador = "";
                         }
                         ?>
-                        <input type="checkbox" name="elevador" value="elevador" class="checkbox" <?php echo $elevador; ?>>
+                        <input type="checkbox" name="elevador" value="1" class="checkbox" <?php echo $elevador; ?>>
                         <div class="option_inner reddit">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-arrow-alt-circle-up"></i></div>
@@ -361,7 +361,7 @@ echo "</pre>";
                           $lazer = "";
                         }
                         ?>
-                        <input type="checkbox" name="lazer" value="lazer" class="checkbox" <?php echo $lazer; ?>>
+                        <input type="checkbox" name="lazer" value="1" class="checkbox" <?php echo $lazer; ?>>
                         <div class="option_inner quora">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-swimming-pool"></i></div>

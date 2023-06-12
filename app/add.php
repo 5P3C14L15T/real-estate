@@ -174,7 +174,7 @@ $bairros = $db->getBairros();
                   <div class="row">
                     <div class="col-md-3 text-center">
                       <label class="option_item">
-                        <input type="checkbox" name="cozinha" value="cozinha" class="checkbox" checked>
+                        <input type="checkbox" name="cozinha" value="1" class="checkbox" checked>
                         <div class="option_inner facebook">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-utensils"></i></div>
@@ -184,7 +184,7 @@ $bairros = $db->getBairros();
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="sala" value="sala" class="checkbox" checked>
+                        <input type="checkbox" name="sala" value="1" class="checkbox" checked>
                         <div class="option_inner twitter">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-tv"></i></div>
@@ -194,7 +194,7 @@ $bairros = $db->getBairros();
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="garden" value="garden" class="checkbox">
+                        <input type="checkbox" name="garden" value="1" class="checkbox">
                         <div class="option_inner instagram">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-seedling"></i></div>
@@ -204,7 +204,7 @@ $bairros = $db->getBairros();
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="sacada" value="sacada" class="checkbox">
+                        <input type="checkbox" name="sacada" value="1" class="checkbox">
                         <div class="option_inner linkedin">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-person-booth"></i></div>
@@ -214,7 +214,7 @@ $bairros = $db->getBairros();
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="lavanderia" value="lavanderia" class="checkbox">
+                        <input type="checkbox" name="lavanderia" value="1" class="checkbox">
                         <div class="option_inner whatsapp">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-faucet"></i></div>
@@ -224,7 +224,7 @@ $bairros = $db->getBairros();
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="suite" value="suite" class="checkbox">
+                        <input type="checkbox" name="suite" value="1" class="checkbox">
                         <div class="option_inner google">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-bed"></i></div>
@@ -234,7 +234,7 @@ $bairros = $db->getBairros();
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="elevador" value="elevador" class="checkbox">
+                        <input type="checkbox" name="elevador" value="1" class="checkbox">
                         <div class="option_inner reddit">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-arrow-alt-circle-up"></i></div>
@@ -244,7 +244,7 @@ $bairros = $db->getBairros();
                     </div>
                     <div class="col-md-3">
                       <label class="option_item">
-                        <input type="checkbox" name="lazer" value="lazer" class="checkbox">
+                        <input type="checkbox" name="lazer" value="1" class="checkbox">
                         <div class="option_inner quora">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-swimming-pool"></i></div>
