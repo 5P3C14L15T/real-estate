@@ -1194,4 +1194,73 @@ class DB
         }
     }
 
+
+
+    public function atualizarImovel(
+        $id_imovel,
+        $titulo,
+        $id_bairro,
+        $valor,
+        $valor_condominio,
+        $iptu,
+        $area_construida,
+        $quartos,
+        $banheiros,
+        $garagem,
+        $cozinha,
+        $sala,
+        $garden,
+        $sacada,
+        $lavanderia,
+        $suite,
+        $elevador,
+        $area_lazer,
+        $descricao,
+        $data_atualizacao
+    ) {
+        try {
+            // Preparar a consulta SQL
+            $sql = "UPDATE imovel SET titulo = :titulo, id_bairro = :id_bairro, valor = :valor, valor_condominio = :valor_condominio, iptu = :iptu, area_construida = :area_construida, quartos = :quartos, banheiros = :banheiros, garagem = :garagem, cozinha = :cozinha, sala = :sala, garden = :garden, sacada = :sacada, lavanderia = :lavanderia, suite = :suite, elevador = :elevador, area_lazer = :area_lazer, descricao = :descricao, data_atualizacao = :data_atualizacao WHERE id_imovel = :id_imovel";
+
+            // Preparar a instrução PDO
+            $stmt = $this->conn->prepare($sql);
+
+            // Bind dos parâmetros
+            $stmt->bindParam(':id_imovel', $id_imovel, PDO::PARAM_INT);
+            $stmt->bindParam(':titulo', $titulo, PDO::PARAM_STR);
+            $stmt->bindParam(':id_bairro', $id_bairro, PDO::PARAM_INT);
+            $stmt->bindParam(':valor', $valor, PDO::PARAM_STR);
+            $stmt->bindParam(':valor_condominio', $valor_condominio, PDO::PARAM_STR);
+            $stmt->bindParam(':iptu', $iptu, PDO::PARAM_STR);
+            $stmt->bindParam(':area_construida', $area_construida, PDO::PARAM_STR);
+            $stmt->bindParam(':quartos', $quartos, PDO::PARAM_INT);
+            $stmt->bindParam(':banheiros', $banheiros, PDO::PARAM_INT);
+            $stmt->bindParam(':garagem', $garagem, PDO::PARAM_INT);
+            $stmt->bindParam(':cozinha', $cozinha, PDO::PARAM_INT);
+            $stmt->bindParam(':sala', $sala, PDO::PARAM_INT);
+            $stmt->bindParam(':garden', $garden, PDO::PARAM_INT);
+            $stmt->bindParam(':sacada', $sacada, PDO::PARAM_INT);
+            $stmt->bindParam(':lavanderia', $lavanderia, PDO::PARAM_INT);
+            $stmt->bindParam(':suite', $suite, PDO::PARAM_INT);
+            $stmt->bindParam(':elevador', $elevador, PDO::PARAM_INT);
+            $stmt->bindParam(':area_lazer', $area_lazer, PDO::PARAM_INT);
+            $stmt->bindParam(':descricao', $descricao, PDO::PARAM_STR);
+            $stmt->bindParam(':data_atualizacao', $data_atualizacao, PDO::PARAM_STR);
+
+            // Executar a consulta
+            $stmt->execute();
+
+            // Verificar se a atualização foi bem-sucedida
+            if ($stmt->rowCount() > 0) {
+                echo "Atualização realizada com sucesso.";
+            } else {
+                echo "Nenhum registro foi atualizado.";
+            }
+        } catch (PDOException $e) {
+            echo "Erro ao atualizar o imóvel: " . $e->getMessage();
+        }
+    }
+
+
+
 }

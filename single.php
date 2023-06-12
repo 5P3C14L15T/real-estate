@@ -157,7 +157,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
             <?php
 
             $valorImovel = $value['valor'];
-            $valorImovelMostrar = $valorImovel / 100;
+            $valorImovelMostrar = $valorImovel;
             $valorImovelFormatado = number_format($valorImovelMostrar, 2, ",", ".");
             echo " " . $valorImovelFormatado;
             ?></h2>
@@ -165,7 +165,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
             <?php
             
             $valorCond = $value['valor_condominio'];
-            $valorCondMostrar = $valorCond / 100;
+            $valorCondMostrar = $valorCond;
             $valorCondFormatado = number_format($valorCondMostrar, 2, ",", ".");
             echo "" . $valorCondFormatado;
             
@@ -175,7 +175,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
             <?php 
             
             $valorIptu = $value['iptu'];
-            $valorIptuMostrar = $valorIptu / 100;
+            $valorIptuMostrar = $valorIptu;
             $valorIptuFormatado = number_format($valorIptuMostrar, 2, ",", ".");
             echo "" . $valorIptuFormatado;
             ?>

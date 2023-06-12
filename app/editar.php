@@ -6,7 +6,10 @@ $db = new DB;
 
 $imovel = $db->buscarImovelPorId($_GET['id']);
 
-var_dump($imovel);
+echo "<pre>";
+print_r($imovel);
+echo "</pre>";
+// var_dump($imovel);
 
 echo "<hr>";
 
@@ -89,9 +92,9 @@ echo "</pre>";
     <div class="container">
       <div class="row">
         <div class="col-md-9 mx-auto">
-          <h1 class="text-center">Adicione um novo Apartamento</h1>
+          <h1 class="text-center">Editar o imóvel</h1>
 
-          <form action="inserir.php" class="add-imovel" method="post" enctype="multipart/form-data">
+          <form action="atualizarimovel.php" class="add-imovel" method="post" enctype="multipart/form-data">
             <label for="titulo"> Insira o Título do Imóvel</label>
             <div class="input-group input-group-lg mb-3">
               <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-building"></i></span>
@@ -226,7 +229,14 @@ echo "</pre>";
                   <div class="row">
                     <div class="col-md-3 text-center">
                       <label class="option_item">
-                        <input type="checkbox" name="cozinha" value="cozinha" class="checkbox" checked>
+                      <?php
+                        if ($imovel['cozinha'] == 1) {
+                          $cozinha = "checked";
+                        } else {
+                          $cozinha = "";
+                        }
+                        ?>
+                        <input type="checkbox" name="cozinha" value="1" class="checkbox" <?php echo $cozinha; ?>>
                         <div class="option_inner facebook">
                           <div class="tickmark"></div>
                           <div class="icon"><i class="fas fa-utensils"></i></div>
@@ -406,6 +416,7 @@ echo "</pre>";
               </div>
 
               <div class="d-grid gap-2">
+                <input type="hidden" value="<?php echo $_GET['id'] ?>" name="id">
                 <input type="submit" class="btn btn-info" name="atualizar" value="ATUALIZAR IMÓVEL" />
 
               </div>
