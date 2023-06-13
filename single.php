@@ -149,7 +149,9 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
         <div class="tituloLeft">
           <h1 class="imovel-title" title="<?php echo $value['titulo'] ?>"><?php echo $value['titulo'] ?></h1>
-          <p class="bairro-title"> <?php echo $value['nome'] ?><i class="fas fa-search-location"></i></p>
+          <p class="bairro-title">
+            <?php echo $value['nome'] ?><i class="fas fa-search-location"></i>
+          </p>
         </div>
 
         <div class="precoRight">
@@ -163,17 +165,17 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
             ?></h2>
           <small>Condomínio:
             <?php
-            
+
             $valorCond = $value['valor_condominio'];
             $valorCondMostrar = $valorCond;
             $valorCondFormatado = number_format($valorCondMostrar, 2, ",", ".");
             echo "" . $valorCondFormatado;
-            
+
             ?>
           </small><br>
           <small>IPTU:
-            <?php 
-            
+            <?php
+
             $valorIptu = $value['iptu'];
             $valorIptuMostrar = $valorIptu;
             $valorIptuFormatado = number_format($valorIptuMostrar, 2, ",", ".");
@@ -256,7 +258,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-tv"></i>
                   <p>
-                    <?php echo $value['sala'] ?>
+                    <?php echo "Sala"; ?>
                   </p>
                 </div>
               <?php } ?>
@@ -281,7 +283,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <?php if ($value['lavanderia'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
-                <i class="fas fa-tshirt"></i>
+                  <i class="fas fa-tshirt"></i>
                   <p>
                     <?php echo "Lavanderia"; ?>
                   </p>
@@ -294,7 +296,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <?php if ($value['sacada'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
-                <i class="fas fa-building"></i>
+                  <i class="fas fa-building"></i>
                   <p>
                     <?php echo "Sacada"; ?>
                   </p>
@@ -311,7 +313,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-shower"></i>
                   <p>
-                    <?php echo $value['banheiros'] ?> Banheiro
+                    <?php echo $value['banheiros'] ?> Banheiro(s)
                   </p>
                 </div>
               <?php } ?>
@@ -321,7 +323,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <?php if ($value['elevador'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
-                <i class="fas fa-chevron-circle-up"></i>
+                  <i class="fas fa-chevron-circle-up"></i>
                   <p>
                     <?php echo "Elevador"; ?>
                   </p>
@@ -334,7 +336,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <?php if ($value['garagem'] !== "") {
                 ?>
                 <div class="col-md-4 text-center item">
-                <i class="fas fa-car"></i>
+                  <i class="fas fa-car"></i>
                   <p>
                     <?php echo $value['garagem']; ?> Garagem
                   </p>
@@ -348,8 +350,10 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <?php if ($value['area_lazer'] == 1) {
                 ?>
                 <div class="col-md-4 text-center item">
-                <i class="fas fa-swimming-pool"></i>
-                  <p> <?php echo $value['lazer']; ?></p>
+                  <i class="fas fa-swimming-pool"></i>
+                  <p>
+                    <?php echo "Área de Lazer"; ?>
+                  </p>
                 </div>
               <?php } ?>
 
@@ -360,7 +364,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-ruler-combined"></i>
                   <p>Área:
-                  <?php echo $value['area_construida']. "m²"; ?>
+                    <?php echo $value['area_construida'] . "m²"; ?>
                   </p>
                 </div>
               <?php } ?>
@@ -411,13 +415,16 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
         <div class="info-corretor">
           <header>
-            <img src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg"
-              alt="Quincy Larson's profile picture" class="profile-thumbnail" />
+            <img src="<?php echo "app/" . $value['img']; ?>" alt="Quincy Larson's profile picture"
+              class="profile-thumbnail" />
             <div class="profile-name">
               <h3>
                 <?php echo $value['nome_user'] ?>
               </h3>
               <h4>Anunciante</h4>
+              <h5>WhatsApp:
+                <?php echo $value['whatsapp']; ?>
+              </h5>
             </div>
           </header>
           <div id="inner">
@@ -430,31 +437,31 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
           <footer>
             <div class="stats">
 
-              <?php if ($value['ig'] !== "0") {
+              <?php if ($value['ig'] !== "") {
                 ?>
                 <div class="Retweets">
-                  <i class="fa fa-instagram"></i>
+                  <a href="<?php echo $value['ig']; ?>" target="_new"> <i class="fa fa-instagram"></i></a>
                 </div>
               <?php } ?>
 
-              <?php if ($value['fb'] !== "0") {
+              <?php if ($value['fb'] !== "") {
                 ?>
                 <div class="Retweets">
-                  <i class="fa fa-facebook-square"></i>
+                  <a href="<?php echo $value['fb']; ?>" target="_new"> <i class="fa fa-facebook-square"></i></a>
                 </div>
               <?php } ?>
 
-              <?php if ($value['linkedin'] !== "0") {
+              <?php if ($value['linkedin'] !== "") {
                 ?>
                 <div class="Retweets">
-                  <i class="fab fa-linkedin"></i>
+                  <a href="<?php echo $value['linkedin']; ?>" target="_new"> <i class="fab fa-linkedin"></i></a>
                 </div>
               <?php } ?>
 
-              <?php if ($value['site'] !== "0") {
+              <?php if ($value['site'] !== "") {
                 ?>
                 <div class="Retweets">
-                  <i class="fas fa-sitemap"></i>
+                  <a href="<?php echo $value['site']; ?>" target="_new"> <i class="fas fa-sitemap"></i></a>
                 </div>
               <?php } ?>
             </div>
@@ -479,32 +486,32 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
 
-    <script>
+  <script>
 
-/* Máscaras ER */
-function mascara(o, f) {
-  v_obj = o
-  v_fun = f
-  setTimeout("execmascara()", 1)
-}
-function execmascara() {
-  v_obj.value = v_fun(v_obj.value)
-}
-function mtel(v) {
-  v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
-  v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-  v = v.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
-  return v;
-}
-function id(el) {
-  return document.getElementById(el);
-}
-window.onload = function () {
-  id('telefone').onkeyup = function () {
-    mascara(this, mtel);
-  }
-}
-</script>
+    /* Máscaras ER */
+    function mascara(o, f) {
+      v_obj = o
+      v_fun = f
+      setTimeout("execmascara()", 1)
+    }
+    function execmascara() {
+      v_obj.value = v_fun(v_obj.value)
+    }
+    function mtel(v) {
+      v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
+      v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+      v = v.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+      return v;
+    }
+    function id(el) {
+      return document.getElementById(el);
+    }
+    window.onload = function () {
+      id('telefone').onkeyup = function () {
+        mascara(this, mtel);
+      }
+    }
+  </script>
 
 </body>
 
