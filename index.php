@@ -19,7 +19,6 @@ $quartos = $db->generateQuartoOptions();
 // echo "<pre>";
 
 
-
 // define a página atual (se não definiu, assume o valor 1)
 $page = isset($_GET['apartamentos']) ? (int) $_GET['apartamentos'] : 1;
 if (isset($_GET['bairro']) and $_GET['bairro'] !== '') {
@@ -67,6 +66,8 @@ $data = $db->pagImoImg($page, $registros_por_pagina, $bairro, $valor, $quarto);
 // echo "<pre>";
 // print_r($data);
 // echo "</pre>";
+
+
 
 $urlImg = __DIR__ . "/app";
 
@@ -266,7 +267,10 @@ echo "Total de Resultados: " . $data['registro'] ;
                         <path fill="currentColor" fill-rule="evenodd"
                           d="M17.044 19.64a30.885 30.885 0 01-4.218 3.697c-.193.138-.332.235-.41.287a.75.75 0 01-.832 0 14.543 14.543 0 01-.41-.287 30.885 30.885 0 01-4.219-3.696C4.025 16.546 2.25 13.294 2.25 10 2.25 4.615 6.615.25 12 .25s9.75 4.365 9.75 9.75c0 3.294-1.774 6.546-4.706 9.64zm-4.105 1.726a29.402 29.402 0 003.017-2.757c2.693-2.843 4.294-5.778 4.294-8.609a8.25 8.25 0 00-16.5 0c0 2.83 1.601 5.766 4.294 8.61A29.402 29.402 0 0012 22.082c.285-.207.6-.447.94-.717zM12 13.75a3.75 3.75 0 110-7.5 3.75 3.75 0 010 7.5zm0-1.5a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z">
                         </path>
-                      </svg> Bairro: <?php echo $value['id_bairro']; ?></li>
+                      </svg> Bairro: <?php $idBbairro =  $db->buscarBairroPorId($value['id_bairro']);
+                      
+                      echo $idBbairro['nome']; 
+                      ?></li>
 
                   </ul>
 
