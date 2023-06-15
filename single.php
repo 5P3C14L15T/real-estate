@@ -150,7 +150,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
         <div class="tituloLeft">
           <h1 class="imovel-title" title="<?php echo $value['titulo'] ?>"><?php echo $value['titulo'] ?></h1>
           <p class="bairro-title">
-            <?php echo $value['nome'] ?><i class="fas fa-search-location"></i>
+            <?php echo "Bairro: " .  $value['nome'] ?><i class="fas fa-search-location"></i>
           </p>
         </div>
 
@@ -398,11 +398,15 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 placeholder="(65) 99999-9999" required>
               <!-- inputs data -->
 
-              <input type="hidden" name="titulo" value="<?php echo $value['titulo'] ?> ">
-              <input type="hidden" name="valor" value="<?php echo $value['valor'] ?> ">
-              <input type="hidden" name="bairroNome" value="<?php echo $value['nome'] ?> ">
-              <input type="hidden" name="whatsapp" value="<?php echo $value['whatsapp'] ?> ">
+              <input type="hidden" name="titulo" value="<?php echo $value['titulo']; ?> ">
+              <input type="hidden" name="valor" value="<?php echo $value['valor']; ?> ">
+              <input type="hidden" name="bairroNome" value="<?php echo $value['nome']; ?> ">
+              <input type="hidden" name="whatsapp" value="<?php echo $value['whatsapp']; ?> ">
               <input type="hidden" name="url" value="<?php echo $urlCompleta ?> ">
+              <input type="hidden" name="quarto" value="<?php echo $value['quartos']; ?> ">
+              <input type="hidden" name="area" value="<?php echo $value['area_construida'];?> ">
+
+
 
 
               <div class="d-grid mt-4">
@@ -469,6 +473,15 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
         </div>
 
       </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row col-md-10 mx-auto">
+      <div class="col-sm-3">AQUI VAI O IMÓVEL</div>
+      <div class="col-sm-3">AQUI VAI O IMÓVEL</div>
+      <div class="col-sm-3">AQUI VAI O IMÓVEL</div>
+      <div class="col-sm-3">AQUI VAI O IMÓVEL</div>
     </div>
   </div>
 

@@ -11,12 +11,16 @@ echo '</pre>';
 
 $titulo = rtrim($data['titulo']);
 $whatsapp = rtrim($data['whatsapp']);
+$quartos = rtrim($data['quarto']);
+$area = rtrim($data['area']) . "m²";
 // echo $titulo;
 
     $urlEncaminha = "https://api.whatsapp.com/send?phone=55".$whatsapp."&text=";
-    $urlEncaminha .= "🏢 *" . $titulo . "* %0A";
-    $urlEncaminha .= "```Valor: " . $data['valor'] . "```%0A";
+    $urlEncaminha .= "🏢 *" . $titulo . "* %0A%0A";
+    $urlEncaminha .= "```Valor: R$" . number_format($data['valor'],2,',','.') . "```%0A";
     $urlEncaminha .= "```Bairro: " . $data['bairroNome'] . "```%0A";
+    $urlEncaminha .= "```Quartos: " . $quartos . "```%0A";
+    $urlEncaminha .= "```Área: " . $area . "```%0A";
     $urlEncaminha .= "Vi esse imóvel no site: %0A". $data['url'];
 
     echo $urlEncaminha;
