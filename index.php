@@ -91,7 +91,8 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
   <link rel="icon" type="image/x-icon" href="imagem/icon.png">
   <!-- metas -->
   <meta property="og:title" content="Apartamento a Venda Cuiaba" />
-  <meta property="og:description" content="Encontre os diversos apartamentos em todos os bairros de Cuiabá que estãõ anunciados a venda." />
+  <meta property="og:description"
+    content="Encontre os diversos apartamentos em todos os bairros de Cuiabá que estãõ anunciados a venda." />
   <meta property="og:url" content="https://www.apartamentoavendacuiaba.com.br" />
   <meta property="og:image" content="" />
 
@@ -124,34 +125,35 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           <div class="col-xl-3 col-md-3 col-sm-12 search-nivel">
             <select class="form-select" name="bairro">
               <option value="" selected>Qual o melhor bairro para você?</option>
-              <?php 
+              <?php
               echo $bairroId;
-               ?>
-              
+              ?>
+
             </select>
           </div>
           <div class="col-xl-3 col-md-3 col-sm-12 search-nivel">
             <select class="form-select" name="valor">
 
-           
+
               <option value="" selected>Faixa de valor do Imóvel?</option>
-              <?php 
+              <?php
               echo $lista;
-               ?>
+              ?>
             </select>
           </div>
           <div class="col-xl-3 col-md-3 col-sm-12 search-nivel">
             <select class="form-select" name="quarto">
               <option value="" selected>Você prefere com quantos quartos?</option>
-              <?php 
+              <?php
               echo $quartos;
-               ?>
+              ?>
             </select>
           </div>
 
           <div class="col-xl-3 col-md-3 col-sm-12 search-nivel">
-            <input type="submit" name="enviar" value="Buscar Apartamento" class="btn btn-outline-success search text-center">
-              <!-- 🔎 Buscar Apartamento
+            <input type="submit" name="enviar" value="Buscar Apartamento"
+              class="btn btn-outline-success search text-center">
+            <!-- 🔎 Buscar Apartamento
             </button> -->
           </div>
         </div>
@@ -162,82 +164,127 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
     <div class="container">
       <div class="row">
 
-      <h2 class="resultados">
-        
-      <?php if (isset($_GET['enviar']) and $_GET['enviar'] == "Buscar Apartamento") {
-        
-      } else {
-# code...
-echo "Total de Resultados: " . $data['registro'] ;
+        <h2 class="resultados">
 
-      }
-      
-      ?>
-      
-    </h2>
+          <?php if (isset($_GET['enviar']) and $_GET['enviar'] == "Buscar Apartamento") {
+
+          } else {
+            # code...
+            echo "Total de Resultados: " . $data['registro'];
+
+          }
+
+          ?>
+
+        </h2>
 
         <!-- ITEM MOBILE FIRST -->
+        <div class="adsMain">
+          <!-- ITEM -->
+          <?php foreach ($data['resultados'] as $key => $value) {
+            # codigo
+          
 
-        <!-- ITEM -->
-        <?php foreach ($data['resultados'] as $key => $value) {
-          # codigo
-        
-
-          // $urlAntiga = $urlBase . "single.php?codimovel=" . $value['cod_imovel'];
-          $urlAntiga = $urlBase;
-          $tituloDeImovel = $value['titulo'];
-          $codigoImovel = $value['cod_imovel'];
-          // // echo $urlAntiga;
-          // // exemplo de URL original
-          // // $url = "http://localhost/casaavendacuiaba/single.php?codimovel=20230001";
-        
-          // http://localhost/casaavendacuiaba/single.php
-        
+            // $urlAntiga = $urlBase . "single.php?codimovel=" . $value['cod_imovel'];
+            $urlAntiga = $urlBase;
+            $tituloDeImovel = $value['titulo'];
+            $codigoImovel = $value['cod_imovel'];
+            // // echo $urlAntiga;
+            // // exemplo de URL original
+            // // $url = "http://localhost/casaavendacuiaba/single.php?codimovel=20230001";
+          
+            // http://localhost/casaavendacuiaba/single.php
+          
 
 
-          // // obter o título do imóvel e o código do imóvel do banco de dados
-          // $titulo_imovel = $value['titulo'];
-          // $codigo_imovel = $value['cod_imovel'];
-        
-          // // transformar o título em uma string URL amigável
-          // $titulo_amigavel = strtolower($titulo_imovel);
-          // $titulo_amigavel = preg_replace('/[^a-zA-Z0-9]/', '-', $titulo_amigavel);
-          // $titulo_amigavel = trim($titulo_amigavel, '-');
-        
-          // // criar a nova URL amigável
-          // $nova_url = $url . $titulo_amigavel . "-" . $codigo_imovel;
-        
-          // // exibir a nova URL
-          // echo $nova_url;
-        
-          $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel);
-       
-          ?>
-          <div class="col-md-8 offset-md-2 imovel">
-            <!-- <a href="single.php?codimovel=aqui vai o php" target="_blank"> -->
-            <a href="<?php echo $imovelUrl; ?>" target="_blank">
-              <div class="col-sm-4 imovel-img-l">
-                <img src="<?php echo "app/" . $value['url']; ?>" class="img-fluid img-imovel" alt="" />
+            // // obter o título do imóvel e o código do imóvel do banco de dados
+            // $titulo_imovel = $value['titulo'];
+            // $codigo_imovel = $value['cod_imovel'];
+          
+            // // transformar o título em uma string URL amigável
+            // $titulo_amigavel = strtolower($titulo_imovel);
+            // $titulo_amigavel = preg_replace('/[^a-zA-Z0-9]/', '-', $titulo_amigavel);
+            // $titulo_amigavel = trim($titulo_amigavel, '-');
+          
+            // // criar a nova URL amigável
+            // $nova_url = $url . $titulo_amigavel . "-" . $codigo_imovel;
+          
+            // // exibir a nova URL
+            // echo $nova_url;
+          
+            $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel);
+
+            ?>
+
+
+
+            <div class="adsMainArea my-4">
+              <!-- dividido entre imagem, titulo e preço -->
+              <!-- <a href="<?php echo $imovelUrl; ?>" target="_blank"> -->
+
+              <div class="adsImg">
+                <img class="img-fluid img-responsive img-imovel" src="<?php echo "app/" . $value['url']; ?>">
               </div>
-              <div class="col-sm-8 imovel-img-r">
-                <div class="tituloepreco">
-                  <div class="col-8 col-sm-12 tituloimovel">
+
+              <div class="adsCenter">
+                <div class="adsTituloArea">
+                  <div class="adsTitulo">
                     <h1>
                       <?php echo $value['titulo']; ?>
                     </h1>
                   </div>
-                  <div class="col-4 col-sm-12 precoimovel">
-                    <h2>
-                      <?php
-                      
-                      $valorImovel = $value['valor'];
-                      $valorImovelMostrar = $valorImovel / 1;
-                      $valorImovelFormatado = number_format($valorImovelMostrar,2,",",".");
-                      echo $valorImovelFormatado;
-                      
-                      ?>
-                    </h2>
+                  <div class="adsComponentes">
+                    <ul>
+                      <li><img src="imagem/quarto.svg" /></li>
+                      <li>
+                        <?php echo $value['quartos']; ?>
+                      </li>
+                      <li><img src="imagem/area.svg" /></li>
+                      <li>
+                        <?php echo $value['area_construida'] . "m²"; ?>
+                      </li>
+                      <li><img src="imagem/carro.svg" /></li>
+                      <li>
+                        <?php echo $value['garagem']; ?>
+                      </li>
+                      <li><img src="imagem/banheiro.svg" /></li>
+                      <li>
+                        <?php echo $value['garagem']; ?>
+                      </li>
+                    </ul>
+
+
                   </div>
+                  <div class="adsLocalizacao">
+                    <ul>
+                      <li><img src="imagem/local.svg" /></li>
+                      <li>
+                        <?php $nomeBairro = $db->buscarBairroPorId($value['id_bairro']);
+                        echo $nomeBairro['nome'];
+                        ?>
+                      </li>
+                      <li> | Postado em:
+                        <?php
+                        $timestamp = strtotime($value['incluida_em']);
+                        $data_formatada = date("d/m/Y", $timestamp);
+                        echo $data_formatada;
+                        ?>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="adsPreco">
+                <div class="AdsPrecoValor text-center">R$
+                  <?php
+
+                  $valorImovel = $value['valor'];
+                  $valorImovelMostrar = $valorImovel / 1;
+                  $valorImovelFormatado = number_format($valorImovelMostrar, 2, ",", ".");
+                  echo $valorImovelFormatado;
+
+                  ?>
                 </div>
 
                 <div class="imovel-itens">
@@ -267,23 +314,21 @@ echo "Total de Resultados: " . $data['registro'] ;
                         <path fill="currentColor" fill-rule="evenodd"
                           d="M17.044 19.64a30.885 30.885 0 01-4.218 3.697c-.193.138-.332.235-.41.287a.75.75 0 01-.832 0 14.543 14.543 0 01-.41-.287 30.885 30.885 0 01-4.219-3.696C4.025 16.546 2.25 13.294 2.25 10 2.25 4.615 6.615.25 12 .25s9.75 4.365 9.75 9.75c0 3.294-1.774 6.546-4.706 9.64zm-4.105 1.726a29.402 29.402 0 003.017-2.757c2.693-2.843 4.294-5.778 4.294-8.609a8.25 8.25 0 00-16.5 0c0 2.83 1.601 5.766 4.294 8.61A29.402 29.402 0 0012 22.082c.285-.207.6-.447.94-.717zM12 13.75a3.75 3.75 0 110-7.5 3.75 3.75 0 010 7.5zm0-1.5a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z">
                         </path>
-                      </svg> Bairro: <?php $idBbairro =  $db->buscarBairroPorId($value['id_bairro']);
-                      
-                      echo $idBbairro['nome']; 
-                      ?></li>
+                      </svg> Bairro: <?php echo $value['id_bairro']; ?></li>
 
                   </ul>
 
                 </div>
 
-                <!-- <div class="precoImovelBtn btn btn-outline-success">Ver imóvel</div> -->
               </div>
-            </a>
-          </div>
 
-        <?php } ?>
+            </div>
 
 
+
+          <?php } ?>
+
+        </div>
       </div>
 
     </div>

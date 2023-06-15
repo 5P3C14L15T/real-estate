@@ -26,43 +26,43 @@ body {
   margin: 0 auto;
 }
 
-.menu{
-    padding: 10px;
-    background: rgb(244, 244, 244);
-    border-bottom: 5px solid rgb(237, 237, 237);
+.menu {
+  padding: 10px;
+  background: rgb(244, 244, 244);
+  border-bottom: 5px solid rgb(237, 237, 237);
 }
 
-.filter-main-search{
-    background: rgb(248, 248, 248);
-    padding: 10px;
-    margin: 10px 0;
+.filter-main-search {
+  background: rgb(248, 248, 248);
+  padding: 10px;
+  margin: 10px 0;
 }
 
-.filter-main-search select{
-    font-size: 0.8em !important;
-    font-family: 'Open Sans';
-    font-weight: 400;
-    min-height: 50px !important;
+.filter-main-search select {
+  font-size: 0.8em !important;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  min-height: 50px !important;
 }
 
-.search-nivel{
-    margin: 2px 0 !important;
- 
+.search-nivel {
+  margin: 2px 0 !important;
+
 }
 
 .search {
-    width: 100%;
-    text-align: left !important;
-    min-height: 50px !important;
-    font-size: 1em !important;
-    font-family: 'Open Sans';
+  width: 100%;
+  text-align: left !important;
+  min-height: 50px !important;
+  font-size: 1em !important;
+  font-family: 'Open Sans';
 }
 
-.logo{
-    text-align: center;
-    width: 70%;
-    margin: 0 auto;
-    
+.logo {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+
 }
 
 .imovel-main {
@@ -101,8 +101,8 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   text-align: left !important;
- 
-  
+
+
   border-radius: 5px 0 0 5px !important;
 }
 
@@ -113,7 +113,7 @@ body {
 }
 
 .imovel-img-l {
-  width: 15%!important;
+  width: 15% !important;
   border-radius: 3px 0 0 3px !important;
   /* object-fit: fill !important; */
   margin: 0 !important;
@@ -122,13 +122,14 @@ body {
   object-fit: fill !important;
   /* background: red !important; */
 }
+
 .imovel-img-r {
   width: 85% !important;
   float: right;
   margin: 0 !important;
   padding: 0 !important;
   /* background: red; */
- 
+
 }
 
 .tituloepreco {
@@ -142,23 +143,25 @@ body {
   /* background: red; */
   float: left;
   /* background: rgb(86, 148, 210); */
-  
+
 }
 
-.tituloimovel h1{
+.tituloimovel h1 {
   font-family: 'Nunito';
-  font-size: 1.7em;
+  font-size: 1em;
   font-weight: 700;
   margin-left: 5px;
   margin-top: 5px;
   color: rgb(59, 57, 57);
+  /* background: red; */
+  height: 70px;
 }
 
 .precoimovel {
   /* background: greenyellow; */
   float: left;
   text-align: right;
-  width:100%;
+  width: 100%;
   padding-right: 5px;
   padding-top: 5px;
 }
@@ -168,7 +171,7 @@ body {
   color: rgb(71, 71, 71);
   font-family: 'Nunito';
   font-weight: 300;
- 
+
 
 }
 
@@ -183,6 +186,23 @@ body {
   font-weight: 300;
 }
 
+.imovel-itens .iconscondominio,
+.imovel-itens .bairro {
+  /* background-color: red; */
+  font-size: 1em !important;
+  display: flex;
+
+  line-height: 17px !important;
+
+}
+
+.bairrinho {
+  /* background-color: #426c42; */
+  display: flex;
+
+
+}
+
 .cidade-visualizacao {
   /* background: rgb(143, 39, 96); */
   /* float: left; */
@@ -190,7 +210,7 @@ body {
   height: 70px;
   display: flex;
   align-items: end;
- 
+
 }
 
 .cid-visu-l {
@@ -201,7 +221,7 @@ body {
   font-weight: 300;
   color: rgb(47, 47, 47);
 
-  
+
 }
 
 .cid-visu-r {
@@ -251,18 +271,18 @@ footer {
 /* media queries */
 
 @media (min-width: 320px) {
-  
+
   .main-casas {
     padding: 0px !important;
     margin: 0 auto !important;
     /* background: rgb(37, 175, 46); */
   }
 
-  body{
+  body {
     /* background: red !important; */
     margin: 0 !important;
     padding: 0 !important;
-  
+
   }
 
   .tituloimovel {
@@ -272,11 +292,11 @@ footer {
     /* background: red; */
     margin: 0;
     padding: 0;
-    
+
   }
 
   .tituloimovel h1 {
-    font-size: 1.1em !important;
+    font-size: 1em !important;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -298,6 +318,7 @@ footer {
     width: 96% !important;
     padding: 10px;
   }
+
   .img-imovel {
     /* max-width: 110px !important; */
     border-radius: 3px 0 0 3px !important;
@@ -310,12 +331,13 @@ footer {
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
+
   .imovel-img-r {
     width: 60% !important;
     float: right;
   }
 
-  .precoimovel{
+  .precoimovel {
     /* font-size: 0.8em !important; */
     color: rgb(71, 71, 71);
     font-family: 'Nunito';
@@ -327,7 +349,8 @@ footer {
     text-align: left;
     /* float: left !important; */
   }
-  .precoimovel h2{
+
+  .precoimovel h2 {
     font-size: 1em !important;
     color: rgb(92, 96, 91);
     font-family: 'Nunito';
@@ -356,13 +379,13 @@ footer {
     list-style: none;
     padding: 0 10px 0 0 !important;
   }
- 
+
   .cid-visu-bairro {
     color: #333;
     font-family: 'Nunito';
     font-weight: 400;
     background: #497c49;
-    
+
   }
 
   .precoImovelBtn {
@@ -378,7 +401,7 @@ footer {
     margin-bottom: 4px !important;
   }
 
-  .bairro{
+  .bairro {
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -393,7 +416,7 @@ footer {
     /* background: rgb(37, 175, 46); */
   }
 
-  body{
+  body {
     /* background: rgb(68, 224, 97) !important; */
     margin: 0 !important;
     padding: 0 !important;
@@ -406,11 +429,11 @@ footer {
     /* background: red; */
     margin: 0;
     padding: 0;
-    
+
   }
 
   .tituloimovel h1 {
-    font-size: 1.3em !important;
+    font-size: 1em !important;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -433,6 +456,7 @@ footer {
     width: 96% !important;
     padding: 10px;
   }
+
   .img-imovel {
     /* max-width: 110px !important; */
     border-radius: 3px 0 0 3px !important;
@@ -445,12 +469,13 @@ footer {
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
+
   .imovel-img-r {
     width: 60% !important;
     float: right;
   }
 
-  .precoimovel{
+  .precoimovel {
     /* font-size: 0.8em !important; */
     color: rgb(71, 71, 71);
     font-family: 'Nunito';
@@ -462,9 +487,10 @@ footer {
     text-align: left;
     /* float: left !important; */
   }
-  .precoimovel h2{
-    font-size: 1.2em !important;
-  color: rgb(92, 96, 91);
+
+  .precoimovel h2 {
+    font-size: 1em !important;
+    color: rgb(92, 96, 91);
     font-family: 'Nunito';
     font-weight: 400;
     /* float: left !important; */
@@ -492,15 +518,17 @@ footer {
     list-style: none;
     padding-right: 10px;
   }
+
   .imovel-itens ul li {
     font-size: 1em !important;
   }
+
   .cid-visu-bairro {
     color: #333;
     font-family: 'Nunito';
     font-weight: 400;
     background: #497c49;
-    
+
   }
 
   .precoImovelBtn {
@@ -514,6 +542,7 @@ footer {
     margin-top: 5px !important;
   }
 }
+
 @media (min-width: 425px) {
   .main-casas {
     padding: 0px !important;
@@ -521,7 +550,7 @@ footer {
     /* background: rgb(37, 175, 46); */
   }
 
-  body{
+  body {
     /* background: rgb(68, 224, 97) !important; */
     margin: 0 !important;
     padding: 0 !important;
@@ -534,11 +563,11 @@ footer {
     /* background: red; */
     margin: 0;
     padding: 0;
-    
+
   }
 
   .tituloimovel h1 {
-    font-size: 1.4em !important;
+    font-size: 1em !important;
     margin: 0;
     padding: 0;
     text-align: left;
@@ -547,7 +576,7 @@ footer {
     /* background: #5ea65e; */
     font-family: "NUNITO";
     font-weight: 500;
-   color: rgb(92, 96, 91);
+    color: rgb(92, 96, 91);
 
   }
 
@@ -560,6 +589,7 @@ footer {
     width: 96% !important;
     padding: 10px;
   }
+
   .img-imovel {
     /* max-width: 110px !important; */
     border-radius: 3px 0 0 3px !important;
@@ -572,12 +602,13 @@ footer {
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
+
   .imovel-img-r {
     width: 60% !important;
     float: right;
   }
 
-  .precoimovel{
+  .precoimovel {
     /* font-size: 0.8em !important; */
     color: rgb(71, 71, 71);
     font-family: 'Nunito';
@@ -589,8 +620,9 @@ footer {
     text-align: left;
     /* float: left !important; */
   }
-  .precoimovel h2{
-    font-size: 1.2em !important;
+
+  .precoimovel h2 {
+    font-size: 1em !important;
     color: rgb(92, 96, 91);
     font-family: 'Nunito';
     font-weight: 400;
@@ -619,15 +651,17 @@ footer {
     list-style: none;
     padding-right: 10px;
   }
+
   .imovel-itens ul li {
     font-size: 1em !important;
   }
+
   .cid-visu-bairro {
     color: #333;
     font-family: 'Nunito';
     font-weight: 400;
     background: #497c49;
-    
+
   }
 
   .precoImovelBtn {
@@ -641,6 +675,7 @@ footer {
     margin-top: 4px !important;
   }
 }
+
 @media (min-width: 768px) {
   .main-casas {
     padding: 0px !important;
@@ -648,7 +683,7 @@ footer {
     /* background: rgb(37, 175, 46); */
   }
 
-  body{
+  body {
     /* background: rgb(68, 224, 97) !important; */
     margin: 0 !important;
     padding: 0 !important;
@@ -661,11 +696,11 @@ footer {
     /* background: red; */
     margin: 0;
     padding: 0;
-    
+
   }
 
   .tituloimovel h1 {
-    font-size: 2em !important;
+    font-size: 1em !important;
     margin: 0;
     margin-bottom: 10px !important;
     padding: 0;
@@ -682,9 +717,10 @@ footer {
 
 
   .imovel {
- margin: 25px auto !important;
- /* margin-bottom: 20px !important; */
+    margin: 25px auto !important;
+    /* margin-bottom: 20px !important; */
   }
+
   .img-imovel {
     /* max-width: 110px !important; */
     border-radius: 3px 0 0 3px !important;
@@ -697,12 +733,13 @@ footer {
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
+
   .imovel-img-r {
     width: 60% !important;
     float: right;
   }
 
-  .precoimovel{
+  .precoimovel {
     /* font-size: 0.8em !important; */
     color: rgb(71, 71, 71);
     font-family: 'Nunito';
@@ -714,8 +751,9 @@ footer {
     text-align: left;
     /* float: left !important; */
   }
-  .precoimovel h2{
-    font-size: 2em !important;
+
+  .precoimovel h2 {
+    font-size: 1em !important;
     color: rgb(92, 96, 91);
     font-family: 'Nunito';
     font-weight: 400;
@@ -744,21 +782,24 @@ footer {
     list-style: none;
     padding-right: 10px;
   }
+
   .imovel-itens ul li {
     font-size: 1.7em !important;
     margin: 20px 0 10px 0 !important;
   }
-  .imovel-itens ul li svg{
+
+  .imovel-itens ul li svg {
     font-size: 1.4em !important;
     width: 24px !important;
     height: 24px !important;
   }
+
   .cid-visu-bairro {
     color: #333;
     font-family: 'Nunito';
     font-weight: 400;
     background: #497c49;
-    
+
   }
 
   .precoImovelBtn {
@@ -772,6 +813,7 @@ footer {
     margin-top: 4px !important;
   }
 }
+
 @media (min-width: 1024px) {
   .main-casas {
     padding: 0px !important;
@@ -779,7 +821,7 @@ footer {
     /* background: rgb(37, 175, 46); */
   }
 
-  body{
+  body {
     /* background: rgb(178, 37, 138) !important; */
     margin: 0 !important;
     padding: 0 !important;
@@ -792,11 +834,11 @@ footer {
     /* background: red; */
     margin: 0;
     padding: 0;
-    
+
   }
 
   .tituloimovel h1 {
-    font-size: 1.3em !important;
+    font-size: 1em !important;
     margin: 0;
     margin-bottom: 1px !important;
     padding: 0;
@@ -813,10 +855,11 @@ footer {
 
 
   .imovel {
- margin: 25px auto !important;
- /* margin-bottom: 20px !important; */
- width: 70% !important;
+    margin: 25px auto !important;
+    /* margin-bottom: 20px !important; */
+    width: 70% !important;
   }
+
   .img-imovel {
     /* max-width: 110px !important; */
     border-radius: 3px 0 0 3px !important;
@@ -829,12 +872,13 @@ footer {
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
+
   .imovel-img-r {
     width: 70% !important;
     float: right;
   }
 
-  .precoimovel{
+  .precoimovel {
     /* font-size: 0.8em !important; */
     color: rgb(71, 71, 71);
     font-family: 'Nunito';
@@ -846,8 +890,9 @@ footer {
     text-align: left;
     /* float: left !important; */
   }
-  .precoimovel h2{
-    font-size: 1.4em !important;
+
+  .precoimovel h2 {
+    font-size: 1em !important;
     color: rgb(92, 96, 91);
     font-family: 'Nunito';
     font-weight: 400;
@@ -876,21 +921,24 @@ footer {
     list-style: none;
     padding-right: 10px;
   }
+
   .imovel-itens ul li {
     font-size: 1.5em !important;
     margin: 10px 0 !important;
   }
+
   .imovel-itens ul li svg {
     font-size: 1.5em !important;
     width: 30px !important;
     height: 30px !important;
   }
+
   .cid-visu-bairro {
     color: #333;
     font-family: 'Nunito';
     font-weight: 400;
     background: #497c49;
-    
+
   }
 
   .precoImovelBtn {
@@ -904,6 +952,7 @@ footer {
     margin-top: 2px !important;
   }
 }
+
 @media (min-width: 1280px) {
   .main-casas {
     padding: 0px !important;
@@ -911,7 +960,7 @@ footer {
     /* background: rgb(37, 175, 46); */
   }
 
-  body{
+  body {
     /* background: rgb(178, 37, 138) !important; */
     margin: 0 !important;
     padding: 0 !important;
@@ -924,11 +973,11 @@ footer {
     /* background: red; */
     margin: 0;
     padding: 0;
-    
+
   }
 
   .tituloimovel h1 {
-    font-size: 1.2em !important;
+    font-size: 1em !important;
     margin: 0;
     margin-bottom: 10px !important;
     padding: 0;
@@ -945,10 +994,11 @@ footer {
 
 
   .imovel {
- margin: 25px auto !important;
- /* margin-bottom: 20px !important; */
- width: 70% !important;
+    margin: 25px auto !important;
+    /* margin-bottom: 20px !important; */
+    width: 70% !important;
   }
+
   .img-imovel {
     /* max-width: 110px !important; */
     border-radius: 3px 0 0 3px !important;
@@ -961,12 +1011,13 @@ footer {
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
+
   .imovel-img-r {
     width: 70% !important;
     float: right;
   }
 
-  .precoimovel{
+  .precoimovel {
     /* font-size: 0.8em !important; */
     color: rgb(71, 71, 71);
     font-family: 'Nunito';
@@ -978,8 +1029,9 @@ footer {
     text-align: left;
     /* float: left !important; */
   }
-  .precoimovel h2{
-    font-size: 1.4em !important;
+
+  .precoimovel h2 {
+    font-size: 1em !important;
     color: rgb(92, 96, 91);
     font-family: 'Nunito';
     font-weight: 400;
@@ -1008,21 +1060,24 @@ footer {
     list-style: none;
     padding-right: 10px;
   }
+
   .imovel-itens ul li {
     font-size: 1.7em !important;
     margin: 15px 0 !important;
   }
+
   .imovel-itens ul li svg {
     font-size: 1.5em !important;
     width: 30px !important;
     height: 30px !important;
   }
+
   .cid-visu-bairro {
     color: #333;
     font-family: 'Nunito';
     font-weight: 400;
     background: #497c49;
-    
+
   }
 
   .precoImovelBtn {
@@ -1036,6 +1091,7 @@ footer {
     margin-top: 2px !important;
   }
 }
+
 @media (min-width: 1440px) {
   .main-casas {
     padding: 0px !important;
@@ -1043,7 +1099,7 @@ footer {
     /* background: rgb(37, 175, 46); */
   }
 
-  body{
+  body {
     /* background: rgb(178, 37, 138) !important; */
     margin: 0 !important;
     padding: 0 !important;
@@ -1056,11 +1112,11 @@ footer {
     /* background: red; */
     margin: 0;
     padding: 0;
-    
+
   }
 
   .tituloimovel h1 {
-    font-size: 1.3em !important;
+    font-size: 1em !important;
     margin: 0;
     margin-bottom: 1px !important;
     padding: 0;
@@ -1077,10 +1133,11 @@ footer {
 
 
   .imovel {
- margin: 25px auto !important;
- /* margin-bottom: 20px !important; */
- width: 60% !important;
+    margin: 25px auto !important;
+    /* margin-bottom: 20px !important; */
+    width: 60% !important;
   }
+
   .img-imovel {
     /* max-width: 110px !important; */
     border-radius: 3px 0 0 3px !important;
@@ -1093,12 +1150,13 @@ footer {
     border-radius: 3px 0 0 3px !important;
     /* object-fit: fill !important; */
   }
+
   .imovel-img-r {
     width: 80% !important;
     float: right;
   }
 
-  .precoimovel{
+  .precoimovel {
     /* font-size: 0.8em !important; */
     color: rgb(71, 71, 71);
     font-family: 'Nunito';
@@ -1110,8 +1168,9 @@ footer {
     text-align: left;
     /* float: left !important; */
   }
-  .precoimovel h2{
-    font-size: 1.3em !important;
+
+  .precoimovel h2 {
+    font-size: 1em !important;
     color: rgb(92, 96, 91);
     font-family: 'Nunito';
     font-weight: 400;
@@ -1140,21 +1199,24 @@ footer {
     list-style: none;
     padding-right: 10px;
   }
+
   .imovel-itens ul li {
     font-size: 1.5em !important;
     margin: 5px 0 !important;
   }
+
   .imovel-itens ul li svg {
     font-size: 1.5em !important;
     width: 24px !important;
     height: 24px !important;
   }
+
   .cid-visu-bairro {
     color: #333;
     font-family: 'Nunito';
     font-weight: 400;
     background: #497c49;
-    
+
   }
 
   .precoImovelBtn {
@@ -1175,10 +1237,10 @@ footer {
 
 /* página de login */
 
-.login-form  {
+.login-form {
   /* margin-top: 30px; */
   background: rgb(245, 245, 245);
-  border: 1px solid rgb(210, 210, 210) ;
+  border: 1px solid rgb(210, 210, 210);
   padding: 20px;
 }
 
@@ -1204,7 +1266,7 @@ footer {
 .signup-form {
   background: red;
   background: rgb(245, 245, 245);
-  border: 1px solid rgb(210, 210, 210) ;
+  border: 1px solid rgb(210, 210, 210);
   padding: 20px;
 }
 
@@ -1212,19 +1274,19 @@ footer {
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); */
 
 
-.loginForm{
+.loginForm {
   position: relative;
   max-width: 850px;
   width: 100%;
   background: #fff;
   padding: 40px 30px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   perspective: 2700px;
   margin: 40px auto;
 
 }
 
-.loginForm .cover{
+.loginForm .cover {
   position: absolute;
   top: 0;
   left: 50%;
@@ -1235,23 +1297,27 @@ footer {
   transform-origin: left;
   transform-style: preserve-3d;
 }
-.loginForm #flip:checked ~ .cover{
+
+.loginForm #flip:checked~.cover {
   transform: rotateY(-180deg);
 }
- .loginForm .cover .front,
- .loginForm .cover .back{
+
+.loginForm .cover .front,
+.loginForm .cover .back {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
 }
-.cover .back{
+
+.cover .back {
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
+
 .loginForm .cover::before,
-.loginForm .cover::after{
+.loginForm .cover::after {
   content: '';
   position: absolute;
   height: 100%;
@@ -1260,19 +1326,22 @@ footer {
   opacity: 0.5;
   z-index: 12;
 }
-.loginForm .cover::after{
+
+.loginForm .cover::after {
   opacity: 0.3;
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
-.loginForm .cover img{
+
+.loginForm .cover img {
   position: absolute;
   height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: 10;
 }
-.loginForm .cover .text{
+
+.loginForm .cover .text {
   position: absolute;
   z-index: 130;
   height: 100%;
@@ -1282,38 +1351,45 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
 .cover .text .text-1,
-.cover .text .text-2{
+.cover .text .text-2 {
   font-size: 26px;
   font-weight: 600;
   color: #fff;
   text-align: center;
 }
-.cover .text .text-2{
+
+.cover .text .text-2 {
   font-size: 15px;
   font-weight: 500;
 }
-.loginForm .forms{
+
+.loginForm .forms {
   height: 100%;
   width: 100%;
   background: #fff;
 }
-.loginForm .form-content{
+
+.loginForm .form-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .form-content .login-form,
-.form-content .signup-form{
+.form-content .signup-form {
   width: calc(100% / 2 - 25px);
 }
-.forms .form-content .title{
+
+.forms .form-content .title {
   position: relative;
   font-size: 24px;
   font-weight: 500;
   color: #333;
 }
-.forms .form-content .title:before{
+
+.forms .form-content .title:before {
   content: '';
   position: absolute;
   left: 0;
@@ -1322,13 +1398,16 @@ footer {
   width: 25px;
   background: #7381bc;
 }
-.forms .signup-form  .title:before{
+
+.forms .signup-form .title:before {
   width: 20px;
 }
-.forms .form-content .input-boxes{
+
+.forms .form-content .input-boxes {
   margin-top: 30px;
 }
-.forms .form-content .input-box{
+
+.forms .form-content .input-box {
   display: flex;
   align-items: center;
   height: 50px;
@@ -1336,7 +1415,8 @@ footer {
   margin: 10px 0;
   position: relative;
 }
-.form-content .input-box input{
+
+.form-content .input-box input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -1344,34 +1424,41 @@ footer {
   padding: 0 30px;
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 2px solid rgba(0,0,0,0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
+
 .form-content .input-box input:focus,
-.form-content .input-box input:valid{
+.form-content .input-box input:valid {
   border-color: #426c42;
 }
-.form-content .input-box i{
+
+.form-content .input-box i {
   position: absolute;
   color: #7381bc;
   font-size: 17px;
 }
-.forms .form-content .text{
+
+.forms .form-content .text {
   font-size: 14px;
   font-weight: 500;
   color: #333;
 }
-.forms .form-content .text a{
+
+.forms .form-content .text a {
   text-decoration: none;
 }
-.forms .form-content .text a:hover{
+
+.forms .form-content .text a:hover {
   text-decoration: underline;
 }
-.forms .form-content .button{
+
+.forms .form-content .button {
   color: #fff;
   margin-top: 40px;
 }
-.forms .form-content .button input{
+
+.forms .form-content .button input {
   color: #fff;
   background: #5ea65e;
   border-radius: 6px;
@@ -1379,44 +1466,55 @@ footer {
   cursor: pointer;
   transition: all 0.4s ease;
 }
-.forms .form-content .button input:hover{
+
+.forms .form-content .button input:hover {
   background: #497c49;
 }
-.forms .form-content label{
+
+.forms .form-content label {
   color: #7381bc;
   cursor: pointer;
 }
-.forms .form-content label:hover{
+
+.forms .form-content label:hover {
   text-decoration: underline;
 }
+
 .forms .form-content .login-text,
-.forms .form-content .sign-up-text{
+.forms .form-content .sign-up-text {
   text-align: center;
   margin-top: 25px;
 }
-.loginForm #flip{
+
+.loginForm #flip {
   display: none;
 }
+
 @media (max-width: 730px) {
-  .loginForm .cover{
+  .loginForm .cover {
     display: none;
   }
+
   .form-content .login-form,
-  .form-content .signup-form{
+  .form-content .signup-form {
     width: 100%;
   }
-  .form-content .signup-form{
+
+  .form-content .signup-form {
     display: none;
   }
-  .loginForm #flip:checked ~ .forms .signup-form{
+
+  .loginForm #flip:checked~.forms .signup-form {
     display: block;
   }
-  .loginForm #flip:checked ~ .forms .login-form{
+
+  .loginForm #flip:checked~.forms .login-form {
     display: none;
   }
 }
 
-.fa, .fas {
+.fa,
+.fas {
   padding-left: 10px;
 }
 
@@ -1428,7 +1526,8 @@ footer {
   margin-top: 20px;
 }
 
-.page-link, .pagina-atual {
+.page-link,
+.pagina-atual {
   display: inline-block;
   padding: 5px 10px;
   margin: 0 5px;
@@ -1441,13 +1540,15 @@ footer {
 
 }
 
-.page-link:hover, .pagina-atual:hover  {
+.page-link:hover,
+.pagina-atual:hover {
   background-color: #333 !important;
   color: #fff !important;
 }
 
-.page-link.active, .pagina-atual.active {
-  background-color: #c9c9c9 !important ;
+.page-link.active,
+.pagina-atual.active {
+  background-color: #c9c9c9 !important;
   color: #ffffff !important;
 }
 
@@ -1458,3 +1559,148 @@ footer {
 }
 
 /* login novo */
+
+
+/* ads */
+
+.adsMain {
+  /* background-color: #5ea65e !important; */
+  width: 100% !important;
+  margin: 0 auto !important;
+
+}
+
+.adsMainArea {
+  width: 70%;
+  background-color: #ffffff;
+  margin: 0 auto;
+  display: flex;
+  padding: 5px;
+  border: 1px solid #c2c2c2;
+  border-radius: 10px;
+}
+
+.adsMainArea a{
+  text-decoration: none;
+  width: 100%;
+
+}
+
+.adsCenter {
+  width: 55%;
+  /* background-color: #cba62c; */
+  margin: 0;
+  padding: 5px;
+  /* display: grid; */
+  position: relative;
+  /* min-height: 250px; */
+
+}
+
+.adsImg {
+  width: 20%;
+  padding: 2px;
+  /* background-color: #aaaaaa; */
+}
+
+.adsImg img {
+  width: 100%;
+  padding: 5px;
+  margin: 0 auto;
+  border-radius: 10px !important;
+  /* background-color: #aaaaaa; */
+}
+
+.adsTituloArea {
+  width: 100%;
+
+  /* background-color: red; */
+}
+
+.adsPreco {
+  width: 25%;
+  text-align: right;
+  font-size: 1.2em;
+  font-family: 'Nunito';
+  color: #1f1f1f;
+  padding: 10px;
+  /* background-color: pink; */
+  position: relative;
+  font-weight: 700;
+}
+
+.adsTitulo h1 {
+  font-size: 1.5em;
+  font-family: 'Nunito';
+  color: #444444;
+  height: 60px;
+  /* background-color: red; */
+}
+
+.adsComponentes {
+  /* background-color: #426c42; */
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+
+}
+
+.adsLocalizacao {
+  /* background-color: #368336; */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+
+}
+
+.botao {
+  margin-top: 20px;
+ width: 100% !important;
+}
+
+.adsComponentes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.adsComponentes ul li {
+  display: inline;
+  padding: 0;
+  font-family: 'Nunito';
+  color: #868686;
+}
+
+.adsLocalizacao ul {
+  list-style: none;
+  padding: 0;
+}
+
+.adsLocalizacao ul li {
+  display: inline;
+  padding: 0;
+  font-family: 'Nunito';
+  color: #868686;
+}
+
+.adsComponentes ul li img {
+  width: 25px;
+}
+
+.adsLocalizacao ul li img {
+  width: 25px;
+}
+
+@media (max-width: 580px) {
+  .adsMainArea {
+    width: 98%;
+    /* background-color: #7381bc; */
+    margin: 0 auto;
+    display: flex;
+    padding: 5px;
+    border: 1px solid #c2c2c2;
+    border-radius: 10px;
+  }
+}
