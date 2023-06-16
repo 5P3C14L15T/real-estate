@@ -1,5 +1,8 @@
 <?php
 
+require_once('config/DB.php');
+
+$db = new DB;
 
 if (isset($_POST['enviar'])) {
 
@@ -15,6 +18,17 @@ $quartos = rtrim($data['quarto']);
 $area = rtrim($data['area']) . "m²";
 // echo $titulo;
 
+// insert lead
+
+$nomeLead = $_POST['nomeLead'];
+$whatsappLead = $_POST['whatsappLead'];
+$urlLead = $data['url'];
+$valorLead = $data['valor'];
+$bairroLead = $data['bairroNome'];
+$quartosLead = $data['quarto'];
+
+$db->inserirLead($nomeLead,$whatsappLead,$urlLead,$valorLead,$bairroLead,$quartosLead);
+
     $urlEncaminha = "https://api.whatsapp.com/send?phone=55".$whatsapp."&text=";
     $urlEncaminha .= "🏢 *" . $titulo . "* %0A%0A";
     $urlEncaminha .= "```Valor: R$" . number_format($data['valor'],2,',','.') . "```%0A";
@@ -25,7 +39,7 @@ $area = rtrim($data['area']) . "m²";
 
     echo $urlEncaminha;
 
-    header("Location: $urlEncaminha");
+    // header("Location: $urlEncaminha");
 
 
 

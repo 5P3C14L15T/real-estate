@@ -391,10 +391,10 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 whatsapp</p>
 
               <legend>Seu Nome <small class="text-secondary">(insira seu nome)</small></legend>
-              <input class="form-control form-control-lg" id="nome" name="nome" type="text"
+              <input class="form-control form-control-lg" id="nome" name="nomeLead" type="text"
                 placeholder="Qual o seu nome?" required>
               <legend>Seu WhatsApp <small class="text-secondary">(preencha somente os números)</small></legend>
-              <input class="form-control form-control-lg" maxlength="15" id="telefone" name="whatsapp" type="text"
+              <input class="form-control form-control-lg" maxlength="15" id="telefone" name="whatsappLead" type="text"
                 placeholder="(65) 99999-9999" required>
               <!-- inputs data -->
 

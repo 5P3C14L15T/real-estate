@@ -1261,6 +1261,38 @@ class DB
         }
     }
 
+    public function inserirLead($nome, $whatsapp, $url, $valor, $bairro, $quartos) {
+        try {
+            // Conexão com o banco de dados
+                 
+            // Preparar a consulta de inserção
+            $query = "INSERT INTO leads (nome, whatsapp, url, valor, bairro, quartos, data) VALUES (:nome, :whatsapp, :url, :valor, :bairro, :quartos, :data)";
+            $stmt = $this->conn->prepare($query);
+            
+            // Bind dos parâmetros
+            $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
+            $stmt->bindValue(':whatsapp', $whatsapp, PDO::PARAM_STR);
+            $stmt->bindValue(':url', $url, PDO::PARAM_STR);
+            $stmt->bindValue(':valor', $valor, PDO::PARAM_STR);
+            $stmt->bindValue(':bairro', $bairro, PDO::PARAM_STR);
+            $stmt->bindValue(':quartos', $quartos, PDO::PARAM_INT);
+            $stmt->bindValue(':data', date('Y-m-d'), PDO::PARAM_STR); // Data atual
+            
+            // Executar a consulta
+            $stmt->execute();
+            
+            // Retorna o ID da última inserção
+            return $this->conn->lastInsertId();
+        } catch (PDOException $e) {
+            // Tratar erros de PDO aqui
+            // Por exemplo, lançar uma exceção personalizada ou registrar o erro em um log
+            throw new Exception("Erro ao inserir lead: " . $e->getMessage());
+        }
+    }
+    
+
+    
+
 
 
 }

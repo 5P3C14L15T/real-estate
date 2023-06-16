@@ -91,7 +91,8 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
   <link rel="icon" type="image/x-icon" href="imagem/icon.png">
   <!-- metas -->
   <meta property="og:title" content="Apartamento a Venda Cuiaba" />
-  <meta property="og:description" content="Encontre os diversos apartamentos em todos os bairros de Cuiabá que estãõ anunciados a venda." />
+  <meta property="og:description"
+    content="Encontre os diversos apartamentos em todos os bairros de Cuiabá que estãõ anunciados a venda." />
   <meta property="og:url" content="https://www.apartamentoavendacuiaba.com.br" />
   <meta property="og:image" content="" />
 
@@ -102,7 +103,8 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
   <meta property="og:image:alt" content="" />
   <!-- CSS only -->
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <title>Apartamento a Venda Cuiabá</title>
 </head>
 
@@ -149,7 +151,8 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           </div>
 
           <div class="col-xl-3 col-md-3 col-sm-12 search-nivel">
-            <input type="submit" name="enviar" value="Buscar Apartamento" class="btn btn-outline-success search text-center">
+            <input type="submit" name="enviar" value="Buscar Apartamento"
+              class="btn btn-outline-success search text-center">
             <!-- 🔎 Buscar Apartamento
             </button> -->
           </div>
@@ -178,7 +181,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           <!-- ITEM -->
           <?php foreach ($data['resultados'] as $key => $value) {
             # codigo
-
+          
 
             // $urlAntiga = $urlBase . "single.php?codimovel=" . $value['cod_imovel'];
             $urlAntiga = $urlBase;
@@ -187,29 +190,29 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
             // // echo $urlAntiga;
             // // exemplo de URL original
             // // $url = "http://localhost/casaavendacuiaba/single.php?codimovel=20230001";
-
+          
             // http://localhost/casaavendacuiaba/single.php
-
+          
 
 
             // // obter o título do imóvel e o código do imóvel do banco de dados
             // $titulo_imovel = $value['titulo'];
             // $codigo_imovel = $value['cod_imovel'];
-
+          
             // // transformar o título em uma string URL amigável
             // $titulo_amigavel = strtolower($titulo_imovel);
             // $titulo_amigavel = preg_replace('/[^a-zA-Z0-9]/', '-', $titulo_amigavel);
             // $titulo_amigavel = trim($titulo_amigavel, '-');
-
+          
             // // criar a nova URL amigável
             // $nova_url = $url . $titulo_amigavel . "-" . $codigo_imovel;
-
+          
             // // exibir a nova URL
             // echo $nova_url;
-
+          
             $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel);
 
-          ?>
+            ?>
 
 
 
@@ -286,6 +289,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
 
                       ?>
                     </div>
+                   
                   </div>
 
                 </div>
@@ -357,7 +361,9 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 
 
 </body>
