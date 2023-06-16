@@ -35,11 +35,11 @@ $db->inserirLead($nomeLead,$whatsappLead,$urlLead,$valorLead,$bairroLead,$quarto
     $urlEncaminha .= "```Bairro: " . $data['bairroNome'] . "```%0A";
     $urlEncaminha .= "```Quartos: " . $quartos . "```%0A";
     $urlEncaminha .= "```Área: " . $area . "```%0A";
-    $urlEncaminha .= "Vi esse imóvel no site: %0A". $data['url'];
+    $urlEncaminha .= "Meu nome é: *" .$nomeLead . "*, Vi esse imóvel no site: %0A". $data['url'];
 
     echo $urlEncaminha;
 
-    // header("Location: $urlEncaminha");
+    header("Location: $urlEncaminha");
 
 
 

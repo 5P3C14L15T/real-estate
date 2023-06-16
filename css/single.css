@@ -398,7 +398,7 @@ padding: 0;
 }
 
 .item i {
-  color: c
+  color:;
   margin-left: 12px !important;
   /* float: left !important; */
   /* background: green; */
@@ -494,4 +494,11 @@ padding: 0;
   font-family: 'Nunito';
   font-size: 0.9em;
   font-weight: 400;
+}
+
+/* outros imóveis */
+
+.outrosImoveis {
+  border-top: 1px solid #efefef;
+  padding-top: 30px;
 }

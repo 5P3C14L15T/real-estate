@@ -52,6 +52,13 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
   // echo "</pre>";
 }
 
+// último quatro imóveis
+
+$dataMenorViews = $db->getImoveisMenorViews();
+
+// echo "<pre>";
+// print_r($dataMenorViews);
+// echo "</pre>";
 
 
 ?>
@@ -68,8 +75,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/single.css" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/6c66823518.js" crossorigin="anonymous"></script>
 
   <title>
@@ -199,7 +205,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
 
                     <?php $i = 0;
-                    foreach ($dataImagem as $row): ?>
+                    foreach ($dataImagem as $row) : ?>
                       <?php if ($i == 0) {
                         $set_ = 'active';
                       } else {
@@ -208,16 +214,15 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                       <div class='carousel-item <?php echo $set_; ?>'>
                         <img src='<?php echo "./app/" . $row['url']; ?>' class='d-block w-100'>
                       </div>
-                      <?php $i++; endforeach ?>
+                    <?php $i++;
+                    endforeach ?>
 
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Próxima</span>
                   </button>
@@ -243,7 +248,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               </div>
 
               <?php if ($value['suite'] == "") {
-                ?>
+              ?>
 
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-bath"></i>
@@ -254,7 +259,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
               <!-- sala -->
               <?php if ($value['sala'] == 1) {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-tv"></i>
                   <p>
@@ -268,7 +273,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <!-- cozinha -->
 
               <?php if ($value['cozinha'] == 1) {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-utensil-spoon"></i>
                   <p>
@@ -281,7 +286,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <!-- lavanderia -->
 
               <?php if ($value['lavanderia'] == 1) {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-tshirt"></i>
                   <p>
@@ -294,7 +299,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <!-- sacada -->
 
               <?php if ($value['sacada'] == 1) {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-building"></i>
                   <p>
@@ -309,7 +314,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <!-- banheiro social -->
 
               <?php if ($value['banheiros'] !== "") {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-shower"></i>
                   <p>
@@ -321,7 +326,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <!-- elevador -->
 
               <?php if ($value['elevador'] == 1) {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-chevron-circle-up"></i>
                   <p>
@@ -334,7 +339,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <!-- garagem -->
 
               <?php if ($value['garagem'] !== "") {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-car"></i>
                   <p>
@@ -348,7 +353,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <!-- area de lazer -->
 
               <?php if ($value['area_lazer'] == 1) {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-swimming-pool"></i>
                   <p>
@@ -360,7 +365,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <!-- area construída -->
 
               <?php if ($value['area_construida'] !== "") {
-                ?>
+              ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-ruler-combined"></i>
                   <p>Área:
@@ -391,11 +396,9 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
                 whatsapp</p>
 
               <legend>Seu Nome <small class="text-secondary">(insira seu nome)</small></legend>
-              <input class="form-control form-control-lg" id="nome" name="nomeLead" type="text"
-                placeholder="Qual o seu nome?" required>
+              <input class="form-control form-control-lg" id="nome" name="nomeLead" type="text" placeholder="Qual o seu nome?" required>
               <legend>Seu WhatsApp <small class="text-secondary">(preencha somente os números)</small></legend>
-              <input class="form-control form-control-lg" maxlength="15" id="telefone" name="whatsappLead" type="text"
-                placeholder="(65) 99999-9999" required>
+              <input class="form-control form-control-lg" maxlength="15" id="telefone" name="whatsappLead" type="text" placeholder="(65) 99999-9999" required>
               <!-- inputs data -->
 
               <input type="hidden" name="titulo" value="<?php echo $value['titulo']; ?> ">
@@ -404,7 +407,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
               <input type="hidden" name="whatsapp" value="<?php echo $value['whatsapp']; ?> ">
               <input type="hidden" name="url" value="<?php echo $urlCompleta ?> ">
               <input type="hidden" name="quarto" value="<?php echo $value['quartos']; ?> ">
-              <input type="hidden" name="area" value="<?php echo $value['area_construida'];?> ">
+              <input type="hidden" name="area" value="<?php echo $value['area_construida']; ?> ">
 
 
 
@@ -419,8 +422,7 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
 
         <div class="info-corretor">
           <header>
-            <img src="<?php echo "app/" . $value['img']; ?>" alt="Quincy Larson's profile picture"
-              class="profile-thumbnail" />
+            <img src="<?php echo "app/" . $value['img']; ?>" alt="Quincy Larson's profile picture" class="profile-thumbnail" />
             <div class="profile-name">
               <h3>
                 <?php echo $value['nome_user'] ?>
@@ -442,28 +444,28 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
             <div class="stats">
 
               <?php if ($value['ig'] !== "") {
-                ?>
+              ?>
                 <div class="Retweets">
                   <a href="<?php echo $value['ig']; ?>" target="_new"> <i class="fa fa-instagram"></i></a>
                 </div>
               <?php } ?>
 
               <?php if ($value['fb'] !== "") {
-                ?>
+              ?>
                 <div class="Retweets">
                   <a href="<?php echo $value['fb']; ?>" target="_new"> <i class="fa fa-facebook-square"></i></a>
                 </div>
               <?php } ?>
 
               <?php if ($value['linkedin'] !== "") {
-                ?>
+              ?>
                 <div class="Retweets">
                   <a href="<?php echo $value['linkedin']; ?>" target="_new"> <i class="fab fa-linkedin"></i></a>
                 </div>
               <?php } ?>
 
               <?php if ($value['site'] !== "") {
-                ?>
+              ?>
                 <div class="Retweets">
                   <a href="<?php echo $value['site']; ?>" target="_new"> <i class="fas fa-sitemap"></i></a>
                 </div>
@@ -476,12 +478,46 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
     </div>
   </div>
 
+
+
   <div class="container">
-    <div class="row col-md-10 mx-auto">
-      <div class="col-sm-3">AQUI VAI O IMÓVEL</div>
-      <div class="col-sm-3">AQUI VAI O IMÓVEL</div>
-      <div class="col-sm-3">AQUI VAI O IMÓVEL</div>
-      <div class="col-sm-3">AQUI VAI O IMÓVEL</div>
+
+
+    <div class="row col-md-10 mx-auto outrosImoveis">
+      <div class="tituloOutrosImoveis">
+        <h1>Outros imóveis</h1>
+      </div>
+
+      <?php
+
+      foreach ($dataMenorViews as $value) {
+// var_dump($value);
+      ?>
+
+        <div class="col-sm-3 outrosImoveisCard my-2">
+          <div class="card">
+            <img src="<?php echo "app/" . $value['primeira_imagem_url']; ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $value['titulo']; ?></h5>
+              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><?php echo $value['quartos']; ?></li>
+              <li class="list-group-item"><?php echo $value['nome_bairro']; ?></li>
+              <li class="list-group-item"><?php echo $value['valor']; ?></li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class=" btn btn-success">Ver Imóvel</a>
+            </div>
+          </div>
+        </div>
+
+      <?php
+
+      }
+
+      ?>
+
     </div>
   </div>
 
@@ -495,32 +531,32 @@ foreach ($dataImagem as $keyImagem => $valueImagem) {
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
   <script>
-
     /* Máscaras ER */
     function mascara(o, f) {
       v_obj = o
       v_fun = f
       setTimeout("execmascara()", 1)
     }
+
     function execmascara() {
       v_obj.value = v_fun(v_obj.value)
     }
+
     function mtel(v) {
       v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
       v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
       v = v.replace(/(\d)(\d{4})$/, "$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
       return v;
     }
+
     function id(el) {
       return document.getElementById(el);
     }
-    window.onload = function () {
-      id('telefone').onkeyup = function () {
+    window.onload = function() {
+      id('telefone').onkeyup = function() {
         mascara(this, mtel);
       }
     }
