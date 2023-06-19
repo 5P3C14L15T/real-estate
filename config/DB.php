@@ -79,7 +79,7 @@ class DB
     }
 
 
-    public function getEmailExist($email, )
+    public function getEmailExist($email,)
     {
         $sql = "SELECT email FROM perfil WHERE email = :email";
         $stmt = $this->conn->prepare($sql);
@@ -370,18 +370,30 @@ class DB
     public function pagImoImg($pagina = 1, $registros_por_pagina = 10, $bairro = null, $valor = null, $quarto = null)
     {
         # code...
+        //     // Prepara a query SQL para contar o total de registros com os filtros aplicados
+        //     $sql_total = "SELECT COUNT(DISTINCT imovel.id_imovel) AS total_registros
+        //   FROM imovel
+        //   INNER JOIN imagem ON imovel.id_imovel = imagem.id_imovel
+        //   WHERE 1";
+
+
+        //     // Prepara a query SQL para recuperar os registros da página atual com os filtros aplicados
+        //     $sql = "SELECT imovel.*, imagem.*, MIN(imagem.id) AS id_imagem
+        //         FROM imovel
+        //         INNER JOIN imagem ON imovel.id_imovel = imagem.id_imovel
+        //         WHERE 1";
+
         // Prepara a query SQL para contar o total de registros com os filtros aplicados
         $sql_total = "SELECT COUNT(DISTINCT imovel.id_imovel) AS total_registros
-      FROM imovel
-      INNER JOIN imagem ON imovel.id_imovel = imagem.id_imovel
-      WHERE 1";
-
+FROM imovel
+INNER JOIN imagem ON imovel.id_imovel = imagem.id_imovel
+WHERE imovel.status = 1";
 
         // Prepara a query SQL para recuperar os registros da página atual com os filtros aplicados
         $sql = "SELECT imovel.*, imagem.*, MIN(imagem.id) AS id_imagem
-            FROM imovel
-            INNER JOIN imagem ON imovel.id_imovel = imagem.id_imovel
-            WHERE 1";
+FROM imovel
+INNER JOIN imagem ON imovel.id_imovel = imagem.id_imovel
+WHERE imovel.status = 1";
 
         // Adiciona as condições de busca se os filtros não forem nulos
         if ($bairro !== null) {
@@ -1405,6 +1417,26 @@ class DB
         return rmdir($dir);
     }
 
-
-
+    public function atualizarStatusImovel($idImovel, $status) {
+        try {
+            $sql = "UPDATE imovel SET status = :status WHERE id_imovel = :idImovel";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':status', $status, PDO::PARAM_INT);
+            $stmt->bindParam(':idImovel', $idImovel, PDO::PARAM_INT);
+            $stmt->execute();
+            
+            // Verifica se ocorreu algum erro durante a execução da consulta
+            var_dump($stmt->errorInfo());
+    
+            if ($stmt->rowCount() > 0) {
+                return 'Status do imóvel atualizado com sucesso.';
+            } else {
+                return 'Imóvel não encontrado ou status não alterado.';
+            }
+        } catch (PDOException $e) {
+            return 'Erro ao atualizar o status do imóvel: ' . $e->getMessage();
+        }
+    }
+    
 }
+

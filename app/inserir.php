@@ -61,7 +61,7 @@ if(isset($_REQUEST['condominio'])) {
 }
 
 // $iptu           = $_REQUEST['iptu'];
-if(isset($_REQUEST['iptu'])) {
+if(!empty($_REQUEST['iptu'])) {
     $iptu         =  $_REQUEST['iptu'];
     $iptu = preg_replace("/[^0-9]/", "", $iptu);
     $iptu = $iptu / 100;

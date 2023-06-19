@@ -130,8 +130,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- CSS only -->
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/6c66823518.js" crossorigin="anonymous"></script>
   <title>Apartamento a Venda Cuiabá</title>
 </head>
@@ -159,6 +158,9 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="col-md-3 my-3">
           <a href="./logout.php" class="btn btn-secondary d-block">Sair do Dashboard</a>
         </div>
+        <div class="col-md-3 my-3">
+          <a href="" class="btn btn-warning d-block"><img class="img-fluid" width="25" src="imagem/medal.svg" >PREMIUM</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -182,39 +184,59 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <?php
 
               // exibir os resultados em uma tabela
-              
+
               // echo '<tr><th scope="row" class="text-center">ID do imóvel</th><th>Imagem</th><th>Titulo do Imóvel</th><th>Ação</th></tr>';
               foreach ($results as $row) {
 
-                
+
 
                 $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
                 $urlAntiga = $urlBase;
                 $tituloDeImovel = $row['titulo'];
                 $codigoImovel = $row['cod_imovel'];
-                
-                
+
+
                 $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel);
-            
-                
+
+                if ($row['status'] == 1) {
+                  $checked = "checked";
+                  $check = "Ativo";
+                } else {
+                  $checked = "";
+                  $check = "Desativado";
+                }
+
+
+
                 echo '<tr>';
                 echo '<td>' . $row['cod_imovel'] . '</td>';
                 // echo '<td>' . $row['id'] . '</td>';
                 echo '<td>' . $row['titulo'] . '</td>';
-                echo '<td>' . "ativado". '</td>';
+                echo '<td>';
+                
+                // Imprime o checkbox com o valor correspondente e o ID do imóvel
+    echo '<div class="form-check form-switch">';
+    echo '<input class="form-check-input" name="status" '.$checked.' type="checkbox" value="' . $row['status'] . '" onclick="redirecionar(this, ' . $row['id_imovel'] . ')">';
+    echo '<label class="form-check-label">' . $check . '</label>';
+    echo '</div>';
+                
+                  '</td>';
                 echo '<td class="text-center icons-action">
-    <a href="editar.php?id='.$row['id_imovel'].'" title="Editar"> <i class="fas fa-edit"></i></a>
-    <a href="deletar.php?id='.$row['id_imovel'].'" title="Deletar"><i class="fas fa-trash-alt"></i></a>
-    <a href="'.$imovelUrl.'" target="_blank" title="Ver Imóvel"><i class="fas fa-home"></i></a>
+    <a href="editar.php?id=' . $row['id_imovel'] . '" title="Editar"> <i class="fas fa-edit"></i></a>
+    <a href="deletar.php?id=' . $row['id_imovel'] . '" title="Deletar"><i class="fas fa-trash-alt"></i></a>
+    <a href="' . $imovelUrl . '" target="_blank" title="Ver Imóvel"><i class="fas fa-home"></i></a>
 
   </td>';
                 echo '</tr>';
+         
+              
               }
-
-            
 
 
               ?>
+
+
+
 
               <!-- <td class="text-center"><img class="rounded img-fluid" width="40" src="imagem/casa.jpg" alt=""></td>
                 <td class="text-center">
@@ -244,7 +266,9 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           }
           echo '<li class="page-item"><a class="page-link" href="' . $_SERVER['PHP_SELF'] . '?id_prop=' . $id_prop . '&page=' . ($page + 1) . '">Próxima &raquo;</a></li>';
           echo '</ul></nav>';
+
           ?>
+
           <!-- <nav>
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">
@@ -307,9 +331,26 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+
+  </script>
+  <script>
+    function redirecionar(checkbox, idImovel) {
+    // Verifica o estado do checkbox (marcado/desmarcado)
+    var valor;
+    if (checkbox.checked) {
+        valor = 1; // Valor quando o checkbox está marcado (ativado)
+    } else {
+        valor = 2; // Valor quando o checkbox está desmarcado (desativado)
+    }
+
+    // Monta a URL com os parâmetros
+    var url = 'ativa_desativar.php?idImovel=' + encodeURIComponent(idImovel) + '&valor=' + encodeURIComponent(valor);
+
+    // Redireciona para a outra página
+    window.location.href = url;
+}
+  </script>
 </body>
 
 </html>

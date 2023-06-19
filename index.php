@@ -224,7 +224,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
 
 
                 <div class="adsImg">
-                  <img class="img-fluid img-responsive img-imovel" src="<?php echo "app/" . $value['url']; ?>">
+                  <img class="img-fluid img-responsive img-imovel" src="<?php echo $urlBase . "app/" . $value['url']; ?>">
                 </div>
 
                 <div class="adsCenterPreco">
