@@ -92,6 +92,7 @@ header h4 {
   font-weight: 500;
   color: rgb(131, 131, 131);
 }
+
 header h5 {
   display: flex;
   margin: 0;
@@ -154,10 +155,11 @@ footer .stats {
   padding: 0;
 }
 
-.Retweets a{
+.Retweets a {
   color: #555555;
 }
-.Retweets a:hover{
+
+.Retweets a:hover {
   color: #828282;
 }
 
@@ -239,13 +241,14 @@ input {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
+
 .form-body legend {
-font-size: 1em;
-font-family: 'Open Sans';
-font-weight: 400;
-/* background: red; */
-margin: 0;
-padding: 0;
+  font-size: 1em;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  /* background: red; */
+  margin: 0;
+  padding: 0;
 }
 
 .form-body .aviso-form {
@@ -261,18 +264,19 @@ padding: 0;
 
 .botao-zap {
   padding: 5px;
- background: url('../imagem/casa.jpg');
- background-repeat: no-repeat;
+  background: url('../imagem/casa.jpg');
+  background-repeat: no-repeat;
   background-size: 20px;
   background: #25d366;
   border: none;
   color: white;
-  border-radius: 50px;
-  width: 70%;
+  border-radius: 7px;
+  width: 100% !important;
   margin: 0 auto;
   cursor: pointer;
   height: 50px;
-  
+  float: left;
+
 }
 
 
@@ -300,9 +304,10 @@ padding: 0;
 }
 
 .tituloLeft {
+  width: 80%;
   /* background: yellow; */
   margin: 0;
-  padding: 0;
+  padding: 10px;
 
 }
 
@@ -360,6 +365,8 @@ padding: 0;
 
 }
 
+
+
 .item {
   /* background: rgb(239, 239, 239); */
   /* margin: 12px auto !important; */
@@ -384,6 +391,8 @@ padding: 0;
   /* float: left; */
   font-size: 1.2em;
 
+
+
 }
 
 .item p {
@@ -395,10 +404,12 @@ padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Open Sans';
+  font-weight: 400;
 }
 
 .item i {
-  color:;
+  color: ;
   margin-left: 12px !important;
   /* float: left !important; */
   /* background: green; */
@@ -485,8 +496,6 @@ padding: 0;
   }
 
 
-
-
 }
 
 .bairro-title {
@@ -499,6 +508,96 @@ padding: 0;
 /* outros imóveis */
 
 .outrosImoveis {
+  /* border-top: 1px solid #efefef; */
+  padding-top: 30px;
+  font-family: 'nunito';
+}
+
+.outrosImoveis h1 {
   border-top: 1px solid #efefef;
   padding-top: 30px;
+  font-family: 'nunito';
+  color: #828282;
+}
+
+.outrosImoveisCard {
+  font-size: 0.9em;
+  color: #828282;
+  font-family: 'Open Sans';
+ 
+}
+
+.outrosImoveisCard .card-title {
+  min-height: 100px;
+}
+
+.outrosImoveisCard li {
+  font-size: 0.9em;
+  color: #828282;
+  font-family: 'Open Sans';
+  font-weight: 400;
+}
+
+.outrosImoveisCard a {
+  font-size: 0.9em;
+  color: #ffffff;
+  font-family: 'Open Sans';
+  font-weight: 400;
+}
+
+
+/* tela menor */
+
+@media (min-width: 200px) {
+  .tituloLeft {
+    width: 100%;
+    /* background: rgb(24, 223, 170); */
+    margin: 0;
+    padding: 10px;
+
+  }
+
+}
+@media (min-width: 960px) {
+  .tituloLeft {
+    width: 100%;
+    /* background: rgb(24, 223, 170); */
+    margin: 0;
+    padding: 10px;
+
+  }
+
+}
+@media (min-width: 961px) {
+  .tituloLeft {
+    width: 70% !important;
+    /* background: rgb(44, 24, 223); */
+    margin: 0;
+    padding: 10px;
+
+  }
+
+}
+@media (min-width: 1200px) {
+  .tituloLeft {
+    width: 70% !important;
+    /* background: rgb(44, 24, 223); */
+    margin: 0;
+    padding: 10px;
+
+  }
+
+}
+
+
+.footer h1 {
+font-size: 0.8em;
+}
+
+.card-img-top {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 200px !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }

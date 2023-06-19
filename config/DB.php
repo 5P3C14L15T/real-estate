@@ -1261,14 +1261,16 @@ class DB
         }
     }
 
-    public function inserirLead($nome, $whatsapp, $url, $valor, $bairro, $quartos) {
+    public function inserirLead($nome, $whatsapp, $url, $valor, $bairro, $quartos)
+    {
         try {
+            date_default_timezone_set('America/Cuiaba');
             // Conexão com o banco de dados
-                 
+
             // Preparar a consulta de inserção
             $query = "INSERT INTO leads (nome, whatsapp, url, valor, bairro, quartos, data) VALUES (:nome, :whatsapp, :url, :valor, :bairro, :quartos, :data)";
             $stmt = $this->conn->prepare($query);
-            
+
             // Bind dos parâmetros
             $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
             $stmt->bindValue(':whatsapp', $whatsapp, PDO::PARAM_STR);
@@ -1276,11 +1278,11 @@ class DB
             $stmt->bindValue(':valor', $valor, PDO::PARAM_STR);
             $stmt->bindValue(':bairro', $bairro, PDO::PARAM_STR);
             $stmt->bindValue(':quartos', $quartos, PDO::PARAM_INT);
-            $stmt->bindValue(':data', date('Y-m-d'), PDO::PARAM_STR); // Data atual
-            
+            $stmt->bindValue(':data', date('Y-m-d H:i:s'), PDO::PARAM_STR); // Data atual
+
             // Executar a consulta
             $stmt->execute();
-            
+
             // Retorna o ID da última inserção
             return $this->conn->lastInsertId();
         } catch (PDOException $e) {
@@ -1289,8 +1291,120 @@ class DB
             throw new Exception("Erro ao inserir lead: " . $e->getMessage());
         }
     }
-    
-eee
+
+    public function getImoveisMenorViews()
+    {
+        // Consulta para obter os 4 imóveis com os menores valores de views
+        $query = "
+        SELECT i.titulo, i.cod_imovel, i.valor, i.quartos, i.id_bairro, img.url AS primeira_imagem_url, b.nome AS nome_bairro
+        FROM imovel AS i
+        JOIN bairros AS b ON b.id = i.id_bairro
+        LEFT JOIN (
+            SELECT id_imovel, url
+            FROM imagem
+            WHERE id IN (
+                SELECT MIN(id)
+                FROM imagem
+                GROUP BY id_imovel
+            )
+        ) AS img ON img.id_imovel = i.id_imovel
+        WHERE i.views IN (
+            SELECT views
+            FROM (
+                SELECT views
+                FROM imovel
+                ORDER BY views ASC
+                LIMIT 4
+            ) AS temp
+        )
+        LIMIT 4
+    ";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
+    // visita na página do imóvel
+
+    public function incrementarVisita($idImovel)
+    {
+        try {
+            $sql = "UPDATE imovel SET views = views + 1 WHERE id_imovel = :idImovel";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':idImovel', $idImovel, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            die("Erro ao atualizar as visualizações do imóvel: " . $e->getMessage());
+        }
+    }
+
+
+    // deletando imóvel e imagens
+
+    public function deleteImovel($idImovel)
+    {
+        try {
+            // Seleciona o caminho da pasta do imóvel para exclusão posterior
+            $sql = "SELECT url FROM imagem WHERE id_imovel = :idImovel";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':idImovel', $idImovel, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $pastaImovel1 = $result['url'];
+
+            $lastSlashPos = strrpos($pastaImovel1, '/');
+            $pastaImovel = substr($pastaImovel1, 0, $lastSlashPos);
+
+            var_dump($pastaImovel);
+
+            // Exclui as imagens do imóvel da tabela imagem
+            $sql = "DELETE FROM imagem WHERE id_imovel = :idImovel";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':idImovel', $idImovel, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Exclui o registro do imóvel da tabela imovel
+            $sql = "DELETE FROM imovel WHERE id_imovel = :idImovel";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':idImovel', $idImovel, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Apaga a pasta do imóvel e suas imagens
+            $path = $pastaImovel;
+            if (file_exists($path)) {
+                $this->deleteDirectory($path);
+            }
+        } catch (PDOException $e) {
+            die("Erro ao excluir o imóvel: " . $e->getMessage());
+        }
+    }
+
+    private function deleteDirectory($dir)
+    {
+        if (!file_exists($dir)) {
+            return true;
+        }
+
+        if (!is_dir($dir)) {
+            return unlink($dir);
+        }
+
+        foreach (scandir($dir) as $item) {
+            if ($item == '.' || $item == '..') {
+                continue;
+            }
+
+            if (!$this->deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
+                return false;
+            }
+        }
+
+        return rmdir($dir);
+    }
+
 
 
 }

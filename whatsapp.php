@@ -34,7 +34,7 @@ $db->inserirLead($nomeLead,$whatsappLead,$urlLead,$valorLead,$bairroLead,$quarto
     $urlEncaminha .= "```Valor: R$" . number_format($data['valor'],2,',','.') . "```%0A";
     $urlEncaminha .= "```Bairro: " . $data['bairroNome'] . "```%0A";
     $urlEncaminha .= "```Quartos: " . $quartos . "```%0A";
-    $urlEncaminha .= "```Área: " . $area . "```%0A";
+    $urlEncaminha .= "```Área: " . $area . "m²" . "```%0A%0A";
     $urlEncaminha .= "Meu nome é: *" .$nomeLead . "*, Vi esse imóvel no site: %0A". $data['url'];
 
     echo $urlEncaminha;

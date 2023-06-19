@@ -147,7 +147,22 @@ footer .cta button {
 
 .tabela-post i {
 
-  color: rgb(102, 95, 92);
+  color: rgb(102, 92, 92);
+  margin: 0 5px;
+}
+.tabela-post .fa-trash-alt {
+
+  color: rgb(219, 88, 88);
+  margin: 0 5px;
+}
+.tabela-post .fa-edit {
+
+  color: rgb(219, 202, 88);
+  margin: 0 5px;
+}
+.tabela-post .fa-home {
+
+  color: rgb(97, 166, 93);
   margin: 0 5px;
 }
 

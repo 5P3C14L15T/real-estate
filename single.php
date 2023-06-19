@@ -26,12 +26,18 @@ if (isset($code)) {
 
 }
 
+
+
 foreach ($data as $key => $value) {
   # code...
   // echo "<pre>";
   // print_r($value);
   // echo "</pre>";
 }
+
+// atualizando imóvel
+
+$db->incrementarVisita($value['id_imovel']);
 
 // pegando as imagens
 
@@ -61,6 +67,8 @@ $dataMenorViews = $db->getImoveisMenorViews();
 // echo "</pre>";
 
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -75,7 +83,8 @@ $dataMenorViews = $db->getImoveisMenorViews();
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/single.css" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/6c66823518.js" crossorigin="anonymous"></script>
 
   <title>
@@ -156,12 +165,12 @@ $dataMenorViews = $db->getImoveisMenorViews();
         <div class="tituloLeft">
           <h1 class="imovel-title" title="<?php echo $value['titulo'] ?>"><?php echo $value['titulo'] ?></h1>
           <p class="bairro-title">
-            <?php echo "Bairro: " .  $value['nome'] ?><i class="fas fa-search-location"></i>
+            <?php echo "Bairro: " . $value['nome'] ?><i class="fas fa-search-location"></i>
           </p>
         </div>
 
         <div class="precoRight">
-          <h2 class="imovel-valor" title="<?php echo $value['valor'] ?>">Valor:
+          <h2 class="imovel-valor" title="<?php echo $value['valor'] ?>">R$
             <?php
 
             $valorImovel = $value['valor'];
@@ -205,7 +214,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
 
 
                     <?php $i = 0;
-                    foreach ($dataImagem as $row) : ?>
+                    foreach ($dataImagem as $row): ?>
                       <?php if ($i == 0) {
                         $set_ = 'active';
                       } else {
@@ -214,15 +223,17 @@ $dataMenorViews = $db->getImoveisMenorViews();
                       <div class='carousel-item <?php echo $set_; ?>'>
                         <img src='<?php echo "./app/" . $row['url']; ?>' class='d-block w-100'>
                       </div>
-                    <?php $i++;
+                      <?php $i++;
                     endforeach ?>
 
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Próxima</span>
                   </button>
@@ -248,7 +259,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               </div>
 
               <?php if ($value['suite'] == "") {
-              ?>
+                ?>
 
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-bath"></i>
@@ -259,7 +270,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
 
               <!-- sala -->
               <?php if ($value['sala'] == 1) {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-tv"></i>
                   <p>
@@ -273,7 +284,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               <!-- cozinha -->
 
               <?php if ($value['cozinha'] == 1) {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-utensil-spoon"></i>
                   <p>
@@ -286,7 +297,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               <!-- lavanderia -->
 
               <?php if ($value['lavanderia'] == 1) {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-tshirt"></i>
                   <p>
@@ -299,7 +310,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               <!-- sacada -->
 
               <?php if ($value['sacada'] == 1) {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-building"></i>
                   <p>
@@ -314,7 +325,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               <!-- banheiro social -->
 
               <?php if ($value['banheiros'] !== "") {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-shower"></i>
                   <p>
@@ -326,7 +337,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               <!-- elevador -->
 
               <?php if ($value['elevador'] == 1) {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-chevron-circle-up"></i>
                   <p>
@@ -339,7 +350,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               <!-- garagem -->
 
               <?php if ($value['garagem'] !== "") {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-car"></i>
                   <p>
@@ -353,7 +364,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               <!-- area de lazer -->
 
               <?php if ($value['area_lazer'] == 1) {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-swimming-pool"></i>
                   <p>
@@ -365,7 +376,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
               <!-- area construída -->
 
               <?php if ($value['area_construida'] !== "") {
-              ?>
+                ?>
                 <div class="col-md-4 text-center item">
                   <i class="fas fa-ruler-combined"></i>
                   <p>Área:
@@ -396,9 +407,11 @@ $dataMenorViews = $db->getImoveisMenorViews();
                 whatsapp</p>
 
               <legend>Seu Nome <small class="text-secondary">(insira seu nome)</small></legend>
-              <input class="form-control form-control-lg" id="nome" name="nomeLead" type="text" placeholder="Qual o seu nome?" required>
+              <input class="form-control form-control-lg" id="nome" name="nomeLead" type="text"
+                placeholder="Qual o seu nome?" required>
               <legend>Seu WhatsApp <small class="text-secondary">(preencha somente os números)</small></legend>
-              <input class="form-control form-control-lg" maxlength="15" id="telefone" name="whatsappLead" type="text" placeholder="(65) 99999-9999" required>
+              <input class="form-control form-control-lg" maxlength="15" id="telefone" name="whatsappLead" type="text"
+                placeholder="(65) 99999-9999" required>
               <!-- inputs data -->
 
               <input type="hidden" name="titulo" value="<?php echo $value['titulo']; ?> ">
@@ -413,7 +426,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
 
 
               <div class="d-grid mt-4">
-                <input class="botao-zap" type="submit" name="enviar" value="Chamar no WhatsApp">
+                <input class="botao-zap" onclick="saveData()" type="submit" name="enviar" value="Chamar no WhatsApp">
               </div>
             </div>
           </form>
@@ -422,7 +435,8 @@ $dataMenorViews = $db->getImoveisMenorViews();
 
         <div class="info-corretor">
           <header>
-            <img src="<?php echo "app/" . $value['img']; ?>" alt="Quincy Larson's profile picture" class="profile-thumbnail" />
+            <img src="<?php echo "app/" . $value['img']; ?>" alt="Quincy Larson's profile picture"
+              class="profile-thumbnail" />
             <div class="profile-name">
               <h3>
                 <?php echo $value['nome_user'] ?>
@@ -444,28 +458,28 @@ $dataMenorViews = $db->getImoveisMenorViews();
             <div class="stats">
 
               <?php if ($value['ig'] !== "") {
-              ?>
+                ?>
                 <div class="Retweets">
                   <a href="<?php echo $value['ig']; ?>" target="_new"> <i class="fa fa-instagram"></i></a>
                 </div>
               <?php } ?>
 
               <?php if ($value['fb'] !== "") {
-              ?>
+                ?>
                 <div class="Retweets">
                   <a href="<?php echo $value['fb']; ?>" target="_new"> <i class="fa fa-facebook-square"></i></a>
                 </div>
               <?php } ?>
 
               <?php if ($value['linkedin'] !== "") {
-              ?>
+                ?>
                 <div class="Retweets">
                   <a href="<?php echo $value['linkedin']; ?>" target="_new"> <i class="fab fa-linkedin"></i></a>
                 </div>
               <?php } ?>
 
               <?php if ($value['site'] !== "") {
-              ?>
+                ?>
                 <div class="Retweets">
                   <a href="<?php echo $value['site']; ?>" target="_new"> <i class="fas fa-sitemap"></i></a>
                 </div>
@@ -491,28 +505,46 @@ $dataMenorViews = $db->getImoveisMenorViews();
       <?php
 
       foreach ($dataMenorViews as $value) {
-// var_dump($value);
-      ?>
+        // var_dump($value);
+        // criando URL
+        $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
+$urlAntiga = $urlBase;
+$tituloDeImovel = $value['titulo'];
+$codigoImovel = $value['cod_imovel'];
 
-        <div class="col-sm-3 outrosImoveisCard my-2">
+
+$imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel);
+
+// var_dump($imovelUrl);
+        ?>
+
+        <div class="col-md-3 outrosImoveisCard my-2">
           <div class="card">
             <img src="<?php echo "app/" . $value['primeira_imagem_url']; ?>" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title"><?php echo $value['titulo']; ?></h5>
+              <h5 class="card-title">
+                <?php echo $value['titulo']; ?>
+              </h5>
               <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
             </div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><?php echo $value['quartos']; ?></li>
-              <li class="list-group-item"><?php echo $value['nome_bairro']; ?></li>
-              <li class="list-group-item"><?php echo $value['valor']; ?></li>
+              <li class="list-group-item">
+                <?php echo  "Quartos " . $value['quartos']; ?>
+              </li>
+              <li class="list-group-item">
+                <?php echo "Bairro " . $value['nome_bairro']; ?>
+              </li>
+              <li class="list-group-item">
+                <?php echo "Valor R$" . number_format($value['valor'], 2, ",", "."); ?>
+              </li>
             </ul>
             <div class="card-body">
-              <a href="#" class=" btn btn-success">Ver Imóvel</a>
+              <a href="<?php echo $imovelUrl  ;?>" target="_new" class=" btn btn-success w-100">Ver Imóvel</a>
             </div>
           </div>
         </div>
 
-      <?php
+        <?php
 
       }
 
@@ -531,9 +563,38 @@ $dataMenorViews = $db->getImoveisMenorViews();
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 
   <script>
+
+    // Função para salvar os dados no LocalStorage e aplicar a máscara
+    function saveData() {
+      var nome = document.getElementById('nome').value;
+      var telefone = document.getElementById('telefone').value;
+
+      localStorage.setItem('nome', nome);
+      localStorage.setItem('telefone', telefone);
+
+      mascara(document.getElementById('telefone'), mtel);
+    }
+
+    // Restaurar os dados do LocalStorage ao carregar a página e aplicar a máscara
+    window.onload = function () {
+      var nome = localStorage.getItem('nome');
+      var telefone = localStorage.getItem('telefone');
+
+      if (nome) {
+        document.getElementById('nome').value = nome;
+      }
+
+      if (telefone) {
+        document.getElementById('telefone').value = telefone;
+        mascara(document.getElementById('telefone'), mtel);
+      }
+    };
+
     /* Máscaras ER */
     function mascara(o, f) {
       v_obj = o
@@ -555,11 +616,12 @@ $dataMenorViews = $db->getImoveisMenorViews();
     function id(el) {
       return document.getElementById(el);
     }
-    window.onload = function() {
-      id('telefone').onkeyup = function() {
-        mascara(this, mtel);
-      }
+
+    // Aplicar a máscara ao digitar no campo de telefone
+    id('telefone').onkeyup = function () {
+      mascara(this, mtel);
     }
+
   </script>
 
 </body>

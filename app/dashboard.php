@@ -133,7 +133,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/6c66823518.js" crossorigin="anonymous"></script>
-  <title>Casa a Venda Cuiabá</title>
+  <title>Apartamento a Venda Cuiabá</title>
 </head>
 
 <body>
@@ -173,7 +173,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th class="text-center">#ID Imóvel</th>
                 <!-- <th class="text-center">Imagem</th> -->
                 <th class="text-center">Título do Imóvel</th>
-                <th class="text-center">Ação</th>
+                <th colspan="2" class="text-center">Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -185,16 +185,27 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
               
               // echo '<tr><th scope="row" class="text-center">ID do imóvel</th><th>Imagem</th><th>Titulo do Imóvel</th><th>Ação</th></tr>';
               foreach ($results as $row) {
+
+                
+
+                $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
+                $urlAntiga = $urlBase;
+                $tituloDeImovel = $row['titulo'];
+                $codigoImovel = $row['cod_imovel'];
+                
+                
+                $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel);
             
                 
                 echo '<tr>';
                 echo '<td>' . $row['cod_imovel'] . '</td>';
                 // echo '<td>' . $row['id'] . '</td>';
                 echo '<td>' . $row['titulo'] . '</td>';
+                echo '<td>' . "ativado". '</td>';
                 echo '<td class="text-center icons-action">
     <a href="editar.php?id='.$row['id_imovel'].'" title="Editar"> <i class="fas fa-edit"></i></a>
     <a href="deletar.php?id='.$row['id_imovel'].'" title="Deletar"><i class="fas fa-trash-alt"></i></a>
-    <a href="#!" title="Ver Imóvel"><i class="fas fa-home"></i></a>
+    <a href="'.$imovelUrl.'" target="_blank" title="Ver Imóvel"><i class="fas fa-home"></i></a>
 
   </td>';
                 echo '</tr>';

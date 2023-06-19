@@ -116,6 +116,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           <img src="imagem/logo.png" class="img-fluid logo-img" alt="" srcset="" />
         </div>
       </div>
+
     </nav>
   </header>
   <div class="filter-main">
