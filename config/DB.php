@@ -79,7 +79,7 @@ class DB
     }
 
 
-    public function getEmailExist($email,)
+    public function getEmailExist($email, )
     {
         $sql = "SELECT email FROM perfil WHERE email = :email";
         $stmt = $this->conn->prepare($sql);
@@ -1417,17 +1417,18 @@ WHERE imovel.status = 1";
         return rmdir($dir);
     }
 
-    public function atualizarStatusImovel($idImovel, $status) {
+    public function atualizarStatusImovel($idImovel, $status)
+    {
         try {
             $sql = "UPDATE imovel SET status = :status WHERE id_imovel = :idImovel";
             $stmt = $this->conn->prepare($sql);
             $stmt->bindParam(':status', $status, PDO::PARAM_INT);
             $stmt->bindParam(':idImovel', $idImovel, PDO::PARAM_INT);
             $stmt->execute();
-            
+
             // Verifica se ocorreu algum erro durante a execução da consulta
             var_dump($stmt->errorInfo());
-    
+
             if ($stmt->rowCount() > 0) {
                 return 'Status do imóvel atualizado com sucesso.';
             } else {
@@ -1437,6 +1438,92 @@ WHERE imovel.status = 1";
             return 'Erro ao atualizar o status do imóvel: ' . $e->getMessage();
         }
     }
-    
-}
 
+    public function verificarWhatsAppPerfil($email)
+    {
+        try {
+
+            // Consultar o campo "whatsapp" na tabela "perfil" para o email especificado
+            $query = "SELECT whatsapp FROM perfil WHERE email = :email";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+            $stmt->execute();
+
+            // Verificar se o campo "whatsapp" está vazio
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (empty($result['whatsapp'])) {
+                // Exibir a div de alerta
+                echo '<div class="col-md-12 my-2">';
+                echo '<div class="alert alert-danger" role="alert">';
+                echo 'Antes de cadastrar Imóvel edite seu perfil colocando seu WhatsApp!';
+                echo '</div>';
+                echo '</div>';
+            }
+        } catch (PDOException $e) {
+            // Tratar erros de PDO aqui
+            // Por exemplo, lançar uma exceção personalizada ou registrar o erro em um log
+            throw new Exception("Erro ao verificar WhatsApp do perfil: " . $e->getMessage());
+        }
+    }
+
+
+    // aqui é para desabilitar os botões
+    public function verificarRegistroImovel($id_proprietario)
+    {
+        try {
+
+
+            // Consultar a quantidade de registros na tabela "imovel" para o ID do proprietário especificado
+            $query = "SELECT COUNT(*) AS total FROM imovel WHERE id_proprietario = :id_proprietario";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':id_proprietario', $id_proprietario, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Verificar o resultado da consulta
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $totalRegistros = $result['total'];
+
+
+
+            // Verificar o campo "payment" na tabela "perfil"
+            $query = "SELECT payment FROM perfil WHERE id = :id_proprietario";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(':id_proprietario', $id_proprietario, PDO::PARAM_INT);
+            $stmt->execute();
+
+            // Verificar o valor do campo "payment"
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $payment = $result['payment'];
+
+           
+
+            // Verificar se há 1 registro na tabela "imovel" e o "payment" é "free"
+            if ($totalRegistros == 1 && $payment == "free") {
+                // Desabilitar o botão "Add Novo Imóvel"
+                echo '<script>';
+                echo 'document.getElementById("btnAddNovoImovel").removeAttribute("href");';
+                echo '</script>';
+
+                echo '<style>';
+                echo '#btnAddNovoImovel { pointer-events: none; opacity: 0.6; }';
+                echo '</style>';
+
+
+                // Exibir a mensagem de aviso para se tornar Premium
+                echo '<div class="col-md-12 my-2">';
+                echo '<div class="alert alert-warning" role="alert">';
+                echo 'Seja PREMIUM para inserir imóveis ILIMITADOS.';
+                echo '</div>';
+                echo '</div>';
+
+            }
+        } catch (PDOException $e) {
+            // Tratar erros de PDO aqui
+            // Por exemplo, lançar uma exceção personalizada ou registrar o erro em um log
+            throw new Exception("Erro ao verificar registro de imóvel: " . $e->getMessage());
+        }
+    }
+
+
+
+}

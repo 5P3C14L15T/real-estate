@@ -14,7 +14,7 @@ $pdo = $db->getConnection();
 
 $userId = $usuario[0]['id'];
 
-// echo $userId;
+echo $userId;
 
 // $perPage = 10;
 // $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -130,7 +130,8 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- CSS only -->
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/6c66823518.js" crossorigin="anonymous"></script>
   <title>Apartamento a Venda Cuiabá</title>
 </head>
@@ -149,17 +150,41 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <nav class="componentes">
     <div class="container">
       <div class="row">
+
+        <!-- mensagem caso não tenha atualizado whatsapp -->
+
+        <?php
+        $db->verificarWhatsAppPerfil($_SESSION['user']);
+
+        $db->verificarRegistroImovel($userId);
+
+
+
+        ?>
+
+        <!-- <div class="col-md-12 my-2">
+          <div class="alert alert-warning" role="alert">
+            Seja PREMIUM para inserir imóveis ILIMITADOS.
+          </div>
+        </div> -->
+
         <div class="col-md-3 my-3">
-          <a href="add.php" class="btn btn-success d-block">Add Novo Imóvel</a>
+          <a href="add.php" id="btnAddNovoImovel" class="alert alert-success d-block">Add Novo Imóvel</a>
+        </div>
+
+        <script>
+          document.getElementById("btnAddNovoImovel").disabled = true;
+
+        </script>
+        <div class="col-md-3 my-3">
+          <a href="perfil.php" class="alert alert-primary d-block">Editar Perfil</a>
         </div>
         <div class="col-md-3 my-3">
-          <a href="perfil.php" class="btn btn-primary d-block">Editar Perfil</a>
+          <a href="./logout.php" class="alert alert-secondary d-block">Sair do Dashboard</a>
         </div>
         <div class="col-md-3 my-3">
-          <a href="./logout.php" class="btn btn-secondary d-block">Sair do Dashboard</a>
-        </div>
-        <div class="col-md-3 my-3">
-          <a href="" class="btn btn-warning d-block"><img class="img-fluid" width="25" src="imagem/medal.svg" >PREMIUM</a>
+          <a href="" class="alert alert-warning d-block"><img class="img-fluid" width="25"
+              src="imagem/medal.svg"> PREMIUM</a>
         </div>
       </div>
     </div>
@@ -184,7 +209,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <?php
 
               // exibir os resultados em uma tabela
-
+              
               // echo '<tr><th scope="row" class="text-center">ID do imóvel</th><th>Imagem</th><th>Titulo do Imóvel</th><th>Ação</th></tr>';
               foreach ($results as $row) {
 
@@ -213,14 +238,14 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 // echo '<td>' . $row['id'] . '</td>';
                 echo '<td>' . $row['titulo'] . '</td>';
                 echo '<td>';
-                
+
                 // Imprime o checkbox com o valor correspondente e o ID do imóvel
-    echo '<div class="form-check form-switch">';
-    echo '<input class="form-check-input" name="status" '.$checked.' type="checkbox" value="' . $row['status'] . '" onclick="redirecionar(this, ' . $row['id_imovel'] . ')">';
-    echo '<label class="form-check-label">' . $check . '</label>';
-    echo '</div>';
-                
-                  '</td>';
+                echo '<div class="form-check form-switch">';
+                echo '<input class="form-check-input" name="status" ' . $checked . ' type="checkbox" value="' . $row['status'] . '" onclick="redirecionar(this, ' . $row['id_imovel'] . ')">';
+                echo '<label class="form-check-label">' . $check . '</label>';
+                echo '</div>';
+
+                '</td>';
                 echo '<td class="text-center icons-action">
     <a href="editar.php?id=' . $row['id_imovel'] . '" title="Editar"> <i class="fas fa-edit"></i></a>
     <a href="deletar.php?id=' . $row['id_imovel'] . '" title="Deletar"><i class="fas fa-trash-alt"></i></a>
@@ -228,8 +253,8 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   </td>';
                 echo '</tr>';
-         
-              
+
+
               }
 
 
@@ -331,25 +356,26 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
 
-  </script>
+    </script>
   <script>
     function redirecionar(checkbox, idImovel) {
-    // Verifica o estado do checkbox (marcado/desmarcado)
-    var valor;
-    if (checkbox.checked) {
+      // Verifica o estado do checkbox (marcado/desmarcado)
+      var valor;
+      if (checkbox.checked) {
         valor = 1; // Valor quando o checkbox está marcado (ativado)
-    } else {
+      } else {
         valor = 2; // Valor quando o checkbox está desmarcado (desativado)
+      }
+
+      // Monta a URL com os parâmetros
+      var url = 'ativa_desativar.php?idImovel=' + encodeURIComponent(idImovel) + '&valor=' + encodeURIComponent(valor);
+
+      // Redireciona para a outra página
+      window.location.href = url;
     }
-
-    // Monta a URL com os parâmetros
-    var url = 'ativa_desativar.php?idImovel=' + encodeURIComponent(idImovel) + '&valor=' + encodeURIComponent(valor);
-
-    // Redireciona para a outra página
-    window.location.href = url;
-}
   </script>
 </body>
 

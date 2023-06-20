@@ -79,7 +79,7 @@ echo "</pre>";
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <a href="dashboard.php" class="btn btn-info d-block">Voltar ao dashboard</a>
+          <a href="dashboard.php" class="alert alert-secondary d-block">< Voltar ao dashboard</a>
         </div>
         <!-- <div class="col-md-3">
           <a href="#!" class="btn btn-primary d-block">Editar Perfil</a>
