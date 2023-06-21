@@ -279,7 +279,7 @@ $bairros = $db->getBairros();
               </div>
 
               <div class="d-grid gap-2">
-                <input type="submit" class="btn btn-success" name="enviar" value="ADICIONAR IMÓVEL" />
+                <input type="submit" class="alert alert-success" name="enviar" value="ADICIONAR IMÓVEL" />
 
               </div>
             </div>

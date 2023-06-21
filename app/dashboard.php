@@ -141,7 +141,9 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <nav class="menu">
       <div class="container">
         <div class="logo">
+          <a href="../index.php">
           <img src="imagem/logo.png" class="img-fluid logo-img" alt="" />
+          </a>
         </div>
       </div>
     </nav>
@@ -183,7 +185,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <a href="./logout.php" class="alert alert-secondary d-block">Sair do Dashboard</a>
         </div>
         <div class="col-md-3 my-3">
-          <a href="" class="alert alert-warning d-block"><img class="img-fluid" width="25"
+          <a href="../planos.php" class="alert alert-warning d-block"><img class="img-fluid" width="25"
               src="imagem/medal.svg"> PREMIUM</a>
         </div>
       </div>

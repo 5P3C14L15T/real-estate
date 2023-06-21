@@ -90,11 +90,11 @@ class DB
     }
 
 
-    public function insertData($name, $email, $password)
+    public function insertData($name, $email, $password, $payment = "free")
     {
-        $sql = "INSERT INTO perfil (nome_user,email,password) VALUES (:name, :email, :password)";
+        $sql = "INSERT INTO perfil (nome_user,email,password, payment) VALUES (:name, :email, :password, :payment)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute(['name' => $name, 'email' => $email, 'password' => $password]);
+        $stmt->execute(['name' => $name, 'email' => $email, 'password' => $password, 'payment' => $payment]);
         echo "Inserido";
     }
 
@@ -1498,7 +1498,7 @@ WHERE imovel.status = 1";
            
 
             // Verificar se há 1 registro na tabela "imovel" e o "payment" é "free"
-            if ($totalRegistros == 1 && $payment == "free") {
+            if ($totalRegistros >= 1 && $payment == "free") {
                 // Desabilitar o botão "Add Novo Imóvel"
                 echo '<script>';
                 echo 'document.getElementById("btnAddNovoImovel").removeAttribute("href");';

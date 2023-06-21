@@ -102,7 +102,7 @@ foreach ($perfilActive as $value) {
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <a href="dashboard.php" class="btn btn-info d-block">Voltar ao dashboard</a>
+          <a href="dashboard.php" class="alert alert-info d-block"> < Voltar ao dashboard</a>
         </div>
 
       </div>
@@ -260,7 +260,7 @@ foreach ($perfilActive as $value) {
 
 
               <div class="d-grid gap-2">
-                <input class="btn btn-success" name="enviar" type="submit" value="ATUALIZAR PERFIL">
+                <input class="alert alert-success" name="enviar" type="submit" value="ATUALIZAR PERFIL">
 
               </div>
             </div>

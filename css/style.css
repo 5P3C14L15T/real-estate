@@ -1580,19 +1580,19 @@ footer {
   border-radius: 10px;
 }
 
-.adsMainArea a{
+.adsMainArea a {
   display: flex;
-/* background-color: red; */
-width: 100% !important;
-margin: 0 !important;
-padding: 0 !important;
-text-decoration: none !important;
+  /* background-color: red; */
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
 
 }
 
-.adsMainArea:hover{ 
-box-shadow: 1px 2px 5px #7270706d;
-border: 1px solid #afd7af;
+.adsMainArea:hover {
+  box-shadow: 1px 2px 5px #7270706d;
+  border: 1px solid #afd7af;
 }
 
 .adsCenter {
@@ -1669,7 +1669,7 @@ border: 1px solid #afd7af;
 
 .botao {
   margin-top: 20px;
- width: 100% !important;
+  width: 100% !important;
 }
 
 .adsComponentes ul {
@@ -1704,6 +1704,99 @@ border: 1px solid #afd7af;
   width: 25px;
 }
 
+/* PLANO ADS */
+
+.planoMain {
+  background: rgb(255, 250, 224);
+  background: linear-gradient(180deg, rgba(255, 250, 224, 1) 0%, rgba(242, 241, 225, 1) 35%, rgba(250, 250, 250, 1) 100%);
+  min-height: 200px;
+  margin: 0;
+  padding: 50px 0 30px 0;
+}
+
+.planoMainTitulo h1 {
+  font-size: 2em;
+  font-family: 'Nunito';
+  text-align: center;
+  color: #928859;
+}
+.planoMainTitulo a {
+ text-decoration: none;
+ font-size: 1.2em;
+ text-align: center;
+ font-family: 'Nunito';
+}
+
+.imgPlan {
+  display: flex;
+ align-items: center !important;
+ margin: 0 auto !important;
+ /* width: 300px !important; */
+
+
+  width:100%;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.imgPlan img {
+  
+/* background-color: #426c42; */
+
+}
+
+.imgPlan span {
+  /* background-color: red; */
+  font-size: 1.4em;
+}
+
+.adsMainBoxContent {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px #1f1f1f2e;
+  
+}
+
+.adsMainBoxContentTitle h3 {
+font-family: 'Nunito';
+color: #444444;
+margin: 10px 0;
+}
+
+.adsMainBoxContentDesc {
+  font-size: 0.9em;
+  color: #868686;
+  font-family: 'Open Sans';
+}
+
+.precoMain {
+  padding-top: 40px;
+}
+
+.precoMain h1 {
+  font-size: 1.3em;
+  color: #444444;
+  font-family: 'Nunito';
+}
+
+.planoCard {
+  background: #ffffff;
+  /* padding: 10px; */
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+
+}
+.planoCardHeader {
+  border-bottom: 1px solid #d3d3d3;
+  width: 100%;
+  padding: 25px 15px;
+  font-family: 'Nunito';
+  color: #444444;
+  font-size: 1.2em;
+  /* background-color: red; */
+}
 
 
 @media (min-width: 360px) {
@@ -1718,9 +1811,9 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: 140px;
-   width: 70%;
+    /* background-color: red; */
+    height: 140px;
+    width: 70%;
   }
 
   .adsImg {
@@ -1728,6 +1821,7 @@ border: 1px solid #afd7af;
     padding: 2px;
     /* background-color: #aaaaaa; */
   }
+
   .adsCenter {
     width: 100%;
     /* background-color: #cba62c; */
@@ -1737,7 +1831,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -1747,12 +1841,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 15px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 0.8em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 16px;
   }
@@ -1766,7 +1862,7 @@ border: 1px solid #afd7af;
     padding: 0px;
     position: relative;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.5em;
     /* line-height: 12px; */
@@ -1780,6 +1876,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1em;
     height: 55px;
@@ -1788,7 +1885,7 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 100%;
     text-align: right;
@@ -1805,6 +1902,7 @@ border: 1px solid #afd7af;
     text-align: left !important;
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     padding: 5px;
   }
@@ -1822,9 +1920,9 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: 140px;
-   width: 70%;
+    /* background-color: red; */
+    height: 140px;
+    width: 70%;
   }
 
   .adsImg {
@@ -1832,6 +1930,7 @@ border: 1px solid #afd7af;
     padding: 2px;
     /* background-color: #aaaaaa; */
   }
+
   .adsCenter {
     width: 100%;
     /* background-color: #cba62c; */
@@ -1841,7 +1940,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -1851,12 +1950,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 15px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 0.8em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 16px;
   }
@@ -1870,7 +1971,7 @@ border: 1px solid #afd7af;
     padding: 0px;
     position: relative;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.6em;
     /* line-height: 12px; */
@@ -1884,6 +1985,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1em;
     height: 55px;
@@ -1892,7 +1994,7 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 100%;
     text-align: right;
@@ -1909,6 +2011,7 @@ border: 1px solid #afd7af;
     text-align: left !important;
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     padding: 5px;
   }
@@ -1926,15 +2029,15 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: auto;
-   width: 80%;
+    /* background-color: red; */
+    height: auto;
+    width: 80%;
   }
 
   .adsImg {
     width: 25%;
     padding: 2px;
-   
+
     /* background-color: #aaaaaa; */
   }
 
@@ -1956,7 +2059,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -1966,12 +2069,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 15px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 0.9em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 18px;
   }
@@ -1985,7 +2090,7 @@ border: 1px solid #afd7af;
     padding: 0px;
     position: relative;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.6em;
     /* line-height: 12px; */
@@ -1999,6 +2104,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1.1em;
     height: 55px;
@@ -2007,7 +2113,7 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 40% !important;
     text-align: right;
@@ -2024,6 +2130,7 @@ border: 1px solid #afd7af;
     text-align: left !important;
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     padding: 5px;
     text-align: right;
@@ -2055,9 +2162,9 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: auto;
-   width: 80%;
+    /* background-color: red; */
+    height: auto;
+    width: 80%;
   }
 
   .adsMainArea a {
@@ -2068,7 +2175,7 @@ border: 1px solid #afd7af;
   .adsImg {
     width: 20%;
     padding: 2px;
-   
+
     /* background-color: #aaaaaa; */
   }
 
@@ -2090,7 +2197,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -2100,12 +2207,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 10px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 1em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 22px;
   }
@@ -2120,7 +2229,7 @@ border: 1px solid #afd7af;
     position: relative;
     margin-top: 7px;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.8em;
     /* line-height: 12px; */
@@ -2134,6 +2243,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1.3em;
     height: 55px;
@@ -2142,7 +2252,7 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 30% !important;
     text-align: right;
@@ -2150,7 +2260,7 @@ border: 1px solid #afd7af;
     font-family: 'Nunito';
     color: #1f1f1f;
     /* padding: 5px; */
-   
+
     position: relative;
     font-weight: 700;
     /* height: 30px; */
@@ -2159,11 +2269,12 @@ border: 1px solid #afd7af;
     text-align: left !important;
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     padding: 5px;
     text-align: right;
     /* background-color: red; */
-    font-size: 0.8em ;
+    font-size: 0.8em;
   }
 }
 
@@ -2179,9 +2290,9 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: auto;
-   width: 80%;
+    /* background-color: red; */
+    height: auto;
+    width: 80%;
   }
 
   .adsMainArea a {
@@ -2192,7 +2303,7 @@ border: 1px solid #afd7af;
   .adsImg {
     width: 20%;
     padding: 2px;
-   
+
     /* background-color: #aaaaaa; */
   }
 
@@ -2214,7 +2325,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -2224,12 +2335,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 10px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 1em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 22px;
   }
@@ -2244,7 +2357,7 @@ border: 1px solid #afd7af;
     position: relative;
     margin-top: 7px;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.8em;
     /* line-height: 12px; */
@@ -2258,6 +2371,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1.3em;
     height: 55px;
@@ -2266,7 +2380,7 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 30% !important;
     text-align: right;
@@ -2274,7 +2388,7 @@ border: 1px solid #afd7af;
     font-family: 'Nunito';
     color: #1f1f1f;
     /* padding: 5px; */
-   
+
     position: relative;
     font-weight: 700;
     /* height: 30px; */
@@ -2283,11 +2397,12 @@ border: 1px solid #afd7af;
     text-align: left !important;
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     padding: 5px;
     text-align: right;
     /* background-color: red; */
-    font-size: 1em ;
+    font-size: 1em;
   }
 }
 
@@ -2303,9 +2418,9 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: auto;
-   width: 80%;
+    /* background-color: red; */
+    height: auto;
+    width: 80%;
   }
 
   .adsMainArea a {
@@ -2316,7 +2431,7 @@ border: 1px solid #afd7af;
   .adsImg {
     width: 20%;
     padding: 2px;
-   
+
     /* background-color: #aaaaaa; */
   }
 
@@ -2338,7 +2453,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -2348,12 +2463,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 10px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 1em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 22px;
   }
@@ -2368,7 +2485,7 @@ border: 1px solid #afd7af;
     position: relative;
     margin-top: 7px;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.8em;
     /* line-height: 12px; */
@@ -2382,6 +2499,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1.3em;
     height: 55px;
@@ -2390,7 +2508,7 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 30% !important;
     text-align: right;
@@ -2398,7 +2516,7 @@ border: 1px solid #afd7af;
     font-family: 'Nunito';
     color: #1f1f1f;
     /* padding: 5px; */
-   
+
     position: relative;
     font-weight: 700;
     /* height: 30px; */
@@ -2407,11 +2525,12 @@ border: 1px solid #afd7af;
     text-align: left !important;
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     padding: 5px;
     text-align: right;
     /* background-color: red; */
-    font-size: 1em ;
+    font-size: 1em;
   }
 }
 
@@ -2427,9 +2546,9 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: auto;
-   width: 80%;
+    /* background-color: red; */
+    height: auto;
+    width: 80%;
   }
 
   .adsMainArea a {
@@ -2440,7 +2559,7 @@ border: 1px solid #afd7af;
   .adsImg {
     width: 20%;
     padding: 2px;
-   
+
     /* background-color: #aaaaaa; */
   }
 
@@ -2462,7 +2581,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -2472,12 +2591,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 10px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 1em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 22px;
   }
@@ -2492,7 +2613,7 @@ border: 1px solid #afd7af;
     position: relative;
     margin-top: 7px;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.8em;
     /* line-height: 12px; */
@@ -2506,6 +2627,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1.3em;
     height: 55px;
@@ -2514,7 +2636,7 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 30% !important;
     text-align: right;
@@ -2522,7 +2644,7 @@ border: 1px solid #afd7af;
     font-family: 'Nunito';
     color: #1f1f1f;
     /* padding: 5px; */
-   
+
     position: relative;
     font-weight: 700;
     /* height: 30px; */
@@ -2531,11 +2653,12 @@ border: 1px solid #afd7af;
     text-align: left !important;
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     padding: 5px;
     text-align: right;
     /* background-color: red; */
-    font-size: 1em ;
+    font-size: 1em;
   }
 }
 
@@ -2551,9 +2674,9 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: auto;
-   width: 84%;
+    /* background-color: red; */
+    height: auto;
+    width: 84%;
   }
 
   .adsMainArea a {
@@ -2564,7 +2687,7 @@ border: 1px solid #afd7af;
   .adsImg {
     width: 20%;
     padding: 2px;
-   
+
     /* background-color: #aaaaaa; */
   }
 
@@ -2586,7 +2709,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -2596,12 +2719,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 10px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 1em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 22px;
   }
@@ -2616,7 +2741,7 @@ border: 1px solid #afd7af;
     position: relative;
     margin-top: 7px;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.8em;
     /* line-height: 12px; */
@@ -2630,6 +2755,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1.3em;
     height: 55px;
@@ -2638,7 +2764,7 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 30% !important;
     text-align: right;
@@ -2646,7 +2772,7 @@ border: 1px solid #afd7af;
     font-family: 'Nunito';
     color: #1f1f1f;
     /* padding: 5px; */
-   
+
     position: relative;
     font-weight: 700;
     /* height: 30px; */
@@ -2655,11 +2781,12 @@ border: 1px solid #afd7af;
     text-align: left !important;
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     padding: 5px;
     text-align: right;
     /* background-color: red; */
-    font-size: 1em ;
+    font-size: 1em;
   }
 }
 
@@ -2675,9 +2802,9 @@ border: 1px solid #afd7af;
   }
 
   .adsCenterPreco {
-   /* background-color: red; */
-   height: auto;
-   /* width: 80%; */
+    /* background-color: red; */
+    height: auto;
+    /* width: 80%; */
   }
 
   .adsMainArea a {
@@ -2691,7 +2818,7 @@ border: 1px solid #afd7af;
   .adsImg {
     width: 16%;
     padding: 2px;
-   
+
     /* background-color: #aaaaaa; */
   }
 
@@ -2713,7 +2840,7 @@ border: 1px solid #afd7af;
     /* position: relative; */
     float: left;
     /* min-height: 250px; */
-  
+
   }
 
   .adsComponentes {
@@ -2723,12 +2850,14 @@ border: 1px solid #afd7af;
     /* background-color: yellow; */
     padding-top: 10px !important;
     padding: 0;
-   height: 30px;
+    height: 30px;
   }
+
   .adsComponentes li {
     font-size: 1em;
     margin-bottom: 0;
   }
+
   .adsComponentes ul li img {
     width: 22px;
   }
@@ -2743,7 +2872,7 @@ border: 1px solid #afd7af;
     position: relative;
     margin-top: 7px;
   }
-  
+
   .adsLocalizacao li {
     font-size: 0.8em;
     /* line-height: 12px; */
@@ -2757,6 +2886,7 @@ border: 1px solid #afd7af;
     /* float: left; */
     margin: 0;
   }
+
   .adsTitulo h1 {
     font-size: 1.2em;
     height: 55px;
@@ -2765,29 +2895,30 @@ border: 1px solid #afd7af;
     float: left;
     width: 100%;
   }
-   
+
   .adsPreco {
     width: 30% !important;
     text-align: right;
     padding: 0 !important;
-    
-   
+
+
     /* padding: 5px; */
-   
+
     /* position: relative; */
-    
+
     /* height: 30px; */
     /* float: left; */
     /* background-color: #7381bc; */
-  
+
     /* padding: 5px !important; */
   }
+
   .AdsPrecoValor {
     width: 100% !important;
     /* padding: 5px; */
     text-align: right;
     /* background-color: rgb(155, 108, 108); */
-    font-size: 1.4em ;
+    font-size: 1.4em;
     font-family: 'Nunito';
     color: #1f1f1f;
     font-weight: 700;

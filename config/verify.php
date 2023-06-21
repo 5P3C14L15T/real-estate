@@ -38,7 +38,7 @@ if (isset($_POST['cadastrar'])) {
 
     } else {
 
-        $inserir = $db->insertData($_POST['name'], $_POST['email'], $_POST['password']);
+        $inserir = $db->insertData($_POST['name'], $_POST['email'], $_POST['password'], "free");
 
         $pasta = md5($_POST['email']);
         echo $pasta;
