@@ -196,11 +196,11 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
                             </div>
                             <div class="planoCardBody">
                                 <h4>Anúncios Ilimitados</h4>
-                                <p>R$ <span>97,90</span> <span> / mês</span> </p>
+                                <p>R$ <span class="planoPrice">97,90</span> <span class="planoTempo"> / mês</span> </p>
                                 <a href="#" class="planoCardBotao">Contratar Agora</a>
                             </div>
                             <div class="planoCardRodape">
-                                <p>Insira anúncios ilimitados por mês</p>
+                                <p>Insira anúncios <strong>ilimitados</strong>  por mês</p>
                             </div>
                         </div>
                     </div>
