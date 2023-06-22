@@ -233,15 +233,53 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
             <div class="row">
                 <div class="col-md-8 mx-auto text-center">
                     <div class="row">
-                        <div class="col-md-6">
-                            <h1>titulo</h1>
-                            <h2>subtitulo</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, ut illo doloremque dignissimos expedita repudiandae? Et a alias animi? Distinctio sint consequuntur facilis vero exercitationem error? Natus temporibus consequatur saepe, unde quam provident minima fuga ea, corporis iusto veritatis porro!</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quisquam ab nihil modi vero enim culpa, atque eaque ipsam facilis voluptate excepturi exercitationem saepe? Consectetur ducimus ipsa laudantium sed eos!</p>
-                            <p class="chamada">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, officiis.</p>
+                        <div class="col-md-6 chamadaMain">
+                            <h1>Os planos APARTAMENTOAVENDACUIABA.COM.BR foram pensados para você que deseja fazer negócios pela nossa plataforma</h1>
+                            <h2>Entenda como funciona</h2>
+                            <p>Todos os dias você pode inserir novos anúncios, sem se importar com o tamanho do seu plano. E eles ficam ativos por até 90 dias após a publicação. Caso o imóvel tenha sido negociado você pode excluir ou ativá-lo novamente.</p>
+                            <p>Além de economizar, você acompanha a performance dos seus anúncios em uma plataforma pensada para seu negócio evoluir.</p>
+                            <p class="chamada">Contrate agora, você pode alterar ou cancelar seu plano a qualquer momento sem multa!</p>
                         </div>
-                        <div class="col-md-6">Imagem</div>
+                        <div class="col-md-6">
+                            <img src="imagem/familia.png" alt="" class="img-fluid">
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cuiabaTitle">
+        <div class="container">
+            <div class="row">
+                <h1>+600mil Pessoas em Cuiabá poderão ver seu imóvel</h1>
+                <p>Escolha seu plano e comece a anunciar.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center">Tire suas dúvidas!</h1>
+                <div class="col-md-6">
+                    <h4>Que tipo de anúncios eu posso publicar?</h4>
+                    <p>R: Apenas apartamentos na cidade de Cuiabá-MT.</p>
+                    <h4>Caso eu venda o apartamento, eu posso trocar o anúncio?</h4>
+                    <p>R: Sim, porém apenas 1 anúncios é gratuito.</p>
+                    <h4>Posso cancelar o plano a qualquer momento?</h4>
+                    <p>R: Claro, da seguinte forma, se você contratar por um mês, pode cancelar que não
+                         haverá cobrança no outro mês. Caso seja plano anual e você cancelar, não será cobrado pelo
+                          próximo ano.</p>
+                </div>
+                <div class="col-md-6">
+                <h4>Os planos incluem destaque?</h4>
+                    <p>R: Ainda não definimos como funcionará os destaques.</p>
+                    <h4>Como vou receber os interessados em meus anúncios?</h4>
+                    <p>R: Através do seu Whatsapp. Por isso, ao criar um perfil, certifique-se de imediatamente editar seu WhatsApp.</p>
+                    <h4>Como funciona o suporte?</h4>
+                    <p>R: Caso haja qualquer dúvida na hora de fazer um anúncio, você poderá entrar em contato através do email:
+                         <a href="mailto:suporte@apartamentoavendacuiaba.com.br" target="_blank">suporte@apartamentoavendacuiaba.com.br</a>.</p>
                 </div>
             </div>
         </div>
