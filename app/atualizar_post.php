@@ -52,7 +52,7 @@ if (isset($_POST['enviar'])) {
     $site = $_POST['site'];
     $creci = $_POST['creci'];
     $access_type = 'user';
-    $payment = null;
+    $payment = "free";
 
 
 

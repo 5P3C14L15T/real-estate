@@ -8,7 +8,7 @@ $db = new DB;
 
 $email = $_SESSION['user'];
 
-var_dump($email);
+// var_dump($email);
 
 $emailExiste = $db->getEmailExist($email);
 
@@ -22,8 +22,8 @@ if (empty($emailExiste)) {
     header("Location: ../login.php");
 } else {
     if (isset($_SESSION['login2']) && $_SESSION['login2'] == "logado2") {
-        echo "está logado";
-        var_dump($_SESSION['user']);
+        // echo "está logado";
+        // var_dump($_SESSION['user']);
     } else {
         header("Location: ../login.php");
     }
@@ -32,6 +32,6 @@ if (empty($emailExiste)) {
 
 
 
-echo "<pre>";
-print_r($emailExiste);
-echo "</pre>";
+// echo "<pre>";
+// print_r($emailExiste);
+// echo "</pre>";

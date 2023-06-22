@@ -6,3 +6,5 @@ $db = new DB;
 
 $idImovel = $_GET['id'];
 $db->deleteImovel($idImovel);
+
+header("Location: dashboard.php");

@@ -203,7 +203,7 @@ if (isset($_POST['atualizar'])) {
     $db->uploadImagens($id, $pastaImagem, $_FILES["fileUpload"]);
     // $db->cropImages($ultimoImovelId, $_FILES["fileUpload"],  $pastaImagem, $size = 500 );
 
-
+header("Location: editar.php?id=$id");
 
 
 } else {

@@ -14,7 +14,7 @@ $pdo = $db->getConnection();
 
 $userId = $usuario[0]['id'];
 
-echo $userId;
+// echo $userId;
 
 // $perPage = 10;
 // $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -128,6 +128,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="../imagem/icon.png">
   <!-- CSS only -->
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -182,12 +183,13 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <a href="perfil.php" class="alert alert-primary d-block">Editar Perfil</a>
         </div>
         <div class="col-md-3 my-3">
-          <a href="./logout.php" class="alert alert-secondary d-block">Sair do Dashboard</a>
-        </div>
-        <div class="col-md-3 my-3">
-          <a href="../planos.php" class="alert alert-warning d-block"><img class="img-fluid" width="25"
+          <a href="../planos.php" target="_blank" class="alert alert-warning d-block"><img class="img-fluid" width="25"
               src="imagem/medal.svg"> PREMIUM</a>
         </div>
+        <div class="col-md-3 my-3">
+          <a href="./logout.php" class="alert alert-secondary d-block">Sair do Dashboard</a>
+        </div>
+       
       </div>
     </div>
   </nav>
@@ -199,9 +201,9 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <table class="table table-striped tabela-post">
             <thead>
               <tr>
-                <th class="text-center">#ID Imóvel</th>
+                <th class="text-center codImo">#ID Imóvel</th>
                 <!-- <th class="text-center">Imagem</th> -->
-                <th class="text-center">Título do Imóvel</th>
+                <th class="text-center tit">Título do Imóvel</th>
                 <th colspan="2" class="text-center">Ações</th>
               </tr>
             </thead>
@@ -236,9 +238,9 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
                 echo '<tr>';
-                echo '<td>' . $row['cod_imovel'] . '</td>';
+                echo '<td class="codImo">' . $row['cod_imovel'] . '</td>';
                 // echo '<td>' . $row['id'] . '</td>';
-                echo '<td>' . $row['titulo'] . '</td>';
+                echo '<td class="tit">' . $row['titulo'] . '</td>';
                 echo '<td>';
 
                 // Imprime o checkbox com o valor correspondente e o ID do imóvel

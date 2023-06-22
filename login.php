@@ -29,6 +29,8 @@
     src="https://kit.fontawesome.com/6c66823518.js"
     crossorigin="anonymous"
   ></script>
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
     <title>Apartamento a Venda Cuiabá</title>
   </head>
   <body>
@@ -90,7 +92,9 @@
                 <input type="password" name="senha" placeholder="Insira sua senha" required>
               </div>
               <div class="text"><a href="#">Esqueci minha senha?</a></div>
+              <div class="g-recaptcha" data-sitekey="6LcpxL4mAAAAAI4oSoZ5ZZvJKzNTGK3vIjeOvSP8"></div>
               <div class="button input-box">
+              
                 <input type="submit" value="Entrar" name="login">
               </div>
               <div class="text sign-up-text">Ainda não tem uma conta? <label for="flip">Criar conta</label></div>
@@ -128,6 +132,7 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" placeholder="Insira uma senha" required>
               </div>
+              <div class="g-recaptcha" data-sitekey="6LcpxL4mAAAAAI4oSoZ5ZZvJKzNTGK3vIjeOvSP8"></div>
               <div class="button input-box">
                 <input type="submit" value="Cadastrar" name="cadastrar">
               </div>

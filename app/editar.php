@@ -6,12 +6,12 @@ $db = new DB;
 
 $imovel = $db->buscarImovelPorId($_GET['id']);
 
-echo "<pre>";
-print_r($imovel);
-echo "</pre>";
+// echo "<pre>";
+// print_r($imovel);
+// echo "</pre>";
 // var_dump($imovel);
 
-echo "<hr>";
+// echo "<hr>";
 
 
 
@@ -20,7 +20,7 @@ $bairros = $db->getBairros();
 
 $bairroId = $db->buscarBairroPorId($imovel['id_bairro']);
 
-var_dump($bairroId);
+// var_dump($bairroId);
 
 
 // Verifica se há resultado da busca
@@ -37,9 +37,9 @@ if ($bairroId) {
 
 $imagensIdImovel = $db->getImageByIdImovel($imovel['id_imovel']);
 
-echo "<pre>";
-print_r($imagensIdImovel);
-echo "</pre>";
+// echo "<pre>";
+// print_r($imagensIdImovel);
+// echo "</pre>";
 
 
 
@@ -417,7 +417,7 @@ echo "</pre>";
 
               <div class="d-grid gap-2">
                 <input type="hidden" value="<?php echo $_GET['id'] ?>" name="id">
-                <input type="submit" class="btn btn-info" name="atualizar" value="ATUALIZAR IMÓVEL" />
+                <input type="submit" class="alert alert-info" name="atualizar" value="ATUALIZAR IMÓVEL" />
 
               </div>
             </div>

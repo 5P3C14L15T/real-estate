@@ -253,6 +253,8 @@ if (isset($_POST['enviar'])) {
 
         $db->uploadImagens($ultimoImovelId,  $pastaImagem, $_FILES["fileUpload"]);
         // $db->cropImages($ultimoImovelId, $_FILES["fileUpload"],  $pastaImagem, $size = 500 );
+
+        
     
 } else {
 
@@ -261,6 +263,8 @@ if (isset($_POST['enviar'])) {
 
     $_SESSION['imagem'] = 'grande';
 }
+
+// header("Location: dashboard.php");
 
 
 ?>

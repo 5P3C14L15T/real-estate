@@ -1370,7 +1370,7 @@ WHERE imovel.status = 1";
             $lastSlashPos = strrpos($pastaImovel1, '/');
             $pastaImovel = substr($pastaImovel1, 0, $lastSlashPos);
 
-            var_dump($pastaImovel);
+            // var_dump($pastaImovel);
 
             // Exclui as imagens do imóvel da tabela imagem
             $sql = "DELETE FROM imagem WHERE id_imovel = :idImovel";
@@ -1455,7 +1455,7 @@ WHERE imovel.status = 1";
                 // Exibir a div de alerta
                 echo '<div class="col-md-12 my-2">';
                 echo '<div class="alert alert-danger" role="alert">';
-                echo 'Antes de cadastrar Imóvel edite seu perfil colocando seu WhatsApp!';
+                echo '<img src="../imagem/alert1.svg" width="20"> Antes de cadastrar Imóvel edite seu perfil colocando seu WhatsApp!';
                 echo '</div>';
                 echo '</div>';
             }
@@ -1512,7 +1512,7 @@ WHERE imovel.status = 1";
                 // Exibir a mensagem de aviso para se tornar Premium
                 echo '<div class="col-md-12 my-2">';
                 echo '<div class="alert alert-warning" role="alert">';
-                echo 'Seja PREMIUM para inserir imóveis ILIMITADOS.';
+                echo '<img src="../imagem/alert.svg" width="25"> Seja <strong> PREMIUM </strong> para inserir imóveis ILIMITADOS.';
                 echo '</div>';
                 echo '</div>';
 

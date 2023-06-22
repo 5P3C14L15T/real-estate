@@ -125,7 +125,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
         <div class="row">
           <div class="col-xl-3 col-md-3 col-sm-12 search-nivel">
             <select class="form-select" name="bairro">
-              <option value="" selected>Qual o melhor bairro para você?</option>
+              <option value="" selected>Todos os bairros de Cuiabá</option>
               <?php
               echo $bairroId;
               ?>

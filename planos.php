@@ -228,7 +228,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
         </div>
     </section>
 
-    <section class="social">
+    <section class="social pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto text-center">
@@ -261,25 +261,30 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
     <section class="faq">
         <div class="container">
             <div class="row">
-                <h1 class="text-center">Tire suas dúvidas!</h1>
-                <div class="col-md-6">
-                    <h4>Que tipo de anúncios eu posso publicar?</h4>
-                    <p>R: Apenas apartamentos na cidade de Cuiabá-MT.</p>
-                    <h4>Caso eu venda o apartamento, eu posso trocar o anúncio?</h4>
-                    <p>R: Sim, porém apenas 1 anúncios é gratuito.</p>
-                    <h4>Posso cancelar o plano a qualquer momento?</h4>
-                    <p>R: Claro, da seguinte forma, se você contratar por um mês, pode cancelar que não
-                         haverá cobrança no outro mês. Caso seja plano anual e você cancelar, não será cobrado pelo
-                          próximo ano.</p>
-                </div>
-                <div class="col-md-6">
-                <h4>Os planos incluem destaque?</h4>
-                    <p>R: Ainda não definimos como funcionará os destaques.</p>
-                    <h4>Como vou receber os interessados em meus anúncios?</h4>
-                    <p>R: Através do seu Whatsapp. Por isso, ao criar um perfil, certifique-se de imediatamente editar seu WhatsApp.</p>
-                    <h4>Como funciona o suporte?</h4>
-                    <p>R: Caso haja qualquer dúvida na hora de fazer um anúncio, você poderá entrar em contato através do email:
-                         <a href="mailto:suporte@apartamentoavendacuiaba.com.br" target="_blank">suporte@apartamentoavendacuiaba.com.br</a>.</p>
+                <div class="col-md-8 mx-auto">
+                    <div class="row">
+                        <h1 class="text-center">Tire suas dúvidas!</h1>
+                        <div class="col-md-6">
+                            <h4>Que tipo de anúncios eu posso publicar?</h4>
+                            <p>R: Apenas apartamentos na cidade de Cuiabá-MT.</p>
+                            <h4>Caso eu venda o apartamento, eu posso trocar o anúncio?</h4>
+                            <p>R: Sim, porém apenas 1 anúncios é gratuito.</p>
+                            <h4>Posso cancelar o plano a qualquer momento?</h4>
+                            <p>R: Claro, da seguinte forma, se você contratar por um mês, pode cancelar que não
+                                haverá cobrança no outro mês. Caso seja plano anual e você cancelar, não será cobrado pelo
+                                próximo ano.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Os planos incluem destaque?</h4>
+                            <p>R: Ainda não definimos como funcionará os destaques.</p>
+                            <h4>Como vou receber os interessados em meus anúncios?</h4>
+                            <p>R: Através do seu Whatsapp. Por isso, ao criar um perfil, certifique-se de imediatamente editar seu WhatsApp.</p>
+                            <h4>Como funciona o suporte?</h4>
+                            <p>R: Caso haja qualquer dúvida na hora de fazer um anúncio, você poderá entrar em contato através do email:
+                                <a href="mailto:suporte@apartamentoavendacuiaba.com.br" target="_blank">suporte@apartamentoavendacuiaba.com.br</a>.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

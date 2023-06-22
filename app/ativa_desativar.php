@@ -15,4 +15,5 @@ echo "</pre>";
 
 
     $result = $db->atualizarStatusImovel($idImovel, $status);
-    var_dump($result);
+   
+    header("Location: dashboard.php");
