@@ -39,6 +39,10 @@ foreach ($data as $key => $value) {
 
 $db->incrementarVisita($value['id_imovel']);
 
+if(!isset($value['id_imovel'])){
+  header("Location: index.php");
+}
+
 // pegando as imagens
 
 // echo $value['id'];
@@ -435,7 +439,10 @@ $dataMenorViews = $db->getImoveisMenorViews();
 
         <div class="info-corretor">
           <header>
-            <img src="<?php echo "app/" . $value['img']; ?>" alt="Quincy Larson's profile picture"
+            <img src="<?php
+            $retVal = ($value['img'] != null) ? "app/" . $value['img'] : "imagem/perfil.jpg" ;
+                echo $retVal;
+            ?>" alt="Quincy Larson's profile picture"
               class="profile-thumbnail" />
             <div class="profile-name">
               <h3>
@@ -556,6 +563,15 @@ $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel)
   <footer class="footer">
     <div class="container">
       <div class="row">
+        <ul>
+          <li>
+            <a href="index.php">Página Inicial</a>
+          </li>
+          <li> | </li>
+          <li>
+            <a href="planos.php">Quero Anunciar meu Ap</a>
+          </li>
+        </ul>
         <h1>APARTAMENTOAVENDACUIABA.COM.BR</h1>
         <p>&copy; Todos os Direitos Reservados</p>
       </div>

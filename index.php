@@ -110,8 +110,11 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
 
 <body>
   <header class="main">
+
     <nav class="menu">
+
       <div class="container">
+
         <div class="logo">
           <img src="imagem/logo.png" class="img-fluid logo-img" alt="" srcset="" />
         </div>
@@ -290,7 +293,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
 
                       ?>
                     </div>
-                   
+
                   </div>
 
                 </div>
@@ -355,6 +358,15 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
   <footer class="footer">
     <div class="container">
       <div class="row">
+        <ul>
+          <li>
+            <a href="index.php">Página Inicial</a>
+          </li>
+          <li> | </li>
+          <li>
+            <a href="planos.php">Quero Anunciar meu Ap</a>
+          </li>
+        </ul>
         <h1>APARTAMENTOAVENDACUIABA.COM.BR</h1>
         <p>&copy; Todos os Direitos Reservados</p>
       </div>

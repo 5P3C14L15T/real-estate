@@ -272,9 +272,9 @@ $bairros = $db->getBairros();
                 <div class="input-images"></div>
               </div>
 
-              <div class="col-md-8 mx-auto alert alert-danger">
+              <!-- <div class="col-md-8 mx-auto alert alert-danger">
                 SUA IMAGEM EXCEDEU AO TAMANHO MÁXIMO PERMITIDO!
-              </div>
+              </div> -->
               <div class="col-md-8 mx-auto alert alert-warning">
                 Insita apenas imagens .JPG ou .PNG
               </div>

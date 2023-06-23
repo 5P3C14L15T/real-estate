@@ -26,6 +26,7 @@ body {
   margin: 0 auto;
 }
 
+
 .menu {
   padding: 10px;
   background: rgb(244, 244, 244);
@@ -266,6 +267,24 @@ footer {
 .footerContainer {
   width: 100%;
   text-align: center;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: #f8f05b;
+  font-family: 'Open Sans';
+  font-size: 0.9em;
+  font-weight: 400;
+
 }
 
 /* media queries */

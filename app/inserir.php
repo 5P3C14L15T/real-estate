@@ -264,7 +264,7 @@ if (isset($_POST['enviar'])) {
     $_SESSION['imagem'] = 'grande';
 }
 
-// header("Location: dashboard.php");
+header("Location: dashboard.php");
 
 
 ?>
