@@ -214,6 +214,8 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           <!-- ITEM -->
           <?php foreach ($data['resultados'] as $key => $value) {
             # codigo
+
+            var_dump($value);
           
 
             // $urlAntiga = $urlBase . "single.php?codimovel=" . $value['cod_imovel'];
@@ -284,7 +286,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
                           </li>
                           <li><img src="imagem/banheiro.svg" /></li>
                           <li>
-                            <?php echo $value['garagem']; ?>
+                            <?php echo $value['banheiros']; ?>
                           </li>
                         </ul>
 
