@@ -6,7 +6,7 @@ $db = new DB;
 
 $url = $_SERVER["REQUEST_URI"];
 
-$urlCompleta = __DIR__ . $url;
+$urlCompleta = $url;
 
 // echo $urlCompleta;
 // echo "<br>";
@@ -105,9 +105,39 @@ $dataMenorViews = $db->getImoveisMenorViews();
   <meta property="og:image:width" content="500" />
   <meta property="og:image:height" content="500" />
   <meta property="og:image:alt" content="<?php echo $value['titulo']; ?>" />
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6YEMTGPBZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R6YEMTGPBZ');
+
+  <!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '650163389954385');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=650163389954385&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</script>
+
 </head>
 
 <body>
+
   <header class="main">
     <nav class="menu">
       <div class="container">
@@ -515,6 +545,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
         // var_dump($value);
         // criando URL
         $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
+        // $urlBase = "https://www.apartamentoavendacuiaba.com.br/";
 $urlAntiga = $urlBase;
 $tituloDeImovel = $value['titulo'];
 $codigoImovel = $value['cod_imovel'];
@@ -567,7 +598,6 @@ $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel)
           <li>
             <a href="index.php">Página Inicial</a>
           </li>
-          <li> | </li>
           <li>
             <a href="planos.php">Quero Anunciar meu Ap</a>
           </li>

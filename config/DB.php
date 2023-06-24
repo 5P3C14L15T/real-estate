@@ -7,6 +7,10 @@ class DB
     private $username = "root";
     private $password = "";
     private $database = "db_imoveis";
+    // private $servername = "localhost";
+    // private $username = "u258163094_db_user";
+    // private $password = "Joao1@2@3@";
+    // private $database = "u258163094_db_imoveis";
     private $conn;
 
 
@@ -936,7 +940,7 @@ WHERE imovel.status = 1";
         $site = null,
         $creci = null,
         $access_type = "user",
-        $payment = null
+        
     ) {
         // Verificar se o usuário já existe no banco de dados
         $userExists = $this->checkUserExists($email);
@@ -956,7 +960,7 @@ WHERE imovel.status = 1";
                 $site,
                 $creci,
                 $access_type,
-                $payment
+               
             );
         } else {
             // Executar a inserção dos campos
@@ -973,7 +977,7 @@ WHERE imovel.status = 1";
                 $site,
                 $creci,
                 $access_type,
-                $payment
+                
             );
         }
     }
@@ -1003,12 +1007,12 @@ WHERE imovel.status = 1";
         $site,
         $creci,
         $access_type,
-        $payment
+        
     ) {
         $query = "INSERT INTO perfil (nome_user, imob_autonomo, whatsapp, email, 
-                  descricao_user, fb, ig, linkedin, site, creci, access_type, payment)
+                  descricao_user, fb, ig, linkedin, site, creci, access_type)
                   VALUES (:nome_user, :imob_autonomo, :whatsapp, :email, 
-                  :descricao_user, :fb, :ig, :linkedin, :site, :creci, :access_type, :payment)";
+                  :descricao_user, :fb, :ig, :linkedin, :site, :creci, :access_type)";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':nome_user', $nome_user);
         $stmt->bindParam(':imob_autonomo', $imob_autonomo);
@@ -1022,7 +1026,7 @@ WHERE imovel.status = 1";
         $stmt->bindParam(':site', $site);
         $stmt->bindParam(':creci', $creci);
         $stmt->bindParam(':access_type', $access_type);
-        $stmt->bindParam(':payment', $payment);
+      
         $stmt->execute();
     }
 
@@ -1039,12 +1043,12 @@ WHERE imovel.status = 1";
         $site,
         $creci,
         $access_type,
-        $payment
+        
     ) {
         $query = "UPDATE perfil SET nome_user = :nome_user, imob_autonomo = :imob_autonomo, whatsapp = :whatsapp,
                                                descricao_user = :descricao_user, fb = :fb,
                                               ig = :ig, linkedin = :linkedin, site = :site, creci = :creci,
-                                              access_type = :access_type, payment = :payment WHERE email = :email";
+                                              access_type = :access_type WHERE email = :email";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':nome_user', $nome_user);
         $stmt->bindParam(':imob_autonomo', $imob_autonomo);
@@ -1057,7 +1061,7 @@ WHERE imovel.status = 1";
         $stmt->bindParam(':site', $site);
         $stmt->bindParam(':creci', $creci);
         $stmt->bindParam(':access_type', $access_type);
-        $stmt->bindParam(':payment', $payment);
+        
         $stmt->bindParam(':email', $email);
         $stmt->execute();
     }

@@ -73,6 +73,7 @@ $urlImg = __DIR__ . "/app";
 
 // $urlBase = __DIR__ . "/";
 // talvez tenha que trocar a url
+// $urlBase = "https://www.apartamentoavendacuiaba.com.br/";
 $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
 
 // var_dump($urlImg);
@@ -106,6 +107,34 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <title>Apartamento a Venda Cuiabá</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6YEMTGPBZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R6YEMTGPBZ');
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '650163389954385');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=650163389954385&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 
 <body>
@@ -362,7 +391,6 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           <li>
             <a href="index.php">Página Inicial</a>
           </li>
-          <li> | </li>
           <li>
             <a href="planos.php">Quero Anunciar meu Ap</a>
           </li>

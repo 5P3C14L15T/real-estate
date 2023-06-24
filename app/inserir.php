@@ -1,4 +1,5 @@
 <?php
+ob_start();
 date_default_timezone_set('America/Cuiaba');
 require_once "../config/DB.php";
 require_once "./logado.php";
@@ -268,3 +269,4 @@ header("Location: dashboard.php");
 
 
 ?>
+<?php ob_end_flush(); ?>

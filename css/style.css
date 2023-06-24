@@ -282,8 +282,11 @@ footer {
   text-decoration: none;
   color: #f8f05b;
   font-family: 'Open Sans';
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 400;
+  background-color: #426c42;
+  padding: 10px;
+  border-radius: 30px;
 
 }
 

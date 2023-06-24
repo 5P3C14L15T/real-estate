@@ -298,7 +298,6 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           <li>
             <a href="index.php">Página Inicial</a>
           </li>
-          <li> | </li>
           <li>
             <a href="planos.php">Quero Anunciar meu Ap</a>
           </li>
