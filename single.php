@@ -603,6 +603,7 @@ $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel)
           </li>
         </ul>
         <h1>APARTAMENTOAVENDACUIABA.COM.BR</h1>
+        <a class="aemail" target="_blank" href="mailto:anuncie@apartamentoavendacuiaba.com.br">anuncie@apartamentoavendacuiaba.com.br</a>
         <p>&copy; Todos os Direitos Reservados</p>
       </div>
     </div>

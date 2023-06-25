@@ -290,6 +290,12 @@ footer {
 
 }
 
+.footer .aemail {
+  color: #fff !important;
+  text-decoration: none;
+  margin: 0 0 10px  0;
+}
+
 /* media queries */
 
 @media (min-width: 320px) {

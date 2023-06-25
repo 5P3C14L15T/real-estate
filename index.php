@@ -193,6 +193,17 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
       </form>
     </div>
   </div>
+  <aside class="publicidade w-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+          <a href="login.php" target="_blank">
+          <img src="imagem/468x60.png" class="img-fluid" alt="" srcset="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
   <section id="imovel-main" class="imovel-main">
     <div class="container">
       <div class="row">
@@ -215,7 +226,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           <?php foreach ($data['resultados'] as $key => $value) {
             # codigo
 
-            var_dump($value);
+            // var_dump($value);
           
 
             // $urlAntiga = $urlBase . "single.php?codimovel=" . $value['cod_imovel'];
@@ -398,6 +409,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           </li>
         </ul>
         <h1>APARTAMENTOAVENDACUIABA.COM.BR</h1>
+        <a class="aemail" target="_blank" href="mailto:anuncie@apartamentoavendacuiaba.com.br">anuncie@apartamentoavendacuiaba.com.br</a>
         <p>&copy; Todos os Direitos Reservados</p>
       </div>
     </div>

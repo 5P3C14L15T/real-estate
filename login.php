@@ -38,12 +38,14 @@
       <nav class="menu">
         <div class="container">
           <div class="logo">
+            <a href="index.php">
             <img
               src="imagem/logo.png"
               class="img-fluid logo-img"
               alt=""
               srcset=""
             />
+            </a>
           </div>
         </div>
       </nav>
@@ -146,14 +148,23 @@
 
 
 
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <h1>APARTAMENTOAVENDACUIABA.COM.BR</h1>
-          <p>&copy; Todos os Direitos Reservados</p>
-        </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <ul>
+          <li>
+            <a href="index.php">Página Inicial</a>
+          </li>
+          <li>
+            <a href="planos.php">Quero Anunciar meu Ap</a>
+          </li>
+        </ul>
+        <h1>APARTAMENTOAVENDACUIABA.COM.BR</h1>
+        <a class="aemail" target="_blank" href="mailto:anuncie@apartamentoavendacuiaba.com.br">anuncie@apartamentoavendacuiaba.com.br</a>
+        <p>&copy; Todos os Direitos Reservados</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
     <!-- JavaScript Bundle with Popper -->
     <script
