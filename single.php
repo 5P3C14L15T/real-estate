@@ -115,6 +115,7 @@ $dataMenorViews = $db->getImoveisMenorViews();
 
   gtag('config', 'G-R6YEMTGPBZ');
 
+  </script>
   <!-- Meta Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)

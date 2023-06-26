@@ -17,6 +17,17 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="imagem/icon.png">
+
+    <meta property="og:title" content="Anuncie Gratuitamente no Apartamento a Venda Cuiabá" />
+  <meta property="og:description" content="Encontre os diversos apartamentos em todos os bairros de Cuiabá que estão anunciados a venda." />
+  <meta property="og:url" content="https://www.apartamentoavendacuiaba.com.br/login.php" />
+  <meta property="og:image" content="/imagem/somente-apto.jpg" />
+
+  <meta property="og:image:secure_url" content="/imagem/somente-apto.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt" content="" />
     <!-- CSS only -->
     <link rel="stylesheet" href="css/style.css" />
     <link

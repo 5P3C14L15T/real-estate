@@ -92,48 +92,57 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
   <link rel="icon" type="image/x-icon" href="imagem/icon.png">
   <!-- metas -->
   <meta property="og:title" content="Apartamento a Venda Cuiaba" />
-  <meta property="og:description"
-    content="Encontre os diversos apartamentos em todos os bairros de Cuiabá que estãõ anunciados a venda." />
+  <meta property="og:description" content="Encontre os diversos apartamentos em todos os bairros de Cuiabá que estão anunciados a venda." />
   <meta property="og:url" content="https://www.apartamentoavendacuiaba.com.br" />
-  <meta property="og:image" content="" />
+  <meta property="og:image" content="/imagem/somente-apto.jpg" />
 
-  <meta property="og:image:secure_url" content="" />
+  <meta property="og:image:secure_url" content="/imagem/somente-apto.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="500" />
   <meta property="og:image:height" content="500" />
   <meta property="og:image:alt" content="" />
   <!-- CSS only -->
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
   <title>Apartamento a Venda Cuiabá</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6YEMTGPBZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6YEMTGPBZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-R6YEMTGPBZ');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '650163389954385');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=650163389954385&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    gtag('config', 'G-R6YEMTGPBZ');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    ! function(f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function() {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '650163389954385');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=650163389954385&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
 
 </head>
 
@@ -184,8 +193,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
           </div>
 
           <div class="col-xl-3 col-md-3 col-sm-12 search-nivel">
-            <input type="submit" name="enviar" value="Buscar Apartamento"
-              class="btn btn-outline-success search text-center">
+            <input type="submit" name="enviar" value="Buscar Apartamento" class="btn btn-outline-success search text-center">
             <!-- 🔎 Buscar Apartamento
             </button> -->
           </div>
@@ -198,7 +206,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
       <div class="row">
         <div class="col-md-6 mx-auto text-center">
           <a href="login.php" target="_blank">
-          <img src="imagem/468x60.png" class="img-fluid" alt="" srcset="">
+            <img src="imagem/728X90.gif" class="img-fluid" alt="" srcset="">
           </a>
         </div>
       </div>
@@ -227,7 +235,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
             # codigo
 
             // var_dump($value);
-          
+
 
             // $urlAntiga = $urlBase . "single.php?codimovel=" . $value['cod_imovel'];
             $urlAntiga = $urlBase;
@@ -236,29 +244,29 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
             // // echo $urlAntiga;
             // // exemplo de URL original
             // // $url = "http://localhost/casaavendacuiaba/single.php?codimovel=20230001";
-          
+
             // http://localhost/casaavendacuiaba/single.php
-          
+
 
 
             // // obter o título do imóvel e o código do imóvel do banco de dados
             // $titulo_imovel = $value['titulo'];
             // $codigo_imovel = $value['cod_imovel'];
-          
+
             // // transformar o título em uma string URL amigável
             // $titulo_amigavel = strtolower($titulo_imovel);
             // $titulo_amigavel = preg_replace('/[^a-zA-Z0-9]/', '-', $titulo_amigavel);
             // $titulo_amigavel = trim($titulo_amigavel, '-');
-          
+
             // // criar a nova URL amigável
             // $nova_url = $url . $titulo_amigavel . "-" . $codigo_imovel;
-          
+
             // // exibir a nova URL
             // echo $nova_url;
-          
+
             $imovelUrl = $db->criar_url_amigavel($urlAntiga, $tituloDeImovel, $codigoImovel);
 
-            ?>
+          ?>
 
 
 
@@ -416,9 +424,7 @@ $urlBase = "http://localhost/apartamentoavendacuiaba/real-estate/";
   </footer>
 
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 
 </body>
