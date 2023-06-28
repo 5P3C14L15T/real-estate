@@ -279,6 +279,24 @@ input {
 
 }
 
+.shareImovel {
+  float: left;
+
+  text-decoration: none;
+  color: #fff;
+  background-color: #075e54;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+ 
+}
+.shareImovel:hover {
+  background-color: #06312c;
+  color: #fff;
+
+ 
+}
+
 
 /* INFO DESC */
 

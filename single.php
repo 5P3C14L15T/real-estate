@@ -526,6 +526,22 @@ $dataMenorViews = $db->getImoveisMenorViews();
           </footer>
         </div>
 
+        <?php
+        $urlEncaminha = "https://api.whatsapp.com/send?text=";
+    $urlEncaminha .= "🏢 *" . $value['titulo'] . "* %0A%0A";
+    $urlEncaminha .= "💰```Valor: R$" . number_format($value['valor'],2,',','.') . "```%0A";
+    $urlEncaminha .= "📍```Bairro: " . $value['nome'] . "```%0A";
+    $urlEncaminha .= "⏹```Quartos: " . $value['quartos'] . "```%0A";
+    $urlEncaminha .= "📐```Área: " . $value['area_construida'] .  "```%0A%0A";
+    $urlEncaminha .= "Vi esse imóvel no site: *APARTAMENTOAVENDACUIABA*: %0A"
+    . "https://www.apartamentoavendacuiaba.com.br". $urlCompleta;
+
+?>
+
+
+      
+        <a href="<?php echo $urlEncaminha;?>" class="shareImovel mt-4"><i class="fab fa-whatsapp"></i> Compartilhar este imóvel</a>
+
       </div>
     </div>
   </div>
