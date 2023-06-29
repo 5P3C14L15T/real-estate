@@ -1311,30 +1311,47 @@ WHERE imovel.status = 1";
     public function getImoveisMenorViews()
     {
         // Consulta para obter os 4 imóveis com os menores valores de views
-        $query = "
-        SELECT i.titulo, i.cod_imovel, i.valor, i.quartos, i.id_bairro, img.url AS primeira_imagem_url, b.nome AS nome_bairro
-        FROM imovel AS i
-        JOIN bairros AS b ON b.id = i.id_bairro
-        LEFT JOIN (
-            SELECT id_imovel, url
+    //     $query = "
+    //     SELECT i.titulo, i.cod_imovel, i.valor, i.quartos, i.id_bairro, img.url AS primeira_imagem_url, b.nome AS nome_bairro
+    //     FROM imovel AS i
+    //     JOIN bairros AS b ON b.id = i.id_bairro
+    //     LEFT JOIN (
+    //         SELECT id_imovel, url
+    //         FROM imagem
+    //         WHERE id IN (
+    //             SELECT MIN(id)
+    //             FROM imagem
+    //             GROUP BY id_imovel
+    //         )
+    //     ) AS img ON img.id_imovel = i.id_imovel
+    //     WHERE i.views IN (
+    //         SELECT views
+    //         FROM (
+    //             SELECT views
+    //             FROM imovel
+    //             ORDER BY views ASC
+    //             LIMIT 4
+    //         ) AS temp
+    //     )
+    //     LIMIT 4
+    // ";
+
+    $query = "
+    SELECT i.titulo, i.cod_imovel, i.valor, i.quartos, i.id_bairro, img.url AS primeira_imagem_url, b.nome AS nome_bairro
+    FROM imovel AS i
+    JOIN bairros AS b ON b.id = i.id_bairro
+    LEFT JOIN (
+        SELECT id_imovel, url
+        FROM imagem
+        WHERE id IN (
+            SELECT MIN(id)
             FROM imagem
-            WHERE id IN (
-                SELECT MIN(id)
-                FROM imagem
-                GROUP BY id_imovel
-            )
-        ) AS img ON img.id_imovel = i.id_imovel
-        WHERE i.views IN (
-            SELECT views
-            FROM (
-                SELECT views
-                FROM imovel
-                ORDER BY views ASC
-                LIMIT 4
-            ) AS temp
+            GROUP BY id_imovel
         )
-        LIMIT 4
-    ";
+    ) AS img ON img.id_imovel = i.id_imovel
+    ORDER BY i.views ASC
+    LIMIT 4
+";
 
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
